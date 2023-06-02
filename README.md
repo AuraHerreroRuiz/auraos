@@ -8,13 +8,13 @@
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/AuraHerreroRuiz/auraos
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos
 ```
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/AuraHerreroRuiz/auraos:20230403
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos:20230403
 ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
@@ -24,6 +24,6 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
 
-    cosign verify --key cosign.pub ghcr.io/AuraHerreroRuiz/auraos
+    cosign verify --key cosign.pub ghcr.io/auraherreroruiz/auraos
 
 If you're forking this repo, the uBlue website has [instructions](https://ublue.it/making-your-own/) for setting up signing properly.
