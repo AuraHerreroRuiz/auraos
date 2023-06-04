@@ -70,12 +70,12 @@ rpm:
     - insync
     - insync-dolphin
     #Virt-manager packages from bluefin-dx
-    - qemu
-    - qemu-user-static
-    - qemu-user-binfmt
-    - virt-manager
-    - libvirt
-    - edk2-ovmf
+    # - qemu
+    # - qemu-user-static
+    # - qemu-user-binfmt
+    # - virt-manager
+    # - libvirt
+    # - edk2-ovmf
     - micro
     - mosquitto
     - awesome
