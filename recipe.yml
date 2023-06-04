@@ -76,13 +76,13 @@ rpm:
     - virt-manager
     - libvirt
     - edk2-ovmf
-    # - micro
-    # - mosquitto
-    # - awesome
-    # - yakuake
-    # - tree
-    # - power-profiles-daemon
-    # - playerctl
+    - micro
+    - mosquitto
+    - awesome
+    - yakuake
+    - tree
+    - power-profiles-daemon
+    - playerctl
     # - lsd
     # - lf
     # Add your own below:
