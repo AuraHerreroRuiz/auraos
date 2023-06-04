@@ -49,7 +49,7 @@ rpm:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
     # - https://yum.enpass.io/enpass-yum.repo
-    # - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
+    - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
     # - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
     # - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%FEDORA_VERSION%/pennbauman-ports-fedora-%FEDORA_VERSION%.repo
 
@@ -66,7 +66,7 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
     # - enpass
-    # - vivaldi-stable
+    - vivaldi-stable
     # - insync
     # - insync-dolphin
     #Virt-manager packages from bluefin-dx
