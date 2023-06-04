@@ -48,7 +48,6 @@ rpm:
   repos:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/justinz/kup/repo/fedora-%FEDORA_VERSION%/justinz-kup-fedora-%FEDORA_VERSION%.repo
     - https://yum.enpass.io/enpass-yum.repo
     - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
     - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
@@ -74,7 +73,6 @@ rpm:
     - micro
     - mosquitto
     - awesome
-    - kup
     - yakuake
     - tree
     - power-profiles-daemon
