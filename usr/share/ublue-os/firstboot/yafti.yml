@@ -105,6 +105,7 @@ screens:
             - Obsidian: md.obsidian.Obsidian
             - Thunderbird Email: org.mozilla.Thunderbird
             - Document Scanner: org.gnome.SimpleScan
+            - Qalculate (QT): io.github.Qalculate.qalculate-qt
         Development:
           description: For developers.
           default: true
