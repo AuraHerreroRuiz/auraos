@@ -65,17 +65,12 @@ rpm:
     # apps and binaries require it, so it's a good idea to always include it
     # if you ever download or compile any custom software on your machine.
     - libadwaita
+    # My own selection of packages
     # - enpass
     # - vivaldi-stable
     # - insync
     # - insync-dolphin
-    #Virt-manager packages from bluefin-dx
-    - qemu
-    - qemu-user-static
-    - qemu-user-binfmt
-    - virt-manager
-    - libvirt
-    - edk2-ovmf
+    - lf
     - micro
     - mosquitto
     - awesome
@@ -83,8 +78,15 @@ rpm:
     - tree
     - power-profiles-daemon
     - playerctl
+    - solaar
+    #Virt-manager packages from bluefin-dx
+    - qemu
+    - qemu-user-static
+    - qemu-user-binfmt
+    - virt-manager
+    - libvirt
+    - edk2-ovmf
     # - lsd
-    - lf
     # Add your own below:
     # Example:
     # - tilix
