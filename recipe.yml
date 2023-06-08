@@ -79,6 +79,7 @@ rpm:
     - power-profiles-daemon
     - playerctl
     - solaar
+    - pam-u2f
     #Virt-manager packages from bluefin-dx
     - qemu
     - qemu-user-static
