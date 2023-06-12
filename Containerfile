@@ -9,11 +9,23 @@ ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
+FROM fedora-minimal:38 as kup-builder
+
+COPY scripts /tmp/scripts 
+
+RUN chmod +x /tmp/scripts/build-kup.sh && \
+        /tmp/scripts/build-kup.sh
+
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 
 # The default recipe set to the recipe's default filename
 # so that `podman build` should just work for many people.
 ARG RECIPE=./recipe.yml
+
+# Copy Bup and Kup artifacts from builder into image
+COPY --from=kup-builder /tmp/kup/usr /usr
+COPY --from=kup-builder /tmp/kup/etc /usr/etc
+COPY --from=kup-builder /tmp/bup/usr /usr
 
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST
