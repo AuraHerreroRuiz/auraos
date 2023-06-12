@@ -9,7 +9,7 @@ ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
-FROM fedora-minimal:38 as kup-builder
+FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
 
 COPY scripts /tmp/scripts 
 
