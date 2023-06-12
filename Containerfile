@@ -23,9 +23,9 @@ FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 ARG RECIPE=./recipe.yml
 
 # Copy Bup and Kup artifacts from builder into image
-COPY --from=kup-builder /tmp/kup/usr /usr
-COPY --from=kup-builder /tmp/kup/etc /usr/etc
-COPY --from=kup-builder /tmp/bup/usr /usr
+COPY --from=kup-builder /tmp/kupbuilt/usr /usr
+COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
+COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST

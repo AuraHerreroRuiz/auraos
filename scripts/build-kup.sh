@@ -16,7 +16,7 @@ git clone 'https://github.com/bup/bup.git'
 cd bup
 git checkout 0.33
 make long-check
-make install DESTDIR=/tmp/bup PREFIX='/usr'
+make install DESTDIR=/tmp/bupbuilt PREFIX='/usr'
 # Kup Build dependencies.
 mkdir /tmp/kupbuild
 cd /tmp/kupbuild
@@ -29,4 +29,4 @@ mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=release ..
 make
-make install DESTDIR=/tmp/kup PREFIX='/usr'
+make install DESTDIR=/tmp/kupbuilt PREFIX='/usr'
