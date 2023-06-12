@@ -13,8 +13,8 @@ echo "Building Bup"
 mkdir /tmp/bupbuild
 cd /tmp/bupbuild
 git clone 'https://github.com/bup/bup.git'
-git checkout 0.33
 cd bup
+git checkout 0.33
 make long-check
 make install DESTDIR=/tmp/bup PREFIX='/usr'
 # Kup Build dependencies.
