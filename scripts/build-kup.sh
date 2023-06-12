@@ -12,7 +12,7 @@ echo "Building Bup"
 #Build bup
 mkdir /tmp/bupbuild
 cd /tmp/bupbuild
-git clone https://github.com/bup/bup
+git clone https://github.com/bup/bup.git
 git checkout 0.33
 cd bup
 make long-check
