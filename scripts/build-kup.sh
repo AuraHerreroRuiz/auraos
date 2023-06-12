@@ -2,7 +2,10 @@
 # Exit immediately upon error
 set -oue pipefail
 echo "-- Building Kup --"
-# Build dependencies.
+# General Build dependencies
+echo "Installing general dependencies"
+dnf -y git
+# Bup Build dependencies.
 echo "Installing Bup dependencies"
 dnf -y install python3-devtools python-devel python3-pyxattr python3-pytest make gcc acl attr rsync
 echo "Building Bup"
@@ -14,7 +17,7 @@ git checkout 0.33
 cd bup
 make long-check
 make install DESTDIR=/tmp/bup PREFIX='/usr'
-#Build kup
+# Kup Build dependencies.
 mkdir /tmp/kupbuild
 cd /tmp/kupbuild
 echo "Installing Kup dependencies" 
