@@ -4,7 +4,7 @@ set -oue pipefail
 echo "-- Building Kup --"
 # General Build dependencies
 echo "Installing general dependencies"
-dnf -y git
+dnf -y install git
 # Bup Build dependencies.
 echo "Installing Bup dependencies"
 dnf -y install python3-devtools python-devel python3-pyxattr python3-pytest make gcc acl attr rsync
