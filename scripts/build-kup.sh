@@ -7,7 +7,7 @@ echo "Installing general dependencies"
 dnf -y install git
 # Bup Build dependencies.
 echo "Installing Bup dependencies"
-dnf -y install python3-devtools python-devel python3-pyxattr python3-pytest make gcc acl attr rsync
+dnf -y install python3-devtools python-devel python3-pyxattr python3-pytest make gcc acl attr rsync diffutils kmod
 echo "Building Bup"
 #Build bup
 mkdir /tmp/bupbuild
