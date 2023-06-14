@@ -70,7 +70,7 @@ rpm:
     - libadwaita
     # My own selection of packages
     # - enpass
-    # - vivaldi-stable
+    - vivaldi-stable
     - insync
     - insync-dolphin
     - lf
