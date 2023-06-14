@@ -48,9 +48,6 @@ rpm:
   repos:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
-    # - https://yum.enpass.io/enpass-yum.repo
-    # - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-    # - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
     - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%FEDORA_VERSION%/pennbauman-ports-fedora-%FEDORA_VERSION%.repo
 
   # These RPMs will be installed from your enabled repositories (Fedora's own
@@ -66,10 +63,10 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
     # My own selection of packages
-    # - enpass
-    # - vivaldi-stable
-    # - insync
-    # - insync-dolphin
+    - enpass
+    - vivaldi-stable
+    - insync
+    - insync-dolphin
     - lf
     - micro
     - mosquitto
