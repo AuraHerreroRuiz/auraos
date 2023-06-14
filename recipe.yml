@@ -69,8 +69,8 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
     # My own selection of packages
-    - enpass
-    - vivaldi-stable
+    # - enpass
+    # - vivaldi-stable
     - insync
     - insync-dolphin
     - lf
