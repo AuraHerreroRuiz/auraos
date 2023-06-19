@@ -94,7 +94,10 @@ rpm:
     # Add your own below:
     # Example:
     # - tilix
-
+  # Create these symlinks ../../usr/lib/opt/[name here] in /opt/[name here] to fix installing packages that add files to /opt while building the image
+  optfix:
+    - enpass
+    - vivaldi
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:
