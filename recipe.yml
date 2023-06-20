@@ -69,7 +69,7 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
     # My own selection of packages
-    # - enpass
+    - enpass
     - vivaldi-stable
     - insync
     - insync-dolphin
@@ -90,10 +90,6 @@ rpm:
     - virt-manager
     - libvirt
     - edk2-ovmf
-    # - lsd
-    # Add your own below:
-    # Example:
-    # - tilix
   # Create these symlinks ../../usr/lib/opt/[name here] in /opt/[name here] to fix installing packages that add files to /opt while building the image
   optfix:
     - enpass
