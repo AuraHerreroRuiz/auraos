@@ -135,7 +135,7 @@ jobs:
             FEDORA_MAJOR_VERSION=${{ env.FEDORA_MAJOR_VERSION }}
             BASE_IMAGE_URL=${{ env.BASE_IMAGE_URL }}
             RECIPE=${{ matrix.recipe }}
-            GHSECRET=${{ secrets.LSD_GET_TOKEN }}
+            GHSECRET=${{ secrets.GH_GET_TOKEN }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
 
