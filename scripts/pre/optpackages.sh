@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-RECIPE_FILE="recipe.yml"
+RECIPE_FILE="/usr/share/ublue-os/recipe.yml"
 get_yaml_array() {
     mapfile -t "${1}" < <(yq -- "${2}" "${RECIPE_FILE}")
 }
