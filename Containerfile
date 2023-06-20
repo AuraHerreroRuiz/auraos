@@ -46,6 +46,8 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
+#Set the enivornment variable to the github token for getting artifacts
+ENV GH_SECRET=${GH_GET_TOKEN}
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
