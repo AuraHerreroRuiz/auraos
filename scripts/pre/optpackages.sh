@@ -10,13 +10,13 @@ get_yaml_array() {
 get_yaml_array optpackages '.rpm.optfix[]'
 if [[ ${#optpackages[@]} -gt 0 ]]; then
     echo "-- Creating symlinks to fix packages that install to /opt --"
-    mkdir -p "/tmp/fakeroot/var/opt"
-    ln -s "/tmp/fakeroot/var/opt"  "/tmp/fakeroot/opt"
+    mkdir -p "/var/opt"
+    ln -s "/var/opt"  "/opt"
     for optpackage in "${optpackages[@]}"; do
         optpackage="${optpackage%\"}"
         optpackage="${optpackage#\"}"
-        mkdir -p "/tmp/fakeroot/usr/lib/opt/${optpackage}"
-        ln -s "../../usr/lib/opt/${optpackage}" "/tmp/fakeroot/var/opt/${optpackage}"
+        mkdir -p "/usr/lib/opt/${optpackage}"
+        ln -s "../../usr/lib/opt/${optpackage}" "/var/opt/${optpackage}"
         echo "Created symlinks for ${optpackage}"
     done
     echo "---"
