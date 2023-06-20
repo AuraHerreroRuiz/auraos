@@ -4,15 +4,15 @@ set -oue pipefail
 
 curl -GL \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: Bearer $GHSECRET"\
+  -H "Authorization: Bearer $GH_GET_TOKEN"\
   -H "X-GitHub-Api-Version: 2022-11-28" \
  $(curl -GL \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: Bearer $GHSECRET"\
+  -H "Authorization: Bearer $GH_GET_TOKEN"\
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/lsd-rs/lsd/actions/runs/$(curl -GL \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: Bearer $GHSECRET"\
+  -H "Authorization: Bearer $GH_GET_TOKEN"\
   -H "X-GitHub-Api-Version: 2022-11-28" \
   -d "status=success" \
   -d "branch=master" \
