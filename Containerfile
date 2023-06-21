@@ -36,10 +36,10 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
 #Set the enivornment variable to the github token for getting artifacts
-ENV GH_GET_TOKEN=${GH_GET_TOKEN}
 
 # Run the build script and clean up temp files.
-RUN chmod +x /tmp/scripts/build.sh && \
+RUN export GH_GET_TOKEN=${GH_GET_TOKEN} && \
+        chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/*
 
