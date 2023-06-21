@@ -9,23 +9,12 @@ ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
-FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
-
-COPY scripts /tmp/scripts 
-
-RUN chmod +x /tmp/scripts/build-kup.sh && \
-        /tmp/scripts/build-kup.sh
-
-FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
+#First stage of image build
+FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION} as first-stage
 
 # The default recipe set to the recipe's default filename
 # so that `podman build` should just work for many people.
 ARG RECIPE=./recipe.yml
-
-# Copy Bup and Kup artifacts from builder into image
-COPY --from=kup-builder /tmp/kupbuilt/usr /usr
-COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
-COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST
@@ -49,8 +38,24 @@ COPY scripts /tmp/scripts
 #Set the enivornment variable to the github token for getting artifacts
 ENV GH_GET_TOKEN=${GH_GET_TOKEN}
 
-# Run the build script, then clean up temp files and finalize container build.
+# Run the build script and clean up temp files.
 RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
-        rm -rf /tmp/* /var/* && \
-        ostree container commit
+        rm -rf /tmp/* /var/*
+
+#Build kup
+FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
+
+COPY scripts /tmp/scripts 
+
+RUN chmod +x /tmp/scripts/build-kup.sh && \
+        /tmp/scripts/build-kup.sh
+# Copy kup build and finalize container build.
+FROM first-stage
+
+# Copy Bup and Kup artifacts from builder into image
+COPY --from=kup-builder /tmp/kupbuilt/usr /usr
+COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
+COPY --from=kup-builder /tmp/bupbuilt/usr /usr
+
+RUN ostree container commit
