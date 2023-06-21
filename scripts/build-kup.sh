@@ -14,7 +14,7 @@ mkdir /tmp/bupbuild
 cd /tmp/bupbuild
 git clone 'https://github.com/bup/bup.git'
 cd bup
-git checkout 0.33
+git checkout $(git tag --sort=tag --list '[0-9]*' | tail -1)
 make long-check
 make install DESTDIR=/tmp/bupbuilt PREFIX='/usr'
 # Kup Build dependencies.
