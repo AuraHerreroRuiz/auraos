@@ -2,7 +2,7 @@
 set -oue pipefail
 
 # Install dependencies
-dnf -y install fontforge python3-configargparse
+dnf -y install fontforge python3-configargparse jq
 
 curl -GL \
   -H "Accept: application/vnd.github+json" \
