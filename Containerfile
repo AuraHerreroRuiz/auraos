@@ -44,14 +44,6 @@ RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/*
 
-#Build kup
-FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
-
-COPY scripts /tmp/scripts 
-
-RUN chmod +x /tmp/scripts/build-kup.sh && \
-        /tmp/scripts/build-kup.sh
-
 # Patch JetbrainsMonoSlashed with Nerd Font
 FROM nerdfonts/patcher as nerdjetbrainsmonoslashed
 
@@ -59,6 +51,14 @@ COPY scripts /tmp/scripts
 
 RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh && \
         /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh
+        
+#Build kup
+FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
+
+COPY scripts /tmp/scripts 
+
+RUN chmod +x /tmp/scripts/build-kup.sh && \
+        /tmp/scripts/build-kup.sh
 
 # Copy kup build and finalize container build.
 FROM first-stage
