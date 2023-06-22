@@ -17,8 +17,8 @@ curl -GL \
   -d "status=success" \
   -d "branch=master" \
   -d "event=push" \
-  -d "per-page=1" https://api.github.com/repos/lsd-rs/lsd/actions/runs | jq ".workflow_runs[0].id")/artifacts | jq '.artifacts[] | select(.name == "lsd-x86_64-unknown-linux-gnu").archive_download_url' --raw-output) -o /tmp/lsdzip
+  -d "per-page=1" https://api.github.com/repos/lsd-rs/lsd/actions/runs | jq ".workflow_runs[0].id")/artifacts | jq '.artifacts[] | select(.name == "lsd-x86_64-unknown-linux-gnu").archive_download_url' --raw-output) -o /tmp/lsd.zip
 
 cd /usr/bin
-unzip /tmp/lsdzip
+unzip /tmp/lsd.zip
 chmod 755 lsd
