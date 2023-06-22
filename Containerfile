@@ -9,6 +9,7 @@ ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
+
 #First stage of image build
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION} as first-stage
 
@@ -35,11 +36,11 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
-#Set the enivornment variable to the github token for getting artifacts
+# ARG for the github token for getting artifacts
+ARG GH_GET_TOKEN
 
 # Run the build script and clean up temp files.
-RUN export GH_GET_TOKEN=${GH_GET_TOKEN} && \
-        chmod +x /tmp/scripts/build.sh && \
+RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/*
 
