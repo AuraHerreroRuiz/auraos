@@ -12,7 +12,7 @@ $(curl -GL \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/sharpjs/JetBrainsMonoSlashed/releases/latest | jq  --raw-output '.assets[0].browser_download_url') -o /tmp/JetBrainsMonoSlashed.zip
 
-mkdir /tmp/fontpatcher
+mkdir -p /tmp/fontpatcher
 curl -GL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip -o /tmp/fontpatcher/fontpatcher.zip
 unzip /tmp/fontpatcher/fontpatcher.zip
 mkdir -p /tmp/jetbrains-mono-slashed /tmp/jetbrains-mono-slashed-nerd-font
