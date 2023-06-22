@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 set -oue pipefail
 curl -GL \
   -H "Accept: application/vnd.github+json" \
