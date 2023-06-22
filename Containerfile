@@ -45,13 +45,13 @@ RUN chmod +x /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/*
 
 # Patch JetbrainsMonoSlashed with Nerd Font
-FROM nerdfonts/patcher as nerdjetbrainsmonoslashed
+FROM fedora:${FEDORA_MAJOR_VERSION} as nerdjetbrainsmonoslashed
 
 COPY scripts /tmp/scripts
 
 RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh && \
         /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh
-        
+
 #Build kup
 FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
 
