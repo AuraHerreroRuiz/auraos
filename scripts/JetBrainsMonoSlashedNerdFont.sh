@@ -16,10 +16,10 @@ mkdir -p /tmp/fontpatcher
 cd /tmp/fontpatcher
 curl -GL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip -o /tmp/fontpatcher/fontpatcher.zip
 unzip /tmp/fontpatcher/fontpatcher.zip
-mkdir -p /tmp/jetbrains-mono-slashed /tmp/jetbrains-mono-slashed-nerd-font
+mkdir -p /tmp/jetbrains-mono-slashed /tmp/patched-font/jetbrains-mono-slashed-nerd-font
 cd /tmp/jetbrains-mono-slashed
 unzip /tmp/JetBrainsMonoSlashed.zip JetBrainsMonoSlashed-Thin.otf JetBrainsMonoSlashed-ExtraLight.otf JetBrainsMonoSlashed-Light.otf JetBrainsMonoSlashed-Regular.otf JetBrainsMonoSlashed-Medium.otf JetBrainsMonoSlashed-SemiBold.otf JetBrainsMonoSlashed-Bold.otf JetBrainsMonoSlashed-ExtraBold.otf JetBrainsMonoSlashed-ThinItalic.otf JetBrainsMonoSlashed-ExtraLightItalic.otf JetBrainsMonoSlashed-LightItalic.otf JetBrainsMonoSlashed-Italic.otf JetBrainsMonoSlashed-MediumItalic.otf JetBrainsMonoSlashed-SemiBoldItalic.otf JetBrainsMonoSlashed-BoldItalic.otf JetBrainsMonoSlashed-ExtraBoldItalic.otf
 
 for font in /tmp/jetbrains-mono-slashed/*.otf; 
-do [ -f "$font" ] && fontforge -script /tmp/fontpatcher/font-patcher -qc -out /tmp/jetbrains-mono-slashed-nerd-font "$font";
+do [ -f "$font" ] && fontforge -script /tmp/fontpatcher/font-patcher -qc -out /tmp/patched-font/jetbrains-mono-slashed-nerd-font "$font";
 done

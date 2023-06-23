@@ -68,5 +68,5 @@ COPY --from=kup-builder /tmp/kupbuilt/usr /usr
 COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
 COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 # Copy JetbrainsMonoSlashed Nerd Font into image
-COPY --from=nerdjetbrainsmonoslashed /tmp/jetbrains-mono-slashed-nerd-font /usr/share/fonts
+COPY --from=nerdjetbrainsmonoslashed /tmp/patched-font /usr/share/fonts
 RUN ostree container commit
