@@ -60,6 +60,10 @@ COPY scripts /tmp/scripts
 RUN chmod +x /tmp/scripts/build-kup.sh && \
         /tmp/scripts/build-kup.sh
 
+#Jetbrains Mono Slash Nerd Font Symlink
+RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh && \
+        /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh
+
 # Copy kup build and finalize container build.
 FROM first-stage
 
