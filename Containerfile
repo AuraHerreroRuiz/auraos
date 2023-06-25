@@ -1,4 +1,4 @@
-# This is the Containerfile for your custom image. 
+# This is the Containerfile for your custom image.
 
 # It takes in the recipe, version, and base image as arguments,
 # all of which are provided by build.yml when doing builds
@@ -55,7 +55,7 @@ RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh && \
 #Build kup
 FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
 
-COPY scripts /tmp/scripts 
+COPY scripts /tmp/scripts
 
 RUN chmod +x /tmp/scripts/build-kup.sh && \
         /tmp/scripts/build-kup.sh
@@ -71,6 +71,7 @@ COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
 COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 # Copy JetbrainsMonoSlashed Nerd Font into image
 COPY --from=nerdjetbrainsmonoslashed /tmp/patched-font /usr/share/fonts
+COPY scripts /tmp/scripts
 RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh && \
         /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh
 RUN ostree container commit
