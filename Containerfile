@@ -61,8 +61,6 @@ RUN chmod +x /tmp/scripts/build-kup.sh && \
         /tmp/scripts/build-kup.sh
 
 #Jetbrains Mono Slash Nerd Font Symlink
-RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh && \
-        /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh
 
 # Copy kup build and finalize container build.
 FROM first-stage
@@ -73,4 +71,6 @@ COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
 COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 # Copy JetbrainsMonoSlashed Nerd Font into image
 COPY --from=nerdjetbrainsmonoslashed /tmp/patched-font /usr/share/fonts
+RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh && \
+        /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh
 RUN ostree container commit
