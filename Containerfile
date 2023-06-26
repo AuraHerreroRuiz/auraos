@@ -44,13 +44,13 @@ RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/*
 
-# Patch JetbrainsMonoSlashed with Nerd Font
-FROM fedora:${FEDORA_MAJOR_VERSION} as nerdjetbrainsmonoslashed
+# Download and patch fonts
+FROM fedora:${FEDORA_MAJOR_VERSION} as font-getter
 
-COPY scripts /tmp/scripts
+COPY scripts /tmp/scripts/fonts
 
-RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh && \
-        /tmp/scripts/JetBrainsMonoSlashedNerdFont.sh
+RUN chmod +x /tmp/scripts/font-getter/font-install.sh && \
+        /tmp/scripts/font-getter/font-install.sh
 
 #Build kup
 FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
@@ -60,8 +60,6 @@ COPY scripts /tmp/scripts
 RUN chmod +x /tmp/scripts/build-kup.sh && \
         /tmp/scripts/build-kup.sh
 
-#Jetbrains Mono Slash Nerd Font Symlink
-
 # Copy kup build and finalize container build.
 FROM first-stage
 
@@ -69,9 +67,9 @@ FROM first-stage
 COPY --from=kup-builder /tmp/kupbuilt/usr /usr
 COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
 COPY --from=kup-builder /tmp/bupbuilt/usr /usr
-# Copy JetbrainsMonoSlashed Nerd Font into image
-COPY --from=nerdjetbrainsmonoslashed /tmp/patched-font /usr/share/fonts
-COPY scripts /tmp/scripts
-RUN chmod +x /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh && \
-        /tmp/scripts/JetBrainsMonoSlashedNerdFontConfigSymlink.sh
+
+# Copy fonts and licenses into image, then generate font cache
+COPY --from=font-getter /tmp/usr /usr
+RUN fc-cache -fv
+
 RUN ostree container commit
