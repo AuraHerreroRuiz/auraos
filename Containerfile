@@ -47,10 +47,10 @@ RUN chmod +x /tmp/scripts/build.sh && \
 # Download and patch fonts
 FROM fedora:${FEDORA_MAJOR_VERSION} as font-getter
 
-COPY scripts /tmp/scripts/fonts
+COPY scripts/font-getter /tmp/scripts
 
-RUN chmod +x /tmp/scripts/font-getter/font-install.sh && \
-        /tmp/scripts/font-getter/font-install.sh
+RUN chmod +x /tmp/scripts/font-install.sh && \
+        /tmp/scripts/font-install.sh
 
 #Build kup
 FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
