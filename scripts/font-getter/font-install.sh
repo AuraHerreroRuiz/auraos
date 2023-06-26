@@ -14,7 +14,7 @@ abort() { yell "${*}"; exit 0; }
 
 # Ensure that a "scripts/" sub-directory exists for the "script category".
 # Note that symlinks to other directories will be accepted by the `-d` check.
-FONT_SCRIPTS_DIR="./fonts"
+FONT_SCRIPTS_DIR="/tmp/scripts/fonts"
 if [[ ! -d "${FONT_SCRIPTS_DIR}" ]]; then
     abort "Nothing to do, since \"${FONT_SCRIPTS_DIR}\" doesn't exist."
 fi
