@@ -12,7 +12,7 @@ set -oue pipefail
 yell() { echo "${0}: ${*}"; }
 abort() { yell "${*}"; exit 0; }
 
-# Ensure that a "scripts/" sub-directory exists for the "script category".
+# Ensure that a the scripts/fonts/ directory is not empty
 # Note that symlinks to other directories will be accepted by the `-d` check.
 FONT_SCRIPTS_DIR="/tmp/scripts/fonts"
 if [[ ! -d "${FONT_SCRIPTS_DIR}" ]]; then
@@ -30,8 +30,7 @@ if [[ ${#buildscripts[@]} -eq 0 ]]; then
     abort "Nothing to do, since \"${FONT_SCRIPTS_DIR}\" doesn't contain any scripts in its top-level directory."
 fi
 
-# Now simply execute all of the discovered scripts, and provide the name of the
-# current "script category" as an argument, to match the behavior of "build.sh".
+# Now simply execute all of the discovered scripts to install the fonts
 for script in "${buildscripts[@]}"; do
     echo "[fonts.sh] Installing font: ${script}"
     bash "$script"
