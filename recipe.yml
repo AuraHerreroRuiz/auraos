@@ -74,6 +74,7 @@ rpm:
     - insync
     - insync-dolphin
     - lf
+    - libreoffice
     - micro
     - mosquitto
     - awesome
@@ -83,6 +84,7 @@ rpm:
     - playerctl
     - solaar
     - pam-u2f
+    - zsh
     #Virt-manager packages from bluefin-dx
     - qemu
     - qemu-user-static
