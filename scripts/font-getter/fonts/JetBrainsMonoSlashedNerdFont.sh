@@ -25,7 +25,7 @@ unzip /tmp/JetBrainsMonoSlashed.zip JetBrainsMonoSlashed-Thin.otf JetBrainsMonoS
 
 #Patch fonts
 for font in /tmp/jetbrains-mono-slashed/*.otf;
-do [ -f "$font" ] && fontforge -script /tmp/fontpatcher/font-patcher -qc -out /tmp/usr/share/fonts/jetbrains-mono-slashed-nerd-font "$font";
+do [ -f "$font" ] && fontforge -script /tmp/fontpatcher/font-patcher -qc -ext otf -out /tmp/usr/share/fonts/jetbrains-mono-slashed-nerd-font "$font";
 done
 
 #Download font license
