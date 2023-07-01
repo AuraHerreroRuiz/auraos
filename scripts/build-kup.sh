@@ -14,8 +14,9 @@ cd /tmp/bupbuild
 #Clone Bup repository
 git clone 'https://github.com/bup/bup.git'
 cd bup
-git checkout $(git tag --sort=tag --list '[0-9]*' | tail -1)
-#Build Bup
+# Checkout last release
+git checkout "$(git tag --sort=tag --list '[0-9]*' | tail -n 1)"
+# Build Bup
 make long-check
 make install DESTDIR=/tmp/bupbuilt PREFIX='/usr'
 # Kup Build dependencies.
@@ -27,6 +28,8 @@ echo "Building Kup"
 #Clone kup repository
 git clone 'https://invent.kde.org/system/kup.git'
 cd kup
+# Checkout last release
+git checkout "$(git tag --sort=tag --list 'kup-[0-9]*' | tail -n 1)"
 #Build Kup
 mkdir build
 cd build
