@@ -23,7 +23,7 @@ make install DESTDIR=/tmp/bupbuilt PREFIX='/usr'
 mkdir /tmp/kupbuild
 cd /tmp/kupbuild
 echo "Installing Kup dependencies"
-dnf -y install cmake extra-cmake-modules qt5-qtbase qt5-qtbase-devel kf5-kcoreaddons kf5-kcoreaddons-devel kf5-kdbusaddons kf5-kdbusaddons-devel kf5-ki18n kf5-ki18n-devel kf5-kio kf5-kio-devel kf5-solid kf5-solid-devel kf5-kidletime kf5-kidletime-devel kf5-knotifications kf5-knotifications-devel kf5-kconfig kf5-kconfig-devel kf5-kjobwidgets kf5-kjobwidgets-devel kf5-plasma kf5-plasma-devel libgit2 libgit2-devel
+dnf -y install cmake extra-cmake-modules qt5-qtbase qt5-qtbase-devel kf5-kcoreaddons kf5-kcoreaddons-devel kf5-kdbusaddons kf5-kdbusaddons-devel kf5-ki18n kf5-ki18n-devel kf5-kinit kf5-kio kf5-kio-devel kf5-solid kf5-solid-devel kf5-kidletime kf5-kidletime-devel kf5-knotifications kf5-knotifications-devel kf5-kconfig kf5-kconfig-devel kf5-kjobwidgets kf5-kjobwidgets-devel kf5-plasma kf5-plasma-devel libgit2 libgit2-devel
 echo "Building Kup"
 #Clone kup repository
 git clone 'https://invent.kde.org/system/kup.git'
