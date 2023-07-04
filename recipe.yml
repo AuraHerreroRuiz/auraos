@@ -80,6 +80,7 @@ rpm:
     - awesome
     - yakuake
     - tree
+    - trash-cli
     - power-profiles-daemon
     - playerctl
     - solaar
