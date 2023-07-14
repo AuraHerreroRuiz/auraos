@@ -1,4 +1,5 @@
-# Aura's own personalised uBlue image
+# Aura's own personalised uBlue images
+
 
 ## Installation
 
@@ -7,17 +8,21 @@
 
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
-```
+```sh
 sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos
 ```
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
-```
+```sh
 sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos:20230403
 ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+For the image with nvidia drivers:
+
+```sh
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos-nvidia
+```
 
 
 ## Verification
