@@ -11,14 +11,14 @@ dnf -y install git clang libgusb libgusb-devel innoextract ninja-build meson gcc
 echo "Building libfprint-tod"
 cd /tmp
 # Clone libfprint-tod repository
-git clone https://gitlab.freedesktop.org/3v1n0/libfprint.git
+git clone 'https://gitlab.freedesktop.org/3v1n0/libfprint.git'
 git checkout tod
 # Build synaTudor
 meson build
 cd build
 # Install to /tmp to copy to final image
-meson configure --prefix /usr
-meson install --destdir /tmp/libfrint-tod-build
+meson configure --prefix '/usr'
+meson install --destdir '/tmp/libfrint-tod-build'
 # Install to use as a dependency
 meson install
 
@@ -30,5 +30,5 @@ cd synaTudor
 meson build
 cd build
 ninja
-meson configure --prefix /usr
-meson install --destdir /tmp/synatudor-build
+meson configure --prefix '/usr'
+meson install --destdir '/tmp/synatudor-build'
