@@ -6,7 +6,7 @@ set -oue pipefail
 echo "-- Building fingerprint drivers --"
 # Install dependencies
 echo "Installing dependencies"
-dnf -y install git clang libgusb libgusb-devel innoextract ninja-build meson gcc cmake openssl openssl-devel libusb1 libusb1-devel libcap libcap-devel libseccomp libseccomp-devel ghc-gio ghc-gio-devel dbus dbus-devel cairo cairo-devel cairo-gobject cairo-gobject-devel gobject-introspection gobject-introspection-devel nss nss-devel libgudev libgudev-devel gtk-doc valgrind valgrind-devel
+dnf -y install git clang libgusb libgusb-devel innoextract ninja-build meson gcc cmake openssl openssl-devel libusb1 libusb1-devel libcap libcap-devel libseccomp libseccomp-devel ghc-gio ghc-gio-devel dbus dbus-devel cairo cairo-devel cairo-gobject cairo-gobject-devel gobject-introspection gobject-introspection-devel nss nss-devel libgudev libgudev-devel gtk-doc valgrind valgrind-devel wget
 
 echo "Building libfprint-tod"
 cd /tmp
