@@ -44,6 +44,14 @@ RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/*
 
+# Install synaTudor drivers
+FROM fedora:${FEDORA_MAJOR_VERSION} as synaTudor
+
+COPY scripts /tmp/scripts
+
+RUN chmod +x /tmp/scripts/tudor.sh && \
+        /tmp/scripts/tudor.sh
+
 # Download and patch fonts
 FROM fedora:${FEDORA_MAJOR_VERSION} as font-getter
 
@@ -71,5 +79,10 @@ COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 # Copy fonts and licenses into image, then generate font cache
 COPY --from=font-getter /tmp/usr /usr
 RUN fc-cache -fv
+
+# Copy fingerprint drivers into image
+COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
+COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
+COPY --from=synaTudor /tmp/synatudor-build/sbin /usr
 
 RUN ostree container commit
