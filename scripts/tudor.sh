@@ -12,6 +12,7 @@ echo "Building libfprint-tod"
 cd /tmp
 # Clone libfprint-tod repository
 git clone 'https://gitlab.freedesktop.org/3v1n0/libfprint.git'
+cd libfprint
 git checkout tod
 # Build synaTudor
 meson build
@@ -23,6 +24,7 @@ meson install --destdir '/tmp/libfrint-tod-build'
 meson install
 
 echo "Building synaTudor"
+cd /tmp
 # Clone synaTudor repository
 git clone 'https://github.com/Popax21/synaTudor.git'
 cd synaTudor
