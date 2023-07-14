@@ -83,6 +83,6 @@ RUN fc-cache -fv
 # Copy fingerprint drivers into image
 COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
-COPY --from=synaTudor /tmp/synatudor-build/sbin /usr
+COPY --from=synaTudor /tmp/synatudor-build/usr /usr
 
 RUN ostree container commit
