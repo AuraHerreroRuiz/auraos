@@ -1,6 +1,5 @@
 # Aura's own personalised uBlue images
 
-
 ## Installation
 
 > **Warning**
@@ -8,27 +7,39 @@
 
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
-```sh
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos
-```
+- First rebase to the image unsigned, to get the proper signing keys and policies installed:
+
+  ```sh
+  sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos:latest
+  ```
+
+- Reboot to complete the rebase:
+
+  ```sh
+  systemctl reboot
+  ```
+
+- Then rebase to the signed image, like so:
+
+  ```sh
+  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:latest
+  ```
+
+- Reboot again to complete the installation
+
+  ```sh
+  systemctl reboot
+  ```
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```sh
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos:20230403
+sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:20230403
 ```
-
 For the image with nvidia drivers:
 
 ```sh
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos-nvidia
+sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:20230403
 ```
 
-
-## Verification
-
-These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
-
-    cosign verify --key cosign.pub ghcr.io/auraherreroruiz/auraos
-
-If you're forking this repo, the uBlue website has [instructions](https://ublue.it/making-your-own/) for setting up signing properly.
+This repository by default also supports signing
