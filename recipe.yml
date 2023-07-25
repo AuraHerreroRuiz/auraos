@@ -79,7 +79,7 @@ rpm:
     - mosquitto
     - awesome
     - yakuake
-    - tree
+    - ksystemlog
     - trash-cli
     - power-profiles-daemon
     - playerctl
