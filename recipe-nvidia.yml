@@ -80,6 +80,7 @@ rpm:
     - awesome
     - yakuake
     - ksystemlog
+    - touchegg
     - trash-cli
     - power-profiles-daemon
     - playerctl
