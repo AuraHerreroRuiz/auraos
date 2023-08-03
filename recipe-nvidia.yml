@@ -80,6 +80,7 @@ rpm:
     - awesome
     - yakuake
     - ksystemlog
+    - kcm_wacomtablet
     - touchegg
     - trash-cli
     - power-profiles-daemon
