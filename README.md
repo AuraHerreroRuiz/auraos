@@ -39,5 +39,5 @@ sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/aura
 For the image with nvidia drivers:
 
 ```sh
-sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:20230403
+sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos-nvidia
 ```
