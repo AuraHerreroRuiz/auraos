@@ -94,7 +94,7 @@ screens:
             - Bottles: com.usebottles.bottles
             - Discord: com.discordapp.Discord
             - Steam: com.valvesoftware.Steam
-            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
+            - Gamescope (Utility): org.freedesktop.Platform.VulkanLayer.gamescope
             - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
             - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
             - Yuzu: org.yuzu_emu.yuzu
