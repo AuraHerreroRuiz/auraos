@@ -63,13 +63,14 @@ screens:
             - Kamoso: org.kde.kamoso
             - KClock: org.kde.kclock
             - KColorChooser: org.kde.kcolorchooser
-            - Kdiff3: org.kde.kdiff3
+            - Kompare: org.kde.kompare
             - Kweather: org.kde.kweather
             - Skrooge: org.kde.skrooge
         System Apps:
           description: System applications for all desktop environments.
           default: true
           packages:
+            - Firefox Browser: org.mozilla.firefox
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Touche (Touchpad gestures): com.github.tchx84.Flatseal
         Social Media:
@@ -115,6 +116,7 @@ screens:
             - DBeaver Community: io.dbeaver.DBeaverCommunity
             - Drawio: com.jgraph.drawio.desktop
             - Umbrello: org.kde.umbrello
+            - Kompare: org.kde.kompare
         File sharing:
           description: Apps to share files.
           default: true
@@ -145,7 +147,6 @@ screens:
             - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Kdenlive: org.kde.kdenlive
             - Tenacity: org.tenacityaudio.Tenacity,
-            - Pinta: com.github.PintaProject.Pinta
             - GIMP: org.gimp.GIMP
 
 
