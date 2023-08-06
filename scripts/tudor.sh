@@ -36,7 +36,9 @@ meson configure --prefix '/usr'
 meson install --destdir '/tmp/synatudor-build'
 
 echo "-- Building fingerprint driver SElinux policies --"
-
+echo "Installing dependencies"
+dnf -y install checkpolicy policycoreutils
+echo "Building policies"
 cd /tmp/policies
 checkmodule -M -m -o fprint-tudor.mod fprint-tudor.te
 mkdir -p /tmp/policies/usr/share/selinux/targeted/
