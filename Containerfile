@@ -91,7 +91,7 @@ COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /usr
 #Remove SELinux restrictions for the fingerprint driver
-RUN chcon -t unconfined_exec_t /usr/sbin/tudor/tudor_host_launcher
+RUN semanage fcontext -a -t unconfined_exec_t /usr/sbin/tudor/tudor_host_launcher
 
 #Commit changes
 RUN ostree container commit
