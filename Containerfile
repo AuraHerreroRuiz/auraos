@@ -54,6 +54,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
 FROM fedora:${FEDORA_MAJOR_VERSION} as synaTudor
 
 COPY scripts /tmp/scripts
+COPY policies /tmp/policies
 
 RUN chmod +x /tmp/scripts/tudor.sh && \
         /tmp/scripts/tudor.sh
@@ -90,7 +91,7 @@ RUN fc-cache -fv
 COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /usr
-#Remove SELinux restrictions for the fingerprint driver
-RUN semanage fcontext -a -t unconfined_exec_t /usr/sbin/tudor/tudor_host_launcher && restorecon /usr/sbin/tudor/tudor_host_launcher
+COPY --from=synaTudor /tmp/policies/usr /usr
+
 #Commit changes
 RUN ostree container commit

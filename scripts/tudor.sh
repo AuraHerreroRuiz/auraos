@@ -34,3 +34,10 @@ cd build
 ninja
 meson configure --prefix '/usr'
 meson install --destdir '/tmp/synatudor-build'
+
+echo "-- Building fingerprint driver SElinux policies --"
+
+cd /tmp/policies
+checkmodule -M -m -o fprint-tudor.mod fprint-tudor.te
+mkdir -p /tmp/policies/usr/share/selinux/targeted/
+semodule_package -m fprint-tudor.mod -o /tmp/policies/usr/share/selinux/targeted/fprint-tudor.pp
