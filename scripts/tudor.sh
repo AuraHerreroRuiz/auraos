@@ -42,4 +42,4 @@ echo "Building policies"
 cd /tmp/policies
 checkmodule -M -m -o fprintd-tudor.mod fprintd-tudor.te
 mkdir -p /tmp/policies/usr/share/selinux/packages/
-semodule_package -m fprintd-tudor.mod -o /tmp/policies/usr/share/selinux/packages/fprintd-tudor.pp
+semodule_package -m fprintd-tudor.mod -o /tmp/policies/usr/share/selinux/packages/targeted/fprintd-tudor.pp

@@ -87,11 +87,12 @@ COPY --from=kup-builder /tmp/bupbuilt/usr /usr
 COPY --from=font-getter /tmp/usr /usr
 RUN fc-cache -fv
 
-# Copy fingerprint driver into image
+# Copy fingerprint driver into image and install policy
 COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /usr
 COPY --from=synaTudor /tmp/policies/usr /usr
+RUN semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp && load_policy
 
 #Commit changes
 RUN ostree container commit
