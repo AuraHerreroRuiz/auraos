@@ -40,6 +40,6 @@ echo "Installing dependencies"
 dnf -y install checkpolicy policycoreutils
 echo "Building policies"
 cd /tmp/policies
-checkmodule -M -m -o fprint-tudor.mod fprint-tudor.te
+checkmodule -M -m -o fprintd-tudor.mod fprintd-tudor.te
 mkdir -p /tmp/policies/usr/share/selinux/targeted/
-semodule_package -m fprint-tudor.mod -o /tmp/policies/usr/share/selinux/targeted/fprint-tudor.pp
+semodule_package -m fprintd-tudor.mod -o /tmp/policies/usr/share/selinux/packages/fprintd-tudor.pp
