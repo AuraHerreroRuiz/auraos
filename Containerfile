@@ -92,7 +92,7 @@ COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /usr
 COPY --from=synaTudor /tmp/policies/usr /usr
-RUN semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp && load_policy
+RUN semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp
 
 #Commit changes
 RUN ostree container commit
