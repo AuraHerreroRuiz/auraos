@@ -87,6 +87,7 @@ screens:
             - ClamTk: com.gitlab.davem.ClamTk
             - Kleopatra: org.kde.kleopatra
             - Yubico Authenticator: com.yubico.yubioath
+            - Metadata Cleaner: fr.romainvigier.MetadataCleaner
         Gaming:
           description: "Gaming related apps"
           default: true
@@ -109,6 +110,7 @@ screens:
             - Thunderbird Email: org.mozilla.Thunderbird
             - Document Scanner: org.gnome.SimpleScan
             - Qalculate (QT): io.github.Qalculate.qalculate-qt
+            - Frog (Text OCR tool): com.github.tenderowl.frog
         Development:
           description: For developers.
           default: true
@@ -137,6 +139,8 @@ screens:
             - Calibre: com.calibre_ebook.calibre
             - Elisa: org.kde.elisa
             - Spotify: com.spotify.Client
+            - Blanket: com.rafaelmardojai.Blanket
+            - Mousai: io.github.seadve.Mousai
         Media production:
           description: Apps to record, create and edit multimedia.
           default: true
