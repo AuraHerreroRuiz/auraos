@@ -87,6 +87,7 @@ rpm:
     - playerctl
     - solaar
     - pam-u2f
+    - pamu2fcfg
     - zsh
     #Virt-manager packages from bluefin-dx
     - qemu
