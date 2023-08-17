@@ -95,7 +95,7 @@ rpm:
     - qemu-user-binfmt
     - virt-manager
     - libvirt
-    - edk2-ovm
+    - edk2-ovmf
     - genisoimage
     - qemu-img
     - qemu-system-x86-core
