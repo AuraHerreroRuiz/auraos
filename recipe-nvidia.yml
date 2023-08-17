@@ -91,7 +91,6 @@ rpm:
     - zsh
     #Virt-manager packages from bluefin-dx
     - qemu
-    - qemu-user-static
     - qemu-user-binfmt
     - virt-manager
     - libvirt
