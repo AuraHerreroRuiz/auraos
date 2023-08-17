@@ -95,7 +95,14 @@ rpm:
     - qemu-user-binfmt
     - virt-manager
     - libvirt
-    - edk2-ovmf
+    - edk2-ovm
+    - genisoimage
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-char-spice
+    - qemu-device-usb-redirect
+    - qemu-device-display-virtio-vga
+    - qemu-device-display-virtio-gpu
   # Create these symlinks ../../usr/lib/opt/[name here] in /opt/[name here] to fix installing packages that add files to /opt while building the image
   optfix:
     - enpass
