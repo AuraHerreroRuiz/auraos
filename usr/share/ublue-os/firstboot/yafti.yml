@@ -150,7 +150,7 @@ screens:
             - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
             - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Kdenlive: org.kde.kdenlive
-            - Tenacity: org.tenacityaudio.Tenacity,
+            - Tenacity: org.tenacityaudio.Tenacity
             - GIMP: org.gimp.GIMP
 
 
