@@ -4,7 +4,7 @@ luks-enroll-fido2:
     set -euxo pipefail
     # Verify a LUKS partition exists
     sudo blkid | grep 'crypto_LUKS'
-    sudo systemd-cryptenroll --fido2-device=auto --fido2-with-user-presence=yes --fido2-with-client-pin=yes '`sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`'
+    sudo systemd-cryptenroll --fido2-device=auto --fido2-with-user-presence=yes --fido2-with-client-pin=yes `sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`
     rpm-ostree kargs --append=rd.luks.options=fido2-device=auto
     rpm-ostree initramfs --enable --arg=--add --arg=fido2
 
@@ -14,7 +14,7 @@ luks-enroll-tpm2:
     set -euxo pipefail
     # Verify a LUKS partition exists
     sudo blkid | grep 'crypto_LUKS'
-    sudo systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=7+14 '`sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`'
+    sudo systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=7+14 `sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`
     rpm-ostree kargs --append=rd.luks.options=tpm2-device=auto
     rpm-ostree initramfs --enable --arg=--add --arg=tpm2-tss
 
@@ -23,8 +23,8 @@ luks-enroll-tpm2-fido2:
     #!/usr/bin/env bash
     set -euxo pipefail
     sudo blkid | grep 'crypto_LUKS'
-    sudo systemd-cryptenroll --fido2-device=auto --fido2-with-user-presence=yes --fido2-with-client-pin=yes '`sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`'sudo systemd-cryptenroll --fido2-device=auto --fido2-with-user-presence=yes --fido2-with-client-pin=yes '`sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`'
-    sudo systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=7+14 '`sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`'
+    sudo systemd-cryptenroll --fido2-device=auto --fido2-with-user-presence=yes --fido2-with-client-pin=yes `sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`
+    sudo systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=7+14 `sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`
     rpm-ostree kargs --append=rd.luks.options=tpm2-device=auto --append=rd.luks.options=fido2-device=auto
     rpm-ostree initramfs --enable --arg=--add --arg=tpm2-tss --arg=--add --arg=fido2
 
@@ -33,4 +33,4 @@ luks-rebind-tpm2:
     #!/usr/bin/env bash
     set -euxo pipefail
     sudo blkid | grep 'crypto_LUKS'
-    sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=7+14 {{lukspath}}
+    sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=7+14 `sudo blkid | grep 'crypto_LUKS' -m 1 | awk '{split($0,a,":"); print a[1];}'`
