@@ -108,6 +108,7 @@ screens:
           packages:
             - Obsidian: md.obsidian.Obsidian
             - Thunderbird Email: org.mozilla.Thunderbird
+            - Birdtray (System tray notifiations for thunderbird): com.ulduzsoft.Birdtray
             - Document Scanner: org.gnome.SimpleScan
             - Qalculate (QT): io.github.Qalculate.qalculate-qt
             - Frog (Text OCR tool): com.github.tenderowl.frog
