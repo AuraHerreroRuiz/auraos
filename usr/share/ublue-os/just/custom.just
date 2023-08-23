@@ -16,4 +16,4 @@ setup-flatpaks:
 opt-packages-symlink-restore:
   #!/usr/bin/env bash
   sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/enpass"
-  sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/vivaldi"
+  sudo ln -s "../../usr/lib/opt/vivaldi" "/var/opt/vivaldi"
