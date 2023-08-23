@@ -13,4 +13,7 @@ setup-flatpaks:
       flatpak install --user --noninteractive flathub $pkg; \
   done
 
-# Include some of your custom scripts here!
+opt-packages-symlink-restore:
+  #!/usr/bin/env bash
+  sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/enpass"
+  sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/vivaldi"
