@@ -72,7 +72,7 @@ screens:
           packages:
             - Firefox Browser: org.mozilla.firefox
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
-            - Touche (Touchpad gestures): com.github.tchx84.Flatseal
+            - Touche (Touchpad gestures): com.github.joseexposito.touche
         Social Media:
           description: Social media apps.
           default: true
