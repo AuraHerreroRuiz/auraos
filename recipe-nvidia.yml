@@ -74,7 +74,6 @@ rpm:
     - insync
     - insync-dolphin
     - lf
-    - lsd
     - libreoffice
     - micro
     - mosquitto
