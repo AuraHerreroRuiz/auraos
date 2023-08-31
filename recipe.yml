@@ -70,6 +70,7 @@ rpm:
     - libadwaita
     # My own selection of packages
     - enpass
+    - fzf
     - vivaldi-stable
     - insync
     - insync-dolphin
@@ -88,7 +89,10 @@ rpm:
     - solaar
     - pam-u2f
     - pamu2fcfg
+    # zsh and its plugins
     - zsh
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
     #Virt-manager packages from bluefin-dx
     - qemu
     - qemu-user-binfmt
