@@ -9,6 +9,6 @@ wget https://raw.githubusercontent.com/zsh-users/zsh-history-substring-search/ma
 
 mkdir -p /usr/share/zsh-sudo
 cd /usr/share/zsh-sudo
-wget wget https://raw.githubusercontent.com/zsh-users/zsh-history-substring-search/master/zsh-history-substring-search.zsh
+wget https://raw.githubusercontent.com/zsh-users/zsh-history-substring-search/master/zsh-history-substring-search.zsh
 
 git clone https://github.com/b4b4r07/enhancd.git /usr/share/enhancd
