@@ -13,4 +13,4 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.
 
 git clone https://github.com/b4b4r07/enhancd.git /usr/share/enhancd
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /tmp/usr/share/zsh-theme-powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh-theme-powerlevel10k
