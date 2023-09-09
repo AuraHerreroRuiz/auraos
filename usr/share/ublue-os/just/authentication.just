@@ -11,3 +11,7 @@ u2f-auth:
     set -euxo pipefail
     pamu2fcfg
     sudo authselect enable-feature with-pam-u2f
+
+ssh-agent key:
+    systemctl --user enable --now ssh-agent.socket
+    ssh-add {{key}}
