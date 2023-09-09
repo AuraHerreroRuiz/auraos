@@ -120,6 +120,7 @@ screens:
             - Drawio: com.jgraph.drawio.desktop
             - Umbrello: org.kde.umbrello
             - Kompare: org.kde.kompare
+            - Filezilla: org.filezillaproject.Filezilla
         File sharing:
           description: Apps to share files.
           default: true
