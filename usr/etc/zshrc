@@ -75,10 +75,6 @@ bindkey '^[[3;5~' kill-word
 
 ##History
 
-###Up or down for history or line
-bindkey '^[[A' up-line-or-history
-bindkey '^[[B' down-line-or-history
-
 ###Accept next suggested word from history
 bindkey '^@' forward-word
 
