@@ -1,0 +1,17 @@
+#Configs
+set hidden true
+set icons true
+set drawbox
+#Remaps
+map <enter> open
+map <c-q> quit
+map <c-up> half-up
+map <c-down> half-down
+map c copy
+map x cut
+map z clear
+map v paste
+map h set hidden!
+map <esc> unselect
+#Commands
+cmd open &xdg-open $f
