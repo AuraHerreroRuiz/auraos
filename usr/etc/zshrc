@@ -53,7 +53,7 @@ alias tp=trash-put
 alias tl=trash-list
 alias te=trash-empty
 alias tres=trash-restore
-alias trm=trash-r
+alias trm=trash-rm
 #Reminders to use trash-put instead of rm
 alias rm="printf 'You sure you want to use rm instead of tp\? If so, use a backslash before rm'; false"
 alias rmdir="printf 'You sure you want to use rm instead of tp\? If so, use a backslash before rmdir'; false"
