@@ -1,7 +1,0 @@
-XCURSOR_SIZE=36
-XCURSOR_THEME=Posys_cursor_Linux_black
-VISUAL=micro
-EDITOR=micro
-PAGER=moar
-SHELL=/usr/bin/zsh
-SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
