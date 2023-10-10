@@ -1,4 +1,5 @@
 type: fonts
-    google-fonts:
-      - Atkinson Hyperlegible
-      - Cormorant Garamond
+fonts:
+  google-fonts:
+    - Atkinson Hyperlegible
+    - Cormorant Garamond

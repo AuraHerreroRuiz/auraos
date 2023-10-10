@@ -1,10 +1,10 @@
 type: script
-    scripts:
-      # this sets up the proper policy & signing files for signed images to work
-      - signing.sh
-      - atuin.sh
-      - codium.sh
-      - lsd.sh
-      - moar.sh
-      - posy-cursors.sh
-      - zshplugins.sh
+scripts:
+  # this sets up the proper policy & signing files for signed images to work
+  - signing.sh
+  - atuin.sh
+  - codium.sh
+  - lsd.sh
+  - moar.sh
+  - posy-cursors.sh
+  - zshplugins.sh
