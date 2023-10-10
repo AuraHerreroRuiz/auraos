@@ -1,8 +1,6 @@
 type: rpm-ostree
 repos:
-    # Example (which also demonstrates version number expansion):
-    # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%FEDORA_VERSION%/pennbauman-ports-fedora-%FEDORA_VERSION%.repo
+    - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%OS_VERSION%/pennbauman-ports-fedora-%OS_VERSION%.repo
     - https://yum.enpass.io/enpass-yum.repo
     - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
     - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
