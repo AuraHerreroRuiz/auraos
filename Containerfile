@@ -47,9 +47,8 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # ARG for the github token for getting artifacts
 ARG GH_GET_TOKEN
 
-# Run the build script and clean up temp files.
-RUN chmod +x /tmp/scripts/build.sh && \
-        /tmp/scripts/build.sh && \
+# Run the build script, then clean up temp files and finalize container build.
+RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
         rm -rf /tmp/* /var/*
 
 # Install synaTudor drivers
