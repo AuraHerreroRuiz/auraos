@@ -12,11 +12,13 @@
 ARG IMAGE_MAJOR_VERSION=38
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
-FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
+
+#First stage of image build
+FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION} as first-stage
 
 # The default recipe is set to the recipe's default filename
 # so that `podman build` should just work for most people.
-ARG RECIPE=recipe.yml 
+ARG RECIPE=recipe.yml
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
@@ -42,6 +44,56 @@ COPY modules /tmp/modules/
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
-# Run the build script, then clean up temp files and finalize container build.
-RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
-    rm -rf /tmp/* /var/* && ostree container commit
+# ARG for the github token for getting artifacts
+ARG GH_GET_TOKEN
+
+# Run the build script and clean up temp files.
+RUN chmod +x /tmp/scripts/build.sh && \
+        /tmp/scripts/build.sh && \
+        rm -rf /tmp/* /var/*
+
+# Install synaTudor drivers
+FROM fedora:${FEDORA_MAJOR_VERSION} as synaTudor
+
+COPY sources /tmp/sources
+
+RUN chmod +x /tmp/sources/build-scripts/tudor.sh && \
+        /tmp/sources/build-scripts/tudor.sh
+
+# Download and patch JetBrainsMonoSlashed with Nerd Fonts
+FROM fedora:${FEDORA_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
+
+COPY sources/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh && \
+        /tmp/build-scripts/font-install.sh
+
+#Build kup
+FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
+
+COPY sources /tmp/sources
+
+RUN chmod +x /tmp/scripts/build-kup.sh && \
+        /tmp/scripts/build-kup.sh
+
+# Copy kup build and finalize container build.
+FROM first-stage
+
+# Copy Bup and Kup artifacts from builder into image
+COPY --from=kup-builder /tmp/kupbuilt/usr /usr
+COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
+COPY --from=kup-builder /tmp/bupbuilt/usr /usr
+
+# Copy fonts and licenses into image, then generate font cache
+COPY --from=JetBrainsMonoSlashedNerdFont /tmp/usr /usr
+RUN fc-cache -fv
+
+# Copy fingerprint driver into image and install policy
+COPY --from=synaTudor /tmp/libfrint-tod-build/usr /usr
+COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
+COPY --from=synaTudor /tmp/synatudor-build/usr /usr
+COPY --from=synaTudor /tmp/policiesout/usr /usr
+RUN semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp
+
+#Commit changes
+RUN ostree container commit

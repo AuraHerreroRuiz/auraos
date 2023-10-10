@@ -4,7 +4,7 @@
 # Only the branch called `live` is published.
 
 
-name: build-ublue
+name: build-auraos
 on: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
   schedule:
     - cron: "20 22 * * *"
@@ -40,6 +40,7 @@ jobs:
         # Don't add module configuration files, you will get errors.
         recipe:
           - recipe.yml
+          - recipe-nvidia.yml
 # !!!
 
     steps:
@@ -150,6 +151,7 @@ jobs:
             IMAGE_MAJOR_VERSION=${{ env.IMAGE_MAJOR_VERSION }}
             BASE_IMAGE_URL=${{ env.BASE_IMAGE_URL }}
             RECIPE=${{ matrix.recipe }}
+            GH_GET_TOKEN=${{ secrets.GH_GET_TOKEN }}
             IMAGE_REGISTRY=${{ steps.registry_case.outputs.lowercase }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false

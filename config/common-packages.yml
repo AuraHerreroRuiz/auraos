@@ -1,0 +1,54 @@
+type: rpm-ostree
+repos:
+    # Example (which also demonstrates version number expansion):
+    # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
+    - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%FEDORA_VERSION%/pennbauman-ports-fedora-%FEDORA_VERSION%.repo
+    - https://yum.enpass.io/enpass-yum.repo
+    - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
+    - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
+
+  install:
+    - enpass
+    - fzf
+    - vivaldi-stable
+    - insync
+    - insync-dolphin
+    - lf
+    - libreoffice
+    - micro
+    - mosquitto
+    - awesome
+    - yakuake
+    - ksystemlog
+    - kcm_wacomtablet
+    - trash-cli
+    - touchegg
+    - power-profiles-daemon
+    - playerctl
+    - solaar
+    - pam-u2f
+    - pamu2fcfg
+    # zsh and its plugins
+    - zsh
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
+    #Virt-manager packages from bluefin-dx
+    - qemu
+    - qemu-user-binfmt
+    - virt-manager
+    - libvirt
+    - edk2-ovmf
+    - genisoimage
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-char-spice
+    - qemu-device-usb-redirect
+    - qemu-device-display-virtio-vga
+    - qemu-device-display-virtio-gpu
+  optfix:
+    - enpass
+    - vivaldi
+  remove:
+    # Remove the native firefox (from Fedora) in favor of the Flatpak.
+    - firefox-langpacks
+    - firefox

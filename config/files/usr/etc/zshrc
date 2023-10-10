@@ -1,0 +1,136 @@
+
+#Instant load
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Use a different p10k config depending on the terminal
+if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+    [[ ! -f /etc/p10k/p10k.zsh ]] || source /usr/etc/p10k/p10k.zsh
+else
+    [[ ! -f /etc/p10k/p10k-portable.zsh ]] || source /usr/etc/p10k/p10k-portable.zsh
+fi
+
+# Use the emacs key bindings
+bindkey -e
+
+# Completion style
+autoload -Uz compinit
+compinit
+zstyle ':completion:*:sudo:*' command-path $PATH
+zstyle ':completion:*' menu select
+autoload -Uz select-word-style
+select-word-style bash
+
+#Plugins
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh-sudo/sudo.plugin.zsh
+source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/enhancd/init.sh
+eval "$(atuin init zsh)"
+
+#Aliases
+alias t="tree"
+alias ~="cd ~"
+alias back="cd -"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+##LS(d)
+alias l="lsd -Ll"
+alias ll="lsd -la"
+alias lñ="lsd -l"
+alias llñ="lsd -la"
+#trash-cli
+alias tp=trash-put
+alias tl=trash-list
+alias te=trash-empty
+alias tres=trash-restore
+alias trm=trash-rm
+#Reminders to use trash-put instead of rm
+alias rm="printf 'You sure you want to use rm instead of tp\? If so, use a backslash before rm'; false"
+alias rmdir="printf 'You sure you want to use rm instead of tp\? If so, use a backslash before rmdir'; false"
+
+# Keybinds
+##Home and End
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
+##Insert
+bindkey '^[[2~' overwrite-mode
+
+##Delete
+bindkey '^[[3~' delete-char
+
+##CTRL+Backpace/Delete for words
+bindkey '^H' backward-kill-word
+bindkey '^[[3;5~' kill-word
+
+##History
+
+###Accept next suggested word from history
+bindkey '^@' forward-word
+
+###Accept suggestion from history
+bindkey '^[[27;5;9~' autosuggest-accept
+
+###Substring history search up and down
+bindkey '^[[1;5A' history-substring-search-up
+bindkey '^[[1;5B' history-substring-search-down
+
+##Arrows left and right
+bindkey '^[[D'      backward-char
+bindkey '^[[C'     forward-char
+
+##CTRL+Arrows keys to travel whole words
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+##Shift tab to go backwards
+bindkey '^[[Z' reverse-menu-complete
+
+##Prepend sudo to command with CTRL+SHIFT+TAB
+bindkey '^[[27;6;9~' sudo-command-line
+
+
+# Provide pathmunge for /etc/profile.d scripts
+pathmunge()
+{
+    if ! echo $PATH | /bin/grep -qE "(^|:)$1($|:)" ; then
+        if [ "$2" = "after" ] ; then
+            PATH=$PATH:$1
+        else
+            PATH=$1:$PATH
+        fi
+    fi
+}
+
+_src_etc_profile_d()
+{
+    #  Make the *.sh things happier, and have possible ~/.zshenv options like
+    # NOMATCH ignored.
+    emulate -L ksh
+
+
+    # from bashrc, with zsh fixes
+    if [[ ! -o login ]]; then # We're not a login shell
+        for i in /etc/profile.d/*.sh; do
+	    if [ -r "$i" ]; then
+	        . $i
+	    fi
+        done
+        unset i
+    fi
+}
+_src_etc_profile_d
+
+unset -f pathmunge _src_etc_profile_d
+
+

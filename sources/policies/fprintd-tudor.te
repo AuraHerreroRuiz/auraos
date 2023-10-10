@@ -1,0 +1,10 @@
+module fprintd-tudor 1.0;
+
+require {
+    type unconfined_service_t;
+    type fprintd_t;
+    class unix_dgram_socket { getattr getopt };
+}
+
+#============= fprintd_t ==============
+allow fprintd_t unconfined_service_t:unix_dgram_socket { getattr getopt };

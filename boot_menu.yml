@@ -1,5 +1,7 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: auraos
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: startingpoint
+      - label: auraos
+      - label: auraos-nvidia
+        info: Nvidia Drivers
