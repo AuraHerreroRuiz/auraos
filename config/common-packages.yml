@@ -6,49 +6,48 @@ repos:
     - https://yum.enpass.io/enpass-yum.repo
     - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
     - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
-
-  install:
-    - enpass
-    - fzf
-    - vivaldi-stable
-    - insync
-    - insync-dolphin
-    - lf
-    - libreoffice
-    - micro
-    - mosquitto
-    - awesome
-    - yakuake
-    - ksystemlog
-    - kcm_wacomtablet
-    - trash-cli
-    - touchegg
-    - power-profiles-daemon
-    - playerctl
-    - solaar
-    - pam-u2f
-    - pamu2fcfg
-    # zsh and its plugins
-    - zsh
-    - zsh-autosuggestions
-    - zsh-syntax-highlighting
-    #Virt-manager packages from bluefin-dx
-    - qemu
-    - qemu-user-binfmt
-    - virt-manager
-    - libvirt
-    - edk2-ovmf
-    - genisoimage
-    - qemu-img
-    - qemu-system-x86-core
-    - qemu-char-spice
-    - qemu-device-usb-redirect
-    - qemu-device-display-virtio-vga
-    - qemu-device-display-virtio-gpu
-  optfix:
-    - enpass
-    - vivaldi
-  remove:
-    # Remove the native firefox (from Fedora) in favor of the Flatpak.
-    - firefox-langpacks
-    - firefox
+install:
+  - enpass
+  - fzf
+  - vivaldi-stable
+  - insync
+  - insync-dolphin
+  - lf
+  - libreoffice
+  - micro
+  - mosquitto
+  - awesome
+  - yakuake
+  - ksystemlog
+  - kcm_wacomtablet
+  - trash-cli
+  - touchegg
+  - power-profiles-daemon
+  - playerctl
+  - solaar
+  - pam-u2f
+  - pamu2fcfg
+  # zsh and its plugins
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  #Virt-manager packages from bluefin-dx
+  - qemu
+  - qemu-user-binfmt
+  - virt-manager
+  - libvirt
+  - edk2-ovmf
+  - genisoimage
+  - qemu-img
+  - qemu-system-x86-core
+  - qemu-char-spice
+  - qemu-device-usb-redirect
+  - qemu-device-display-virtio-vga
+  - qemu-device-display-virtio-gpu
+optfix:
+  - enpass
+  - vivaldi
+remove:
+  # Remove the native firefox (from Fedora) in favor of the Flatpak.
+  - firefox-langpacks
+  - firefox
