@@ -3,7 +3,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%OS_VERSION%/pennbauman-ports-fedora-%OS_VERSION%.repo
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-  - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/repos/insync.repo
+  - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/sources/repos/insync.repo
 install:
   - enpass
   - fzf
