@@ -52,7 +52,7 @@ RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
         rm -rf /tmp/* /var/*
 
 # Install synaTudor drivers
-FROM fedora:${FEDORA_MAJOR_VERSION} as synaTudor
+FROM fedora:${IMAGE_MAJOR_VERSION} as synaTudor
 
 COPY sources /tmp/sources
 
@@ -60,7 +60,7 @@ RUN chmod +x /tmp/sources/build-scripts/tudor.sh && \
         /tmp/sources/build-scripts/tudor.sh
 
 # Download and patch JetBrainsMonoSlashed with Nerd Fonts
-FROM fedora:${FEDORA_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
+FROM fedora:${IMAGE_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
 
 COPY sources/build-scripts /tmp/build-scripts
 
@@ -68,7 +68,7 @@ RUN chmod +x /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh && \
         /tmp/build-scripts/font-install.sh
 
 #Build kup
-FROM fedora:${FEDORA_MAJOR_VERSION} as kup-builder
+FROM fedora:${IMAGE_MAJOR_VERSION} as kup-builder
 
 COPY sources /tmp/sources
 
