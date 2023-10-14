@@ -70,10 +70,10 @@ RUN chmod +x /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh && \
 #Build kup
 FROM fedora:${IMAGE_MAJOR_VERSION} as kup-builder
 
-COPY sources /tmp/sources
+COPY sources/build-scripts /tmp/build-scripts
 
-RUN chmod +x /tmp/scripts/build-kup.sh && \
-        /tmp/scripts/build-kup.sh
+RUN chmod +x /tmp/build-scripts/build-kup.sh && \
+        /tmp/build-scripts/build-kup.sh
 
 # Copy kup build and finalize container build.
 FROM first-stage
