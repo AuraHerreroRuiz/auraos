@@ -65,7 +65,7 @@ FROM fedora:${IMAGE_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
 COPY sources/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh && \
-        /tmp/build-scripts/font-install.sh
+        /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh
 
 #Build kup
 FROM fedora:${IMAGE_MAJOR_VERSION} as kup-builder
