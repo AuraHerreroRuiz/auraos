@@ -14,7 +14,7 @@ install:
   - libreoffice
   - micro
   - mosquitto
-  - awesome
+  - bismuth
   - yakuake
   - ksystemlog
   - kcm_wacomtablet
