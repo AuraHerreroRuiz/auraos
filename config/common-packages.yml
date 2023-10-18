@@ -15,6 +15,7 @@ install:
   - micro
   - mosquitto
   - bismuth
+  - lightly
   - yakuake
   - ksystemlog
   - kcm_wacomtablet
