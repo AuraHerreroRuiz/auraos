@@ -8,3 +8,4 @@ scripts:
   - moar.sh
   - posy-cursors.sh
   - zshplugins.sh
+  - fluent-icons.sh

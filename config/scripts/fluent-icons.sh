@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-set -oue pipefail
+set -oe pipefail
 
 # Get latest release of the icon theme
 
 cd /tmp
 git clone https://github.com/vinceliuice/Fluent-icon-theme
-
-mkdir /tmp/Fluent-icon-theme
 
 #!/usr/bin/env bash
 
