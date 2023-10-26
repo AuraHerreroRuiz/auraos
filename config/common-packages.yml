@@ -5,7 +5,6 @@ repos:
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/sources/repos/insync.repo
 install:
-  - spectacle-23.04.3 # Avoid regression https://bugs.kde.org/show_bug.cgi?id=473879
   - enpass
   - fzf
   - vivaldi-stable
