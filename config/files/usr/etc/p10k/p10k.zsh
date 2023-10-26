@@ -27,6 +27,7 @@
     os_icon                 # os identifier
     vpn_ip
     wifi
+    toolbox                 # toolbox name (https://github.com/containers/toolbox)
     context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
@@ -64,7 +65,6 @@
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
-    toolbox                 # toolbox name (https://github.com/containers/toolbox)
     nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
     nnn                     # nnn shell (https://github.com/jarun/nnn)
@@ -1552,12 +1552,12 @@
 
   ##############[ toolbox: toolbox name (https://github.com/containers/toolbox) ]###############
   # Toolbox color.
-  typeset -g POWERLEVEL9K_TOOLBOX_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TOOLBOX_BACKGROUND=3
+  typeset -g POWERLEVEL9K_TOOLBOX_FOREGROUND=255
+  typeset -g POWERLEVEL9K_TOOLBOX_BACKGROUND=99
   # Don't display the name of the toolbox if it matches fedora-toolbox-*.
   typeset -g POWERLEVEL9K_TOOLBOX_CONTENT_EXPANSION='${P9K_TOOLBOX_NAME:#fedora-toolbox-*}'
   # Custom icon.
-  # typeset -g POWERLEVEL9K_TOOLBOX_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_TOOLBOX_VISUAL_IDENTIFIER_EXPANSION='󰏗'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TOOLBOX_PREFIX='in '
 
