@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=Aura's Theme
+Description=SDDM
+Author=AuraHerreroRuiz
+License=ISC
+Type=sddm-theme
+Version=20220521
+Screenshot=screenshot.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=aura-os-sddm
+Theme-API=2.0
