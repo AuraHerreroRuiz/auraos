@@ -1,1 +1,2 @@
 SHELL=/usr/bin/zsh
+JUST_ALLOW_UNSTABLE=true
