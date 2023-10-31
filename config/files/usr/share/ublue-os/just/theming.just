@@ -26,7 +26,7 @@ terminus-console-font size='24' style='bold':
             echo 'The 12 size font does not have bold variants.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold", or "crt-vga-bold".'
+            echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
             ;;
         esac
         ;;
@@ -42,7 +42,7 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v14v
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold", or "crt-vga-bold".'
+            echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
             ;;
         esac
         ;;
@@ -58,7 +58,7 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v16v
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold", or "crt-vga-bold".'
+            echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
             ;;
         esac
         ;;
@@ -71,10 +71,10 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v18b
             ;;
         crt-vga-bold)
-            echo 'Invalid weight, size 18 does not have a "crt-vga-bold" variant.'
+            echo 'Invalid style, size 18 does not have a "crt-vga-bold" variant.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold".'
+            echo 'Invalid style. Must be "normal","bold".'
             ;;
         esac
         ;;
@@ -87,10 +87,10 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v20b
             ;;
         crt-vga-bold)
-            echo 'Invalid weight, size 20 does not have a "crt-vga-bold" variant.'
+            echo 'Invalid style, size 20 does not have a "crt-vga-bold" variant.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold".'
+            echo 'Invalid style. Must be "normal","bold".'
             ;;
         esac
         ;;
@@ -103,10 +103,10 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v22b
             ;;
         crt-vga-bold)
-            echo 'Invalid weight, size 22 does not have a "crt-vga-bold" variant.'
+            echo 'Invalid style, size 22 does not have a "crt-vga-bold" variant.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold".'
+            echo 'Invalid style. Must be "normal","bold".'
             ;;
         esac
         ;;
@@ -119,10 +119,10 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v24b
             ;;
         crt-vga-bold)
-            echo 'Invalid weight, size 24 does not have a "crt-vga-bold" variant.'
+            echo 'Invalid style, size 24 does not have a "crt-vga-bold" variant.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold".'
+            echo 'Invalid style. Must be "normal","bold".'
             ;;
         esac
         ;;
@@ -135,10 +135,10 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v28b
             ;;
         crt-vga-bold)
-            echo 'Invalid weight, size 28 does not have a "crt-vga-bold" variant.'
+            echo 'Invalid style, size 28 does not have a "crt-vga-bold" variant.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold".'
+            echo 'Invalid style. Must be "normal","bold".'
             ;;
         esac
         ;;
@@ -151,14 +151,14 @@ terminus-console-font size='24' style='bold':
             rpm-ostree kargs --append=vconsole.font=ter-v32b
             ;;
         crt-vga-bold)
-            echo 'Invalid weight, size 32 does not have a "crt-vga-bold" variant.'
+            echo 'Invalid style, size 32 does not have a "crt-vga-bold" variant.'
             ;;
         *)
-            echo 'Invalid weight. Must be "normal","bold".'
+            echo 'Invalid style. Must be "normal","bold".'
             ;;
         esac
         ;;
     *)
-        echo 'Invalid size. Must be oen of_ 12,14,16,18,20,22,24,26,28,32.'
+        echo 'Invalid size. Must be one of 12,14,16,18,20,22,24,28,32.'
     esac
 
