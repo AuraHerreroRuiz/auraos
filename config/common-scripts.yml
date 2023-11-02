@@ -10,3 +10,4 @@ scripts:
   - zshplugins.sh
   - fluent-icons.sh
   - replace-spectacle-regression.sh
+  - xremap.sh
