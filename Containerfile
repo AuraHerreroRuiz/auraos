@@ -51,13 +51,13 @@ ARG GH_GET_TOKEN
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
         rm -rf /tmp/* /var/*
 
-# Install synaTudor drivers
-FROM fedora:${IMAGE_MAJOR_VERSION} as synaTudor
+#Build lightly-qt
+FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
 
-COPY sources /tmp/sources
+COPY sources/build-scripts /tmp/build-scripts
 
-RUN chmod +x /tmp/sources/build-scripts/tudor.sh && \
-        /tmp/sources/build-scripts/tudor.sh
+RUN chmod +x /tmp/build-scripts/lightly-qt.sh && \
+        /tmp/build-scripts/lightly-qt.sh
 
 # Download and patch JetBrainsMonoSlashed with Nerd Fonts
 FROM fedora:${IMAGE_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
@@ -67,6 +67,14 @@ COPY sources/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh && \
         /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh
 
+# Build and install synaTudor drivers
+FROM fedora:${IMAGE_MAJOR_VERSION} as synaTudor
+
+COPY sources /tmp/sources
+
+RUN chmod +x /tmp/sources/build-scripts/tudor.sh && \
+        /tmp/sources/build-scripts/tudor.sh
+
 #Build kup
 FROM fedora:${IMAGE_MAJOR_VERSION} as kup-builder
 
@@ -75,13 +83,6 @@ COPY sources/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/build-kup.sh && \
         /tmp/build-scripts/build-kup.sh
 
-#Build lightly-qt
-FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
-
-COPY sources/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/lightly-qt.sh && \
-        /tmp/build-scripts/lightly-qt.sh
 
 # Finalize container build
 FROM first-stage
