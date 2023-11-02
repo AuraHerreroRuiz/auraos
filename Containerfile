@@ -75,7 +75,15 @@ COPY sources/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/build-kup.sh && \
         /tmp/build-scripts/build-kup.sh
 
-# Copy kup build and finalize container build.
+#Build lightly-qt
+FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
+
+COPY sources/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/lightly-qt.sh && \
+        /tmp/build-scripts/lightly-qt.sh
+
+# Finalize container build
 FROM first-stage
 
 # Copy Bup and Kup artifacts from builder into image
@@ -93,6 +101,9 @@ COPY --from=synaTudor /tmp/synatudor-build/sbin /sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /usr
 COPY --from=synaTudor /tmp/policiesout/usr /usr
 RUN semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp
+
+# Copy lightly-qt into image
+COPY --from=lightly-qt-builder /tmp/lightly-qt-built/usr /usr
 
 #Commit changes
 RUN ostree container commit
