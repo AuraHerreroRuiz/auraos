@@ -7,8 +7,8 @@ dnf -y install git cmake extra-cmake-modules "cmake(Qt5Core)" "cmake(Qt5Gui)" "c
 echo "Building Lightly-qt"
 cd /tmp
 #Using fork for fixes
-git clone --single-branch --depth=1 https://github.com/boehs/lightly
-cd Lightly
+git clone --single-branch --depth=1 https://github.com/boehs/lightly.git
+cd lightly
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DBUILD_TESTING=OFF ..
