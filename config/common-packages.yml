@@ -23,6 +23,7 @@ install:
   - touchegg
   - power-profiles-daemon
   - playerctl
+  - python-spotipy
   - solaar
   - terminus-fonts-console
   - pam-u2f
