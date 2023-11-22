@@ -17,6 +17,7 @@ install:
   - bismuth
   - yakuake
   - variety
+  - kdecoration
   - ksystemlog
   - kcm_wacomtablet
   - trash-cli
