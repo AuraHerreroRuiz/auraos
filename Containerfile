@@ -50,7 +50,7 @@ ARG GH_GET_TOKEN
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-v4l2loopback*.rpm
-RUN rpm-ostree install /tmp/rpms/kmods/xpadneo*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-xpadneo*.rpm
 
 
 # Run the build script, then clean up temp files and finalize container build.
