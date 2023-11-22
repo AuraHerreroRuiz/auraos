@@ -18,6 +18,7 @@ install:
   - yakuake
   - variety
   - kdecoration
+  - krename
   - ksystemlog
   - kcm_wacomtablet
   - trash-cli
