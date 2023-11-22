@@ -9,7 +9,7 @@ fingerprint-auth:
 u2f-auth:
     #!/usr/bin/env bash
     set -euxo pipefail
-    pamu2fcfg -o pam://hostname -i pam://hostname > ~/.config/Yubico/u2f_keys
+    pamu2fcfg | tee -p .config/Yubico/u2f_keys
     sudo authselect enable-feature with-pam-u2f
 
 ssh-agent key:
