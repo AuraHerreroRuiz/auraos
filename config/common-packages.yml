@@ -8,6 +8,7 @@ install:
   - applet-window-buttons
   - enpass
   - fzf
+  - flatpak-builder
   - vivaldi-stable
   - insync
   - insync-dolphin
