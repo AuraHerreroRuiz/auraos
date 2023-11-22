@@ -30,6 +30,7 @@ source /usr/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh-sudo/sudo.plugin.zsh
 source /usr/share/fzf/shell/key-bindings.zsh
 source /usr/share/enhancd/init.sh
+source /usr/share/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 eval "$(atuin init zsh)"
 
 #Aliases
