@@ -17,6 +17,7 @@ install:
   - mosquitto
   - bismuth
   - yakuake
+  - hunspell-es
   - variety
   - krename
   - ksystemlog
