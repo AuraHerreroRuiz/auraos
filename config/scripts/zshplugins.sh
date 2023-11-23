@@ -9,7 +9,7 @@ wget https://raw.githubusercontent.com/zsh-users/zsh-history-substring-search/ma
 
 mkdir -p /usr/share/zsh-interactive-cd
 cd /usr/share/zsh-interactive-cd
-wget https://github.com/mrjohannchang/zsh-interactive-cd/blob/master/zsh-interactive-cd.plugin.zsh
+wget https://raw.githubusercontent.com/mrjohannchang/zsh-interactive-cd/master/zsh-interactive-cd.plugin.zsh
 
 mkdir -p /usr/share/zsh-sudo
 cd /usr/share/zsh-sudo
