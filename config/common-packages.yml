@@ -66,3 +66,4 @@ remove:
   - vim-enhanced
   - nano
   - nano-default-editor
+  - default-editor
