@@ -75,6 +75,7 @@ screens:
             - Touche (Touchpad gestures): com.github.joseexposito.touche
             - Warehouse (Flatpak Manager): io.github.flattool.Warehouse
             - ISO Image Writer: org.kde.isoimagewriter
+            - OpenRGB (RGB lighting control): org.openrgb.OpenRGB
         Social Media:
           description: Social media apps.
           default: true
