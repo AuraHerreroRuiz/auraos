@@ -48,6 +48,9 @@ install:
   - qemu-device-usb-redirect
   - qemu-device-display-virtio-vga
   - qemu-device-display-virtio-gpu
+  #Kup dependencies
+  - par2cmdline
+  - libgit2
 optfix:
   - enpass
   - vivaldi
