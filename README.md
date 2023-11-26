@@ -10,7 +10,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 - First rebase to the image unsigned, to get the proper signing keys and policies installed:
 
   ```sh
-  sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/auraherreroruiz/auraos:latest
   ```
 
 - Reboot to complete the rebase:
@@ -22,9 +22,8 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 - Then rebase to the signed image, like so:
 
   ```sh
-  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:latest
   ```
-
 - Reboot again to complete the installation
 
   ```sh
@@ -33,11 +32,11 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
-```sh
-sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:20230403
+```
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20230403
 ```
 For the image with nvidia drivers:
 
 ```sh
-sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos-nvidia
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos-nvidia
 ```
