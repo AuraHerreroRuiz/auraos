@@ -2,20 +2,21 @@
 posy-cursor-white-kde size='24':
     #!/usr/bin/env bash
     set -euxo pipefail
-    plasma-apply-cursortheme "Posys_cursor_Linux" --size {{size}}
+    plasma-apply-cursortheme "Posys_cursor_Linux" --size {{ size }}
 
 # Enable the white Posy's cursor in kde. You can also specify a size between 24, 30, 36 and 48 as a paremeter. Default is 24.
 posy-cursor-black-kde size='24':
     #!/usr/bin/env bash
     set -euxo pipefail
-    plasma-apply-cursortheme "Posys_cursor_Linux_black" --size {{size}}
+    plasma-apply-cursortheme "Posys_cursor_Linux_black" --size {{ size }}
+
 # Set the terminal font to terminus. bold can be "normal", "bold", or "crt-vga-bold". There are certain options that are incompatible with each other."
 terminus-console-font size='24' style='bold':
     #!/usr/bin/bash
     set -exo pipefail
-    case {{size}} in
+    case {{ size }} in
     12)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v12n
             ;;
@@ -31,7 +32,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     14)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v14n
             ;;
@@ -47,7 +48,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     16)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v16n
             ;;
@@ -63,7 +64,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     18)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v18n
             ;;
@@ -79,7 +80,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     20)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v20n
             ;;
@@ -95,7 +96,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     22)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v22n
             ;;
@@ -111,7 +112,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     24)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v24n
             ;;
@@ -127,7 +128,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     28)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v28n
             ;;
@@ -143,7 +144,7 @@ terminus-console-font size='24' style='bold':
         esac
         ;;
     32)
-        case {{style}} in
+        case {{ style }} in
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v32n
             ;;
@@ -161,4 +162,3 @@ terminus-console-font size='24' style='bold':
     *)
         echo 'Invalid size. Must be one of 12,14,16,18,20,22,24,28,32.'
     esac
-

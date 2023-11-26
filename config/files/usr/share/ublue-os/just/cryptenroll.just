@@ -1,4 +1,4 @@
-#Enable unlocking the system encryption with a fido2 key
+# Enable unlocking the system encryption with a fido2 key
 luks-enroll-fido2:
     #!/usr/bin/env bash
     set -euxo pipefail
@@ -8,7 +8,7 @@ luks-enroll-fido2:
     rpm-ostree kargs --append=rd.luks.options=fido2-device=auto
     rpm-ostree initramfs --enable --arg=--add --arg=fido2
 
-#Enable unlocking the system encryption with a tpm2
+# Enable unlocking the system encryption with a tpm2
 luks-enroll-tpm2:
     #!/usr/bin/env bash
     set -euxo pipefail
@@ -18,7 +18,7 @@ luks-enroll-tpm2:
     rpm-ostree kargs --append=rd.luks.options=tpm2-device=auto
     rpm-ostree initramfs --enable --arg=--add --arg=tpm2-tss
 
-#Enable unlocking the system encryption with both a tpm2 and fido2 as a fallback
+# Enable unlocking the system encryption with both a tpm2 and fido2 as a fallback
 luks-enroll-tpm2-fido2:
     #!/usr/bin/env bash
     set -euxo pipefail

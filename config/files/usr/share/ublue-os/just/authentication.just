@@ -14,4 +14,4 @@ u2f-auth:
 
 ssh-agent key:
     systemctl --user enable --now ssh-agent.socket
-    ssh-add {{key}}
+    ssh-add {{ key }}

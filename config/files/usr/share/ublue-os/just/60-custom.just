@@ -6,15 +6,15 @@
 
 # Install all flatpaks defined in recipe.yml
 setup-flatpaks:
-  #!/usr/bin/env bash
-  echo 'Installing flatpaks from the ublue recipe ...'
-  flatpaks=$(yq -- '.firstboot.flatpaks[]' "/usr/share/ublue-os/recipe.yml")
-  for pkg in $flatpaks; do \
-      echo "Installing: ${pkg}" && \
-      flatpak install --user --noninteractive flathub $pkg; \
-  done
+    #!/usr/bin/env bash
+    echo 'Installing flatpaks from the ublue recipe ...'
+    flatpaks=$(yq -- '.firstboot.flatpaks[]' "/usr/share/ublue-os/recipe.yml")
+    for pkg in $flatpaks; do \
+        echo "Installing: ${pkg}" && \
+        flatpak install --user --noninteractive flathub $pkg; \
+    done
 
 opt-packages-symlink-restore:
-  #!/usr/bin/env bash
-  sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/enpass"
-  sudo ln -s "../../usr/lib/opt/vivaldi" "/var/opt/vivaldi"
+    #!/usr/bin/env bash
+    sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/enpass"
+    sudo ln -s "../../usr/lib/opt/vivaldi" "/var/opt/vivaldi"
