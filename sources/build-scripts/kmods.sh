@@ -9,6 +9,6 @@ done
 
 rpm-ostree install --idempotent \
     /tmp/rpms/kmods/*v4l2loopback*.rpm \
-    /tmp/rpms/kmods/*xpadneo*.rpm \
     /tmp/rpms/kmods/*openrgb*.rpm
+#    /tmp/rpms/kmods/*xpadneo*.rpm
 
