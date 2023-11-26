@@ -51,6 +51,8 @@ install:
   #Kup dependencies
   - par2cmdline
   - libgit2
+  #Kmod from repo
+  - kmod-xpadneo
 optfix:
   - enpass
   - vivaldi
