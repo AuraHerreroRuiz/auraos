@@ -1,0 +1,5 @@
+type: rpm-ostree
+install:
+  - kmod-xpadneo
+  - kmod-openrgb
+  - kmod-v4l2loopback
