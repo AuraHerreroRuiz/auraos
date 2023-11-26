@@ -21,7 +21,9 @@ FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION} as first-stage
 ARG RECIPE=recipe.yml
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
-ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-39}"
+ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-39}"
+# ARG for the github token for getting artifacts
+ARG GH_GET_TOKEN
 
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
 
@@ -44,11 +46,8 @@ COPY modules /tmp/modules/
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
-# ARG for the github token for getting artifacts
-ARG GH_GET_TOKEN
-
 #Kmods
-COPY --from=ghcr.io/ublue-os/akmods:main-${IMAGE_MAJOR_VERSION} /rpms/ /tmp/rpms
+COPY --from=ghcr.io/ublue-os/akmods:main-"${IMAGE_MAJOR_VERSION}" /rpms/ /tmp/rpms
 COPY sources/build-scripts /tmp/build-scripts
 chmod +x /tmp/build-scripts/kmods.sh && \
         /tmp/build-scripts/kmods.sh
