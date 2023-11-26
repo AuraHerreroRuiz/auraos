@@ -21,7 +21,7 @@ FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION} as first-stage
 ARG RECIPE=recipe.yml
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
-ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-39}"
+ARG IMAGE_MAJOR_VERSION=${IMAGE_MAJOR_VERSION:-39}
 # ARG for the github token for getting artifacts
 ARG GH_GET_TOKEN
 
