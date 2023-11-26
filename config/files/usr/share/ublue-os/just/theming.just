@@ -18,7 +18,8 @@ terminus-console-font size='24' style='bold':
     12)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v12n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v12n
             ;;
         bold)
             echo 'The 12 size font does not have bold variants.'
@@ -34,13 +35,16 @@ terminus-console-font size='24' style='bold':
     14)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v14n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v14n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v14b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v14b
             ;;
         crt-vga-bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v14v
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v14v
             ;;
         *)
             echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
@@ -50,13 +54,16 @@ terminus-console-font size='24' style='bold':
     16)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v16n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v16n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v16b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v16b
             ;;
         crt-vga-bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v16v
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v16v
             ;;
         *)
             echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
@@ -66,10 +73,12 @@ terminus-console-font size='24' style='bold':
     18)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v18n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v18n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v18b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v18b
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 18 does not have a "crt-vga-bold" variant.'
@@ -82,10 +91,12 @@ terminus-console-font size='24' style='bold':
     20)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v20n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v20n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v20b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v20b
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 20 does not have a "crt-vga-bold" variant.'
@@ -98,10 +109,12 @@ terminus-console-font size='24' style='bold':
     22)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v22n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v22n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v22b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v22b
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 22 does not have a "crt-vga-bold" variant.'
@@ -114,10 +127,12 @@ terminus-console-font size='24' style='bold':
     24)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v24n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v24n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v24b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v24b
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 24 does not have a "crt-vga-bold" variant.'
@@ -130,10 +145,12 @@ terminus-console-font size='24' style='bold':
     28)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v28n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v28n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v28b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v28b
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 28 does not have a "crt-vga-bold" variant.'
@@ -146,10 +163,12 @@ terminus-console-font size='24' style='bold':
     32)
         case {{ style }} in
         normal)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v32n
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v32n
             ;;
         bold)
-            rpm-ostree kargs --delete-if-present=vconsole.font --append=vconsole.font=ter-v32b
+            rpm-ostree kargs --delete-if-present=vconsole.font
+            rpm-ostree kargs --append=vconsole.font=ter-v32b
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 32 does not have a "crt-vga-bold" variant.'
