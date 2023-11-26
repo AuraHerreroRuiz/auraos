@@ -48,7 +48,7 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 #Kmods
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 COPY sources/build-scripts /tmp/build-scripts
-chmod +x /tmp/build-scripts/kmods.sh && \
+RUN chmod +x /tmp/build-scripts/kmods.sh && \
         /tmp/build-scripts/kmods.sh
 
 # Run the build script, then clean up temp files and finalize container build.
