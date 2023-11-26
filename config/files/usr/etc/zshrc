@@ -44,6 +44,7 @@ alias .....='cd ../../../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
+alias j='just'
 ##LS(d)
 alias l="lsd -Ll"
 alias ll="lsd -la"
