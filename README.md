@@ -24,6 +24,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
   ```sh
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:latest
   ```
+  
 - Reboot again to complete the installation
 
   ```sh
@@ -32,9 +33,10 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
-```
+```sh
 rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20230403
 ```
+
 For the image with nvidia drivers:
 
 ```sh
