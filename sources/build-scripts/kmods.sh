@@ -8,7 +8,6 @@ for REPO in $(rpm -ql ublue-os-akmods-addons|grep ^"/etc"|grep repo$); do
 done
 
 rpm-ostree install --idempotent \
-    /tmp/rpms/ublue-os/*ublue-os-akmods-addons* \
     /tmp/rpms/kmods/*v4l2loopback*.rpm \
     /tmp/rpms/kmods/*xpadneo*.rpm \
     /tmp/rpms/kmods/*openrgb*.rpm
