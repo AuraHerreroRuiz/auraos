@@ -51,6 +51,8 @@ install:
   #Kup dependencies
   - par2cmdline
   - libgit2
+  - pyxattr
+  - python-fuse
 optfix:
   - enpass
   - vivaldi
