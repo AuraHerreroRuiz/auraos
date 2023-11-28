@@ -59,6 +59,8 @@ alias trm=trash-rm
 #Reminders to use trash-put instead of rm
 alias rm="printf 'You sure you want to use rm instead of tp\? If so, use a backslash before rm'; false"
 alias rmdir="printf 'You sure you want to use rm instead of tp\? If so, use a backslash before rmdir'; false"
+# Clipboard
+alias cp="flatpak run app.getclipboard.Clipboard"
 
 # Keybinds
 ##Home and End
