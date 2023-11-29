@@ -23,13 +23,16 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v12n' /etc/vconsole.conf
             ;;
         bold)
-            echo 'The 12 size font does not have bold variants.'
+            printf 'The 12 size font does not have bold variants.' >&2
+            exit 1
             ;;
         crt-vga-bold)
-            echo 'The 12 size font does not have bold variants.'
+            printf 'The 12 size font does not have bold variants.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
+            printf 'Invalid style. Must be "normal","bold", or "crt-vga-bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -51,7 +54,8 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v14v' /etc/vconsole.conf
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
+            printf 'Invalid style. Must be "normal","bold", or "crt-vga-bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -73,7 +77,8 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v16v' /etc/vconsole.conf
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
+            printf 'Invalid style. Must be "normal","bold", or "crt-vga-bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -90,10 +95,12 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v18b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
-            echo 'Invalid style, size 18 does not have a "crt-vga-bold" variant.'
+            printf 'Invalid style, size 18 does not have a "crt-vga-bold" variant.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold".'
+            printf 'Invalid style. Must be "normal","bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -110,10 +117,12 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v20b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
-            echo 'Invalid style, size 20 does not have a "crt-vga-bold" variant.'
+            printf 'Invalid style, size 20 does not have a "crt-vga-bold" variant.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold".'
+            printf 'Invalid style. Must be "normal","bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -130,10 +139,12 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v22b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
-            echo 'Invalid style, size 22 does not have a "crt-vga-bold" variant.'
+            printf 'Invalid style, size 22 does not have a "crt-vga-bold" variant.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold".'
+            printf 'Invalid style. Must be "normal","bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -150,10 +161,12 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v24b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
-            echo 'Invalid style, size 24 does not have a "crt-vga-bold" variant.'
+            printf 'Invalid style, size 24 does not have a "crt-vga-bold" variant.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold".'
+            printf 'Invalid style. Must be "normal","bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -170,10 +183,12 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v28b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
-            echo 'Invalid style, size 28 does not have a "crt-vga-bold" variant.'
+            printf 'Invalid style, size 28 does not have a "crt-vga-bold" variant.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold".'
+            printf 'Invalid style. Must be "normal","bold".' >&2
+            exit 1
             ;;
         esac
         ;;
@@ -190,13 +205,20 @@ terminus-console-font size='24' style='bold':
             sudo sed -nri '/^FONT=/!p;$aFONT=ter-v32b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
-            echo 'Invalid style, size 32 does not have a "crt-vga-bold" variant.'
+            printf 'Invalid style, size 32 does not have a "crt-vga-bold" variant.' >&2
+            exit 1
             ;;
         *)
-            echo 'Invalid style. Must be "normal","bold".'
+            printf 'Invalid style. Must be "normal","bold".' >&2
+            exit 1
             ;;
         esac
         ;;
     *)
-        echo 'Invalid size. Must be one of 12,14,16,18,20,22,24,28,32.'
+        printf 'Invalid size. Must be one of 12,14,16,18,20,22,24,28,32.' >&2
+            exit 1
     esac
+
+    if rpm-ostree initramfs | grep -q disabled; then
+        rpm-ostree initramfs --enable
+    fi
