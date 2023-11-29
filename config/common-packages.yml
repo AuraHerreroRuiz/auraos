@@ -72,3 +72,4 @@ remove:
   - nano
   - nano-default-editor
   - default-editor
+  - less
