@@ -73,7 +73,6 @@ remove:
   - nano-default-editor
   - default-editor
   - less
-  - breeze-gtk
   - breeze-gtk-gtk2
   - breeze-gtk-gtk3
   - breeze-gtk-gtk4
