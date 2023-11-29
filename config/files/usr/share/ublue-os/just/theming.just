@@ -20,6 +20,7 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v12n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v12n' /etc/vconsole.conf
             ;;
         bold)
             echo 'The 12 size font does not have bold variants.'
@@ -37,14 +38,17 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v14n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v14n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v14b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v14b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v14v
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v14v' /etc/vconsole.conf
             ;;
         *)
             echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
@@ -56,14 +60,17 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v16n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v16n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v16b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v16b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v16v
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v16v' /etc/vconsole.conf
             ;;
         *)
             echo 'Invalid style. Must be "normal","bold", or "crt-vga-bold".'
@@ -75,10 +82,12 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v18n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v18n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v18b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v18b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 18 does not have a "crt-vga-bold" variant.'
@@ -93,10 +102,12 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v20n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v20n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v20b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v20b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 20 does not have a "crt-vga-bold" variant.'
@@ -111,10 +122,12 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v22n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v22n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v22b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v22b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 22 does not have a "crt-vga-bold" variant.'
@@ -129,10 +142,12 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v24n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v24n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v24b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v24b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 24 does not have a "crt-vga-bold" variant.'
@@ -147,10 +162,12 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v28n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v28n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v28b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v28b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 28 does not have a "crt-vga-bold" variant.'
@@ -165,10 +182,12 @@ terminus-console-font size='24' style='bold':
         normal)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v32n
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v32n' /etc/vconsole.conf
             ;;
         bold)
             rpm-ostree kargs --delete-if-present=vconsole.font
             rpm-ostree kargs --append=vconsole.font=ter-v32b
+            sudo sed -nri '/^FONT=/!p;$aFONT=ter-v32b' /etc/vconsole.conf
             ;;
         crt-vga-bold)
             echo 'Invalid style, size 32 does not have a "crt-vga-bold" variant.'
