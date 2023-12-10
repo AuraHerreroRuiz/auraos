@@ -4,8 +4,10 @@ repos:
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/live/sources/repos/insync.repo
+  - https://raw.githubusercontent.com/ublue-os/bluefin/main/dx/etc/yum.repos.d/vscode.repo
 install:
   - applet-window-buttons
+  - code
   - enpass
   - fzf
   - vivaldi-stable
