@@ -54,6 +54,7 @@ alias llñ="lsd -la"
 alias lsd.="lsd -d .*"
 alias l.="lsd -Ll -d .*"
 alias lñ.="lsd -l -d .*"
+alias tree="lsd --tree"
 #trash-cli
 alias tp=trash-put
 alias tl=trash-list
