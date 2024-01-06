@@ -1,4 +1,4 @@
-import? '/usr/share/ublue-os/just/100-bling.just'
+import '/usr/share/ublue-os/just/100-bling.just' #Place a ? here when fedora updates
 import '/usr/share/ublue-os/just/cryptenroll.just'
 import '/usr/share/ublue-os/just/authentication.just'
 import '/usr/share/ublue-os/just/theming.just'
