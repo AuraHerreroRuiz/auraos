@@ -1,8 +1,7 @@
-# !include /usr/share/ublue-os/just/100-bling.just Commenting this as I don't use bling just files
-
-!include /usr/share/ublue-os/just/cryptenroll.just
-!include /usr/share/ublue-os/just/authentication.just
-!include /usr/share/ublue-os/just/theming.just
+import? '/usr/share/ublue-os/just/100-bling.just'
+import '/usr/share/ublue-os/just/cryptenroll.just'
+import '/usr/share/ublue-os/just/authentication.just'
+import '/usr/share/ublue-os/just/theming.just'
 
 # Install all flatpaks defined in recipe.yml
 setup-flatpaks:
