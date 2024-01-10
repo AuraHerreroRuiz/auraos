@@ -48,7 +48,7 @@ alias j='just'
 alias jh='just --justfile ~/.justfile --working-directory .'
 ##LS(d)
 alias l="lsd -Ll"
-alias ll="lsd -la"
+alias ll="lsd -Lla"
 alias lñ="lsd -l"
 alias llñ="lsd -la"
 alias lsd.="lsd -d .*"
