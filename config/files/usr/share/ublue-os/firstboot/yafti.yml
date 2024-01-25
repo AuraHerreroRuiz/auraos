@@ -136,7 +136,6 @@ screens:
           default: true
           packages:
             - Qpwgraph: org.rncbc.qpwgraph
-            - Wireshark: org.wireshark.Wireshark
         Media consumption:
           description: Apps to consume multimedia.
           default: true

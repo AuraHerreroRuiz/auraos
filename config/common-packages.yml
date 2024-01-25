@@ -36,6 +36,7 @@ install:
   - terminus-fonts-console
   - pam-u2f
   - pamu2fcfg
+  - wireshark
   # zsh and its plugins
   - zsh
   - zsh-autosuggestions
