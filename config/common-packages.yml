@@ -19,7 +19,6 @@ install:
   - libreoffice
   - micro
   - mosquitto
-  - pipx
   - bismuth
   - yakuake
   - hunspell-es
