@@ -45,11 +45,8 @@ COPY modules /tmp/modules/
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
-#Kmods
-COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
-COPY sources/build-scripts /tmp/build-scripts
-RUN chmod +x /tmp/build-scripts/kmods.sh && \
-        /tmp/build-scripts/kmods.sh
+# Change this if you want different version/tag of akmods.
+COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms /tmp/rpms
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
@@ -86,7 +83,6 @@ COPY sources/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/build-kup.sh && \
         /tmp/build-scripts/build-kup.sh
-
 
 # Finalize container build
 FROM first-stage
