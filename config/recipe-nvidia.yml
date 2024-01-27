@@ -37,6 +37,5 @@ modules:
       # - Krita: org.kde.krita
   - type: akmods
     install:
-      - ublue-os-nvidia-addons
       - v4l2loopback
       - openrgb
