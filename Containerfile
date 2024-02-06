@@ -52,14 +52,6 @@ COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms /tmp/rpms
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
         rm -rf /tmp/* /var/*
 
-#Build espanso
-FROM fedora:38 as espanso-builder
-
-COPY sources/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/espanso.sh && \
-        /tmp/build-scripts/espanso.sh
-
 #Build lightly-qt
 FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
 
