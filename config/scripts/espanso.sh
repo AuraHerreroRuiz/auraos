@@ -32,6 +32,7 @@ $(curl -GL \
 ) -o /tmp/espanso.sha256
 
 #Checksum
+cd /tmp
 sha256sum -c /tmp/espanso.sha256
 
 #Copy to bin
