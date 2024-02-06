@@ -52,6 +52,14 @@ COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms /tmp/rpms
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
         rm -rf /tmp/* /var/*
 
+#Build espanso
+FROM fedora:${IMAGE_MAJOR_VERSION} as espanso-builder
+
+COPY sources/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/espanso.sh && \
+        /tmp/build-scripts/espanso.sh
+
 #Build lightly-qt
 FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
 
@@ -86,6 +94,9 @@ RUN chmod +x /tmp/build-scripts/build-kup.sh && \
 
 # Finalize container build
 FROM first-stage
+
+# Copy espanso artifacts from builder into image
+COPY --from=espanso-builder /tmp/usr /usr
 
 # Copy Bup and Kup artifacts from builder into image
 COPY --from=kup-builder /tmp/kupbuilt/usr /usr
