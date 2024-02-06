@@ -37,4 +37,4 @@ sha256sum -c /tmp/espanso.sha256
 
 #Copy to bin
 cp /tmp/Espanso-X11.AppImage /usr/bin/espanso
-chmod 755 espanso
+chmod 755 /usr/bin/espanso
