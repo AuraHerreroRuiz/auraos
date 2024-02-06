@@ -53,7 +53,7 @@ RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
         rm -rf /tmp/* /var/*
 
 #Build espanso
-FROM fedora:${IMAGE_MAJOR_VERSION} as espanso-builder
+FROM fedora:38 as espanso-builder
 
 COPY sources/build-scripts /tmp/build-scripts
 

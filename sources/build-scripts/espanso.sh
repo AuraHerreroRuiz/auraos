@@ -5,7 +5,7 @@ echo "-- Building Espanso --"
 echo "Installing dependencies"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rustup-setup.sh
 sh /tmp/rustup-setup.sh -y
-dnf -y install git gcc libX11-devel libxtst-devel libxkbcommon-devel rust-libdbus-sys wxBase3-devel wxGTK3-devel openssl-devel
+dnf -y install git gcc libX11-devel libXtst-devel libxkbcommon-devel rust-libdbus-sys-devel wxBase3-devel wxGTK3-devel openssl-devel
 cargo install --force cargo-make
 echo "Building espanso"
 # Clone espanso repository
