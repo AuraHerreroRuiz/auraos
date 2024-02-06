@@ -87,9 +87,6 @@ RUN chmod +x /tmp/build-scripts/build-kup.sh && \
 # Finalize container build
 FROM first-stage
 
-# Copy espanso artifacts from builder into image
-COPY --from=espanso-builder /tmp/usr /usr
-
 # Copy Bup and Kup artifacts from builder into image
 COPY --from=kup-builder /tmp/kupbuilt/usr /usr
 COPY --from=kup-builder /tmp/kupbuilt/etc /usr/etc
