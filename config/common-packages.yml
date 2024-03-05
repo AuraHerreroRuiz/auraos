@@ -36,6 +36,7 @@ install:
   - pam-u2f
   - pamu2fcfg
   - wireshark
+  - ydotool
   # zsh and its plugins
   - zsh
   - zsh-autosuggestions
