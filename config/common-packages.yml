@@ -27,6 +27,7 @@ install:
   - krename
   - ksystemlog
   - kcm_wacomtablet
+  - plymouth-kcm
   - trash-cli
   - touchegg
   - power-profiles-daemon
