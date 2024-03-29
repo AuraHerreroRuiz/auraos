@@ -44,14 +44,13 @@ COPY --from=kup-builder /tmp/bupbuilt/usr /artifacts/usr
 
 # Copy fonts and licenses into image, then generate font cache
 COPY --from=JetBrainsMonoSlashedNerdFont /tmp/usr /artifacts/usr
-RUN fc-cache -fv
 
 # Copy fingerprint driver into image and install policy
 COPY --from=synaTudor /tmp/libfrint-tod-build/usr /artifacts/usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /artifacts/sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /artifacts/usr
 COPY --from=synaTudor /tmp/policiesout/usr /artifacts/usr
-RUN semodule -n -s targeted -X 200 -i /artifacts/usr/share/selinux/packages/targeted/fprintd-tudor.pp
+
 
 # Copy lightly-qt into image
 COPY --from=lightly-qt-builder /tmp/lightly-qt-built/usr /artifacts/usr
