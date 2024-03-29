@@ -3,9 +3,9 @@
 ## Installation
 
 > **Warning**
-> This is an experimental feature and should not be used in production, try it in a VM for a while!
+> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
-To rebase an existing Silverblue/Kinoite installation to the latest build:
+To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the image unsigned, to get the proper signing keys and policies installed:
 
@@ -24,7 +24,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
   ```sh
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos:latest
   ```
-  
+
 - Reboot again to complete the installation
 
   ```sh
