@@ -1,0 +1,4 @@
+type: akmods
+install:
+    - v4l2loopback
+    - openrgb

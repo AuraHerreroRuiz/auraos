@@ -10,32 +10,11 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
   - from-file: common-packages.yml
-  - from-file: common-scripts.yml
+  - from-file: common-modules.yml
   - from-file: common-fonts.yml
-  - type: files
-    files:
-      - usr: /usr # copy static configurations
-                  #
-                  # copies config/files/usr into your image's /usr
-                  #
-                  # configuration you wish to end up in /etc/ on the booted system
-                  # should be added into /usr/etc/ as that is the proper "distro"
-                  # config directory on ostree. Read more in the files module's README
-  - type: bling # configure what to pull in from ublue-os/bling
-    install:
-      # - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
-                  # in your custom.just (added by default) or local justfile
-      # - nix-installer # shell shortcuts for determinate system's nix installers
-      # - ublue-os-wallpapers
-      - ublue-update # https://github.com/ublue-os/ublue-update
-      # - dconf-update-service # a service unit that updates the dconf db on boot
-      # - devpod # https://devpod.sh/ as an rpm
-  - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
-                #  will be installed and set up
-    custom-flatpaks: # this section is optional
-      # - Celluloid: io.github.celluloid_player.Celluloid
-      # - Krita: org.kde.krita
-  - type: akmods
-    install:
-      - v4l2loopback
-      - openrgb
+  - from-file: common-akmods.yml
+  - from-file: common-scripts.yml
+  - from-file: common-flatpaks.yml
+  - from-file: common-bling.yml
+  - from-file: common-files.yml
+  - from-file: common-containerfiles.yml
