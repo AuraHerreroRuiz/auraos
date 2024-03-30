@@ -1,5 +1,6 @@
 type: containerfile
 snippets:
-  - COPY --from=ghcr.io/auraherreroruiz/auraos-software-builds /artifacts /
+  - COPY --from=ghcr.io/auraherreroruiz/auraos-software-builds /artifacts/usr /usr
+  - COPY --from=ghcr.io/auraherreroruiz/auraos-software-builds /artifacts/sbin /sbin
   - RUN fc-cache -fv
   - RUN semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp
