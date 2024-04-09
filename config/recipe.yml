@@ -9,6 +9,9 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: containerfile
+    snippets:
+      - ENV RPMOSTREE_EXPERIMENTAL_FORCE_OPT_USRLOCAL_OVERLAY 1
   - from-file: common-packages.yml
   - from-file: common-modules.yml
   - from-file: common-fonts.yml
