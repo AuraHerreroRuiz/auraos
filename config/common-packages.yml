@@ -62,9 +62,6 @@ install:
   - libgit2
   - python3-pyxattr
   - python3-fusepy
-optfix:
-  - enpass
-  - vivaldi
 remove:
   # Remove the native firefox (from Fedora) in favor of the Flatpak.
   - spectacle
