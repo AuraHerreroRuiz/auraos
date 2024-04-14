@@ -20,3 +20,10 @@ opt-packages-symlink-restore:
 #Useful when artifacts appear after graphic driver upgrades
 vivaldi-remove-gpu-cache:
     find ~/.config/vivaldi/ -depth -type d -name GPUCache -exec rm -rf {} \;
+
+#Pin a deployment. Use a number where 0 is the latest deployment, and increments the older the deployment.
+pin-deployment deployment:
+    sudo ostree admin pin "{{deployment}}"
+#Unpin a deployment. Use a number where 0 is the latest deployment, and increments the older the deployment.
+unpin-deployment deployment:
+    sudo ostree admin pin -u "{{deployment}}"
