@@ -20,7 +20,6 @@ install:
   - libreoffice
   - micro
   - mosquitto
-  - bismuth
   - yakuake
   - hunspell-es
   - variety
