@@ -7,5 +7,4 @@ scripts:
   - posy-cursors.sh
   - zshplugins.sh
   - fluent-icons.sh
-  - replace-spectacle-regression.sh
   - xremap.sh
