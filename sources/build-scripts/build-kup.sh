@@ -28,8 +28,10 @@ echo "Building Kup"
 #Clone kup repository
 git clone 'https://invent.kde.org/system/kup.git'
 cd kup
-# Checkout last release
-git checkout "$(git tag --sort=tag --list 'kup-[0-9]*' | tail -n 1)"
+## Checkout last release
+## git checkout "$(git tag --sort=tag --list 'kup-[0-9]*' | tail -n 1)"
+# Checking out commit that has kup fixed for plasma 6 until release is made
+git checkout '07ee384082f1b2efa7a57e120c0dd5dc17d435aa'
 #Build Kup
 mkdir build
 cd build
