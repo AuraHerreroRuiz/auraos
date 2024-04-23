@@ -6,7 +6,6 @@ repos:
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/insync.repo
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/vscode.repo
   - https://copr.fedorainfracloud.org/coprs/pesader/showmethekey/repo/fedora-%OS_VERSION%/pesader-showmethekey-fedora-%OS_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/eclipseo/polonium/repo/fedora-%OS_VERSION%/eclipseo-polonium-fedora-%OS_VERSION%.repo
 install:
   - applet-window-buttons
   - code
@@ -21,7 +20,6 @@ install:
   - libreoffice
   - micro
   - mosquitto
-  - polonium
   - yakuake
   - hunspell-es
   - variety
