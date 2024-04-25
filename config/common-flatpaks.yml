@@ -72,7 +72,7 @@ system:
     - io.github.seadve.Mousai
     # Media production
     - com.obsproject.Studio
-    - com.obsproject.Studio.OBSVkCapture
+    - com.obsproject.Studio.Plugin.OBSVkCapture
     - com.obsproject.Studio.Plugin.Gstreamer
     - com.obsproject.Studio.Plugin.GStreamerVaapi
     - org.kde.kdenlive
