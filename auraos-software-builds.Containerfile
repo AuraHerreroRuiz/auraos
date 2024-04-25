@@ -42,7 +42,3 @@ COPY --from=synaTudor /tmp/libfrint-tod-build/usr /artifacts/usr
 COPY --from=synaTudor /tmp/synatudor-build/sbin /artifacts/sbin
 COPY --from=synaTudor /tmp/synatudor-build/usr /artifacts/usr
 COPY --from=synaTudor /tmp/policiesout/usr /artifacts/usr
-
-
-# Copy lightly-qt into image
-COPY --from=lightly-qt-builder /tmp/lightly-qt-built/usr /artifacts/usr
