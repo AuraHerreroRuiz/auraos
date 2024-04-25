@@ -1,13 +1,5 @@
 ARG IMAGE_MAJOR_VERSION=40
 
-#Build lightly-qt
-FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
-
-COPY sources/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/lightly-qt.sh && \
-        /tmp/build-scripts/lightly-qt.sh
-
 # Download and patch JetBrainsMonoSlashed with Nerd Fonts
 FROM fedora:${IMAGE_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
 
