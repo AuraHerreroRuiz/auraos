@@ -1,4 +1,4 @@
-ARG IMAGE_MAJOR_VERSION=39
+ARG IMAGE_MAJOR_VERSION=40
 
 #Build lightly-qt
 FROM fedora:${IMAGE_MAJOR_VERSION} as lightly-qt-builder
