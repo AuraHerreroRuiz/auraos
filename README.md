@@ -1,11 +1,10 @@
-# Aura's own personalised uBlue images
-
+# AuraOS
+AuraOS is my own custom fedora atomic image, built with software tailored to my needs.
 ## Installation
-
 > **Warning**
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> This image is built using [an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
-To rebase an existing atomic Fedora installation to the latest build:
+To install, first install one existing [Atomic Fedora Desktop](https://fedoraproject.org/atomic-desktops) installation, and then rebase it to the latest build:
 
 - First rebase to the image unsigned, to get the proper signing keys and policies installed:
 
@@ -40,5 +39,5 @@ rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20
 For the image with nvidia drivers:
 
 ```sh
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos-nvidia
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/auraherreroruiz/auraos-nvidia:latest
 ```
