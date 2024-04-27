@@ -22,7 +22,6 @@ system:
     - com.github.joseexposito.touche
     - io.github.flattool.Warehouse
     - org.kde.isoimagewriter
-    - org.openrgb.OpenRGB
     - app.getclipboard.Clipboard
     # Social Media:
     - org.telegram.desktop
