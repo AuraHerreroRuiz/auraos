@@ -2,12 +2,9 @@
 # Exit immediately upon error
 set -oue pipefail
 echo "-- Building Kup --"
-# General build dependencies
-echo "Installing general dependencies"
-dnf -y install git
-# Bup Build dependencies.
+# Installing dependencies.
 echo "Installing Bup dependencies"
-dnf -y install python3-devtools python-devel python3-pyxattr python3-pytest make gcc acl attr rsync diffutils kmod python3-distutils-extra pkg-config  glibc glibc-devel  python3-pytest-xdist par2cmdline libacl libacl-devel
+dnf -y install git python3-devtools python-devel python3-pyxattr python3-pytest make gcc acl attr rsync diffutils kmod python3-distutils-extra pkg-config  glibc glibc-devel  python3-pytest-xdist par2cmdline libacl libacl-devel
 echo "Building Bup"
 mkdir /tmp/bupbuild
 cd /tmp/bupbuild
