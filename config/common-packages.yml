@@ -20,7 +20,6 @@ install:
   - libreoffice
   - micro
   - mosquitto
-  - bismuth
   - yakuake
   - hunspell-es
   - variety
@@ -66,13 +65,12 @@ optfix:
   - enpass
   - vivaldi
 remove:
-  # Remove the native firefox (from Fedora) in favor of the Flatpak.
-  - spectacle
   - firefox-langpacks
   - firefox
   - kwrite
   - kate
   - kate-plugins
+  - kate-krunner-plugin
   - vim-data
   - vim-minimal
   - vim-filesystem
