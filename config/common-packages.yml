@@ -65,8 +65,6 @@ optfix:
   - enpass
   - vivaldi
 remove:
-  # Remove the native firefox (from Fedora) in favor of the Flatpak.
-  - spectacle
   - firefox-langpacks
   - firefox
   - kwrite
