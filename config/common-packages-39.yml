@@ -72,7 +72,6 @@ remove:
   - kwrite
   - kate
   - kate-plugins
-  - kate-krunner-plugin
   - vim-data
   - vim-minimal
   - vim-filesystem
