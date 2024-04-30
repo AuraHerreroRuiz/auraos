@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containerfile: [auraos-software-builds.Containerfile]
+        containerfile: [auraos-software-builds.Containerfile,auraos-software-builds-39.Containerfile]
 
     steps:
       # Checkout push-to-registry action GitHub repository
@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Gather environment variables
-        run: echo "IMAGE_NAME=$(echo ${{ matrix.containerfile }} | cut -d . -f 1)" >> $GITHUB_ENV
+        run: echo "IMAGE_NAME=auraos-software-builds"
 
       # Build metadata
       - name: Image Metadata
@@ -58,7 +58,16 @@ jobs:
           COMMIT_TAGS+=("${SHA_SHORT}")
 
           BUILD_TAGS+=("${TIMESTAMP}")
-          BUILD_TAGS+=("latest")
+          if [[ "${{ matrix.containerfile }}" == "auraos-software-builds-39.Containerfile" ]]; then
+          echo "Generated the following version tag: 39"
+          BUILD_TAGS+=("39")
+          COMMIT_TAGS+=("39")
+          else
+          echo "Generated the following version tags: 40,latest"
+            BUILD_TAGS+=("latest")
+            BUILD_TAGS+=("40")
+            COMMIT_TAGS+=("40")
+          fi
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
               echo "Generated the following commit tags: "
