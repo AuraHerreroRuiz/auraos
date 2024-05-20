@@ -75,6 +75,7 @@ system:
     - com.obsproject.Studio.Plugin.Gstreamer
     - com.obsproject.Studio.Plugin.GStreamerVaapi
     - org.kde.kdenlive
+    - no.mifi.losslesscut
     - org.tenacityaudio.Tenacity
     - org.gimp.GIMP
 # A flatpak repo can also be added without having to install flatpaks,
