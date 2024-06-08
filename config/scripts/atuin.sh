@@ -42,18 +42,6 @@ cd "/tmp/atuin/$zipname"
 cp ./atuin /usr/bin/atuin
 chmod 755 /usr/bin/atuin
 
-mkdir -p /usr/share/bash-completion/completions
-cp ./completions/atuin.bash /usr/share/bash-completion/completions/atuin
-chmod 644 /usr/share/bash-completion/completions/atuin
-
-mkdir -p /usr/share/fish/vendor_completions.d
-cp ./completions/atuin.fish /usr/share/fish/vendor_completions.d/atuin
-chmod 644 /usr/share/fish/vendor_completions.d/atuin
-
-mkdir -p /usr/share/zsh/site-functions
-cp ./completions/_atuin /usr/share/zsh/site-functions/_atuin
-chmod 644 /usr/share/zsh/site-functions/_atuin
-
 mkdir -p /usr/share/licenses/atuin
 cp ./LICENSE /usr/share/licenses/atuin/LICENSE
 chmod 644 /usr/share/licenses/atuin/LICENSE
@@ -61,3 +49,16 @@ chmod 644 /usr/share/licenses/atuin/LICENSE
 mkdir -p /usr/share/doc/atuin
 cp ./README.md /usr/share/licenses/atuin/README.md
 chmod 644 /usr/share/licenses/atuin/README.md
+
+# Shell completions
+mkdir -p /usr/share/bash-completion/completions
+/usr/bin/atuin gen-completions --shell bash --out-dir /usr/share/bash-completion/completions/atuin
+chmod 644 /usr/share/bash-completion/completions/atuin
+
+mkdir -p /usr/share/fish/vendor_completions.d
+/usr/bin/atuin gen-completions --shell fish --out-dir /usr/share/fish/vendor_completions.d/atuin
+chmod 644 /usr/share/fish/vendor_completions.d/atuin
+
+mkdir -p /usr/share/zsh/site-functions
+/usr/bin/atuin gen-completions --shell zsh --out-dir ./completions/_atuin /usr/share/zsh/site-functions/_atuin
+chmod 644 /usr/share/zsh/site-functions/_atuin
