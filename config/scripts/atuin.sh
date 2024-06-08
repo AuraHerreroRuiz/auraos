@@ -31,7 +31,7 @@ done
 zipname=$(basename -s '.tar.gz' $(curl -GL \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/atuinsh/atuin/releases | jq --raw-output ".[$try].assets[] | select(.name | test(\"x86_64-unknown-linux-gnu\")).name"))
+  https://api.github.com/repos/atuinsh/atuin/releases | jq --raw-output ".[$try].assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz\")).name"))
 
 mkdir -p /tmp/atuin/unzip
 
