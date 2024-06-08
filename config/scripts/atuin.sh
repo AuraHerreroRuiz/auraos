@@ -2,8 +2,8 @@
 
 set -oue pipefail
 
-mkdir -p /tmp/atuin
-cd /tmp/atuin
+mkdir -p /tmp/asd/atuin
+cd /tmp/asd/atuin
 #Download atuin
 
 #Set tries of seeking version with a valid targz to 0
@@ -16,8 +16,8 @@ while ! curl -GL \
 $(curl -GL \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/atuinsh/atuin/releases | jq --raw-output ".[$try].assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz\")).browser_download_url"
-) -o /tmp/atuin/atuin.tar.gz;
+  https://api.github.com/repos/atuinsh/atuin/releases | jq --raw-output ".[$try].assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz$\")).browser_download_url"
+) -o /tmp/asd/atuin/atuin.tar.gz;
 
 do
   ((try += 1))
@@ -31,13 +31,13 @@ done
 zipname=$(basename -s '.tar.gz' $(curl -GL \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/atuinsh/atuin/releases | jq --raw-output ".[$try].assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz\")).name"))
+  https://api.github.com/repos/atuinsh/atuin/releases | jq --raw-output ".[$try].assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz$\")).name"))
 
-mkdir -p /tmp/atuin/unzip
+mkdir -p /tmp/asd/atuin/unzip
 
-tar -xf /tmp/atuin/atuin.tar.gz --directory /tmp/atuin
+tar -xf /tmp/asd/atuin/atuin.tar.gz --directory /tmp/asd/atuin
 
-cd "/tmp/atuin/$zipname"
+cd "/tmp/asd/atuin/$zipname"
 #install
 cp ./atuin /usr/bin/atuin
 chmod 755 /usr/bin/atuin
