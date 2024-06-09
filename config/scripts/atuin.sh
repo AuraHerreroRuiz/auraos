@@ -51,14 +51,14 @@ cp ./README.md /usr/share/licenses/atuin/README.md
 chmod 644 /usr/share/licenses/atuin/README.md
 
 # Shell completions
-mkdir -p /usr/share/bash-completion/completions/atuin
-/usr/bin/atuin gen-completions --shell bash --out-dir /usr/share/bash-completion/completions/atuin
+mkdir -p /usr/share/bash-completion/completions
+/usr/bin/atuin gen-completions --shell bash > /usr/share/bash-completion/completions/atuin
 chmod 644 /usr/share/bash-completion/completions/atuin
 
-mkdir -p /usr/share/fish/vendor_completions.d/atuin
-/usr/bin/atuin gen-completions --shell fish --out-dir /usr/share/fish/vendor_completions.d/atuin
+mkdir -p /usr/share/fish/vendor_completions.d
+/usr/bin/atuin gen-completions --shell fish > /usr/share/fish/vendor_completions.d/atuin
 chmod 644 /usr/share/fish/vendor_completions.d/atuin
 
-mkdir -p /usr/share/zsh/site-functions/atuin
-/usr/bin/atuin gen-completions --shell zsh --out-dir ./completions/_atuin /usr/share/zsh/site-functions/_atuin
+mkdir -p /usr/share/zsh/site-functions
+/usr/bin/atuin gen-completions --shell zsh > /usr/share/zsh/site-functions/_atuin
 chmod 644 /usr/share/zsh/site-functions/_atuin
