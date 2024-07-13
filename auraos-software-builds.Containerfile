@@ -8,6 +8,14 @@ COPY sources/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh && \
         /tmp/build-scripts/JetBrainsMonoSlashedNerdFont.sh
 
+#Build Headset Control
+FROM fedora:${IMAGE_MAJOR_VERSION} as HeadsetControl-builder
+
+COPY sources/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/build-headsetcontrol.sh && \
+        /tmp/build-scripts/build-headsetcontrol.sh
+
 # Build and install synaTudor drivers
 FROM fedora:${IMAGE_MAJOR_VERSION} as synaTudor
 
@@ -44,6 +52,9 @@ COPY --from=bup-builder /tmp/bupbuilt/usr /artifacts/usr
 
 # Copy fonts and licenses into image, then generate font cache
 COPY --from=JetBrainsMonoSlashedNerdFont /tmp/usr /artifacts/usr
+
+# Copy HeadsetControl artifacts from builder into image
+COPY --from=HeadsetControl-builder /tmp/HeadsetControlBuilt/usr /artifacts/usr
 
 # Copy fingerprint driver into image and install policy
 COPY --from=synaTudor /tmp/libfrint-tod-build/usr /artifacts/usr
