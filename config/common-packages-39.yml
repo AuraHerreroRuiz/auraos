@@ -77,8 +77,8 @@ remove:
 #  - vim-filesystem
 #  - vim-common
 #  - vim-enhanced
-  - nano
-  - nano-default-editor
+#  - nano
+#  - nano-default-editor
   - default-editor
   - breeze-gtk-gtk2
   - breeze-gtk-gtk3
