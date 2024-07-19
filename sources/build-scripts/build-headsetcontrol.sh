@@ -20,5 +20,6 @@ make
 make install DESTDIR=/tmp/HeadsetControlBuilt
 mkdir -p /tmp/HeadsetControlBuilt/usr/bin
 mkdir -p /tmp/HeadsetControlBuilt/usr/lib
-mv /tmp/HeadsetControlBuilt/usr/local/bin /tmp/HeadsetControlBuilt/usr/bin
-mv /tmp/HeadsetControlBuilt/usr/local/lib /tmp/HeadsetControlBuilt/usr/lib
+mv /tmp/HeadsetControlBuilt/usr/local/bin /tmp/HeadsetControlBuilt/usr/
+mv /tmp/HeadsetControlBuilt/usr/local/lib /tmp/HeadsetControlBuilt/usr/
+rmdir /tmp/HeadsetControlBuilt/usr/local
