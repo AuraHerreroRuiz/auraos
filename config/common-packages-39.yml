@@ -66,22 +66,22 @@ optfix:
   - enpass
   - vivaldi
 remove:
-#  - spectacle
-# - firefox-langpacks
-# - firefox
-# - kwrite
-# - kate
-# - kate-plugins
-#  - vim-data
-#  - vim-minimal
-#  - vim-filesystem
-#  - vim-common
-#  - vim-enhanced
-#  - nano
-#  - nano-default-editor
-#  - default-editor
-# - breeze-gtk-common
-# - breeze-gtk-gtk2
-# - breeze-gtk-gtk3
-# - breeze-gtk-gtk4
-# - kde-gtk-config
+- spectacle
+- firefox-langpacks
+- firefox
+- kwrite
+- kate
+- kate-plugins
+- vim-data
+- vim-minimal
+- vim-filesystem
+- vim-common
+- vim-enhanced
+- nano
+- nano-default-editor
+- default-editor
+- breeze-gtk-common
+- breeze-gtk-gtk2
+- breeze-gtk-gtk3
+- breeze-gtk-gtk4
+- kde-gtk-config
