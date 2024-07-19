@@ -67,11 +67,11 @@ optfix:
   - vivaldi
 remove:
   - spectacle
-  - firefox-langpacks
-  - firefox
-  - kwrite
-  - kate
-  - kate-plugins
+# - firefox-langpacks
+# - firefox
+# - kwrite
+# - kate
+# - kate-plugins
 #  - vim-data
 #  - vim-minimal
 #  - vim-filesystem
@@ -80,8 +80,8 @@ remove:
 #  - nano
 #  - nano-default-editor
 #  - default-editor
-  - breeze-gtk-common
-  - breeze-gtk-gtk2
-  - breeze-gtk-gtk3
-  - breeze-gtk-gtk4
-  - kde-gtk-config
+# - breeze-gtk-common
+# - breeze-gtk-gtk2
+# - breeze-gtk-gtk3
+# - breeze-gtk-gtk4
+# - kde-gtk-config
