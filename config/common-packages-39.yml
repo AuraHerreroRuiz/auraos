@@ -79,7 +79,8 @@ remove:
 #  - vim-enhanced
 #  - nano
 #  - nano-default-editor
-  - default-editor
+#  - default-editor
+  - breeze-gtk-common
   - breeze-gtk-gtk2
   - breeze-gtk-gtk3
   - breeze-gtk-gtk4
