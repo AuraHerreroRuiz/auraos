@@ -72,10 +72,11 @@ remove:
   - kwrite
   - kate
   - kate-plugins
-  - vim-data
-  - vim-minimal
-  - vim-common
-  - vim-enhanced
+#  - vim-data
+#  - vim-minimal
+#  - vim-filesystem
+#  - vim-common
+#  - vim-enhanced
   - nano
   - nano-default-editor
   - default-editor
