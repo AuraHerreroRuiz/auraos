@@ -62,6 +62,8 @@ install:
   - libgit2
   - python3-pyxattr
   - python3-fusepy
+  #Headset Control dependencies.
+  - hidapi
 optfix:
   - enpass
   - vivaldi
