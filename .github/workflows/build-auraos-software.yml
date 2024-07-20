@@ -4,8 +4,10 @@ on:
   schedule:
     - cron: '0 14 * * *'  # 2 pm everyday
   push:
-    paths-ignore: # don't rebuild if only documentation has changed
-        - "**.md"
+    paths: # don't build software if only auraos files change
+        - "!**.md"
+        - "sources/build-scripts"
+        - "auraos-software-builds**.Containerfile"
   workflow_dispatch:
 env:
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
