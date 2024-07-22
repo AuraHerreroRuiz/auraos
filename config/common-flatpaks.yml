@@ -37,7 +37,7 @@ system:
     - com.discordapp.Discord
     - com.valvesoftware.Steam
     - org.freedesktop.Platform.VulkanLayer.gamescope
-    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+    - org.freedesktop.Platform.VulkanLayer.MangoHud
     - com.valvesoftware.Steam.Utility.steamtinkerlaunch
     - org.yuzu_emu.yuzu
     - org.kde.kmines
