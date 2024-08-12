@@ -6,9 +6,9 @@ fi
 
 # Use a different p10k config depending on the terminal
 if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
-    [[ ! -f /etc/p10k/p10k.zsh ]] || source /usr/etc/p10k/p10k.zsh
+    [[ ! -f /etc/p10k/p10k.zsh ]] || source /etc/p10k/p10k.zsh
 else
-    [[ ! -f /etc/p10k/p10k-portable.zsh ]] || source /usr/etc/p10k/p10k-portable.zsh
+    [[ ! -f /etc/p10k/p10k-portable.zsh ]] || source /etc/p10k/p10k-portable.zsh
 fi
 
 # Use the emacs key bindings

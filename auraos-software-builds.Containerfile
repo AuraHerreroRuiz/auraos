@@ -42,11 +42,12 @@ RUN chmod +x /tmp/build-scripts/build-kup.sh && \
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
-RUN mkdir -p /artifacts/usr/etc
+RUN mkdir -p /artifacts/usr
+RUN mkdir -p /artifacts/etc
 RUN mkdir -p /artifacts/sbin
 # Copy Bup and Kup artifacts from builder into image
 COPY --from=kup-builder /tmp/kupbuilt/usr /artifacts/usr
-COPY --from=kup-builder /tmp/kupbuilt/etc /artifacts/usr/etc
+COPY --from=kup-builder /tmp/kupbuilt/etc /artifacts/etc
 
 COPY --from=bup-builder /tmp/bupbuilt/usr /artifacts/usr
 
