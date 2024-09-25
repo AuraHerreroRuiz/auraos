@@ -26,7 +26,7 @@ system:
     # Social Media:
     - org.telegram.desktop
     - com.skype.Client
-    - com.discordapp.Discord
+    - dev.vencord.Vesktop
     # Security:
     - com.gitlab.davem.ClamTk
     - org.kde.kleopatra
