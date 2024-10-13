@@ -11,7 +11,7 @@ install:
   - code
   - ddcutil
   - enpass
-  - fzf
+  - fzfk
   - vivaldi-stable
   - insync
   - insync-dolphin
@@ -25,6 +25,10 @@ install:
   - variety
   - krename
   - ksystemlog
+  # plasmoid stuff
+  - qt6-qdbusviewer
+  - qt6-qtwebsockets
+  - korganizer
   - kcm_wacomtablet
   - plymouth-kcm
   - trash-cli
@@ -38,6 +42,8 @@ install:
   - pam-u2f
   - pamu2fcfg
   - wireshark
+  # keymapp
+  - webkit2gtk4.1
   - ydotool
   # zsh and its plugins
   - zsh
@@ -84,4 +90,3 @@ remove:
   - breeze-gtk-gtk2
   - breeze-gtk-gtk3
   - breeze-gtk-gtk4
-  - kde-gtk-config

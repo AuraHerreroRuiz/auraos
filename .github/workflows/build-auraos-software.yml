@@ -7,7 +7,7 @@ on:
     paths: # don't build software if only auraos files change
         - "!**.md"
         - "sources/build-scripts"
-        - "auraos-software-builds**.Containerfile"
+        - "auraos-software-builds.Containerfile"
   workflow_dispatch:
 env:
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containerfile: [auraos-software-builds.Containerfile,auraos-software-builds-39.Containerfile]
+        containerfile: [auraos-software-builds.Containerfile]
 
     steps:
       # Checkout push-to-registry action GitHub repository
@@ -60,16 +60,10 @@ jobs:
           COMMIT_TAGS+=("${SHA_SHORT}")
 
           BUILD_TAGS+=("${TIMESTAMP}")
-          if [[ "${{ matrix.containerfile }}" == "auraos-software-builds-39.Containerfile" ]]; then
-          echo "Generated the following version tag: 39"
-          BUILD_TAGS+=("39")
-          COMMIT_TAGS+=("39")
-          else
           echo "Generated the following version tags: 40,latest"
             BUILD_TAGS+=("latest")
             BUILD_TAGS+=("40")
             COMMIT_TAGS+=("40")
-          fi
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
               echo "Generated the following commit tags: "
