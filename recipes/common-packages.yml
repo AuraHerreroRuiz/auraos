@@ -27,8 +27,7 @@ install:
   - ksystemlog
   # plasmoid stuff
   - qt6-qdbusviewer
-  - qt6-qtwebsockets
-  - korganizer
+  - merkuro
   - kcm_wacomtablet
   - plymouth-kcm
   - trash-cli
