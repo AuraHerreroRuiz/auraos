@@ -11,7 +11,7 @@ install:
   - code
   - ddcutil
   - enpass
-  - fzfk
+  - fzf
   - vivaldi-stable
   - insync
   - insync-dolphin
