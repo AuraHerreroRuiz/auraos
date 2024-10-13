@@ -28,6 +28,7 @@ install:
   # plasmoid stuff
   - qt6-qdbusviewer
   - merkuro
+  - korganizer
   - kcm_wacomtablet
   - plymouth-kcm
   - trash-cli
