@@ -20,15 +20,12 @@ install:
   - libreoffice
   - micro
   - mosquitto
+  - bismuth
   - yakuake
   - hunspell-es
   - variety
   - krename
   - ksystemlog
-  # plasmoid stuff
-  - qt6-qdbusviewer
-  - merkuro
-  - korganizer
   - kcm_wacomtablet
   - plymouth-kcm
   - trash-cli
@@ -71,21 +68,22 @@ optfix:
   - enpass
   - vivaldi
 remove:
-  - firefox-langpacks
-  - firefox
-  - kwrite
-  - kate
-  - kate-plugins
-  - kate-krunner-plugin
-  - vim-data
-  - vim-minimal
-  - vim-filesystem
-  - vim-common
-  - vim-enhanced
-  - nano
-  - nano-default-editor
-  - default-editor
-  - breeze-gtk-gtk2
-  - breeze-gtk-gtk3
-  - breeze-gtk-gtk4
-  - kde-gtk-config
+- spectacle
+- firefox-langpacks
+- firefox
+- kwrite
+- kate
+- kate-plugins
+- vim-data
+- vim-minimal
+- vim-filesystem
+- vim-common
+- vim-enhanced
+- nano
+- nano-default-editor
+- default-editor
+- breeze-gtk-common
+- breeze-gtk-gtk2
+- breeze-gtk-gtk3
+- breeze-gtk-gtk4
+- kde-gtk-config

@@ -1,3 +1,5 @@
+export XCURSOR_SIZE=36
+export XCURSOR_THEME=Posys_cursor_Linux_black
 export VISUAL=micro
 export EDITOR=micro
 export PAGER=moar
