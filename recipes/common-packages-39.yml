@@ -64,6 +64,9 @@ install:
   - python3-fusepy
   #Headset Control dependencies.
   - hidapi
+  #PlasmaVault
+  - cryfs
+  - fmt
 optfix:
   - enpass
   - vivaldi
