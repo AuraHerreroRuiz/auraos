@@ -7,5 +7,6 @@ mkdir -p /tmp/keymapp-download
 wget https://oryx.nyc3.cdn.digitaloceanspaces.com/keymapp/keymapp-latest.tar.gz -O /tmp/keymapp-download/keymapp.tar.gz
 # Extract binary
 mkdir -p /usr/bin
-tar -xf /tmp/keymapp-download/keymapp.tar.gz keymapp --group root --owner root --directory /usr/bin
+cd /usr/bin
+tar -xf /tmp/keymapp-download/keymapp.tar.gz keymapp --group root --owner root
 chmod 755 /usr/bin/keymapp
