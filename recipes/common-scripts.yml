@@ -7,5 +7,5 @@ scripts:
   - posy-cursors.sh
   - zshplugins.sh
   - fluent-icons.sh
-  - keymapp
+  - keymapp.sh
   - xremap.sh
