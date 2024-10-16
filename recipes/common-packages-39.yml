@@ -67,6 +67,8 @@ install:
   #PlasmaVault
   - cryfs
   - fmt
+  #Keymapp
+  - webkit2gtk4.1
 optfix:
   - enpass
   - vivaldi

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Keymapp
+GenericName=Moonlander Configurer
+Icon=maps
+Terminal=false
+Exec=/usr/bin/keymapp %U
+Categories=Utility

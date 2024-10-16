@@ -8,4 +8,5 @@ scripts:
   - replace-spectacle-regression.sh
   - zshplugins.sh
   - fluent-icons.sh
+  - keymapp
   - xremap.sh
