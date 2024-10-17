@@ -12,7 +12,7 @@ install:
   - ddcutil
   - enpass
   - fzf
-  - vivaldi-snapshot
+  - vivaldi-stable
   - insync
   - insync-dolphin
   - lf
@@ -74,7 +74,7 @@ install:
   - webkit2gtk4.1
 optfix:
   - enpass
-  - vivaldi-snapshot
+  - vivaldi
 remove:
   - firefox-langpacks
   - firefox
