@@ -1,4 +1,4 @@
-ARG IMAGE_MAJOR_VERSION=40
+ARG IMAGE_MAJOR_VERSION=41
 
 # Download and patch JetBrainsMonoSlashed with Nerd Fonts
 FROM fedora:${IMAGE_MAJOR_VERSION} as JetBrainsMonoSlashedNerdFont
