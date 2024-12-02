@@ -23,7 +23,6 @@ install:
   - hunspell-es
   - variety
   - krename
-  - gnome-calendar
   - ksystemlog
   # plasmoid stuff
   - qt6-qdbusviewer
