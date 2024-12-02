@@ -31,7 +31,7 @@ install:
   - plymouth-kcm
   - trash-cli
   - touchegg
-  - power-profiles-daemon
+  - tuned-ppd
   - playerctl
   - python-spotipy
   - solaar
