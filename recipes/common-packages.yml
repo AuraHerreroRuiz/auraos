@@ -7,10 +7,6 @@ repos:
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/vscode.repo
   - https://copr.fedorainfracloud.org/coprs/pesader/showmethekey/repo/fedora-%OS_VERSION%/pesader-showmethekey-fedora-%OS_VERSION%.repo
 install:
-# Kde stuff not on base
-  - dolphin
-  - dolphin-plugins
-  - wayfire
   - code
   - ddcutil
   - enpass
@@ -77,13 +73,21 @@ optfix:
   - enpass
   - vivaldi
 remove:
-  - firefox-langpacks
-  - firefox
-  - vim-data
-  - vim-minimal
-  - vim-filesystem
-  - vim-common
-  - vim-enhanced
-  - nano
-  - nano-default-editor
-  - default-editor
+- firefox-langpacks
+- firefox
+- kwrite
+- kate
+- kate-plugins
+- vim-data
+- vim-minimal
+- vim-filesystem
+- vim-common
+- vim-enhanced
+- nano
+- nano-default-editor
+- default-editor
+- breeze-gtk-common
+- breeze-gtk-gtk2
+- breeze-gtk-gtk3
+- breeze-gtk-gtk4
+- kde-gtk-config
