@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containerfile: [auraos-software-builds.Containerfile,auraos-software-builds-39.Containerfile]
+        containerfile: [auraos-software-builds.Containerfile]
 
     steps:
       # Checkout push-to-registry action GitHub repository
