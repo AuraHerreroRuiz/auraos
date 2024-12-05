@@ -1,0 +1,74 @@
+type: default-flatpaks
+notify: true # Send notification after install/uninstall is finished (true/false)
+system:
+  # If no repo information is specified, Flathub will be used by default
+  repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  repo-name: flathub
+  repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+  install:
+    # KDE Apps:
+    - org.kde.digikam
+    - org.kde.elisa
+    - org.kde.kamoso
+    - org.kde.kclock
+    - org.kde.kcolorchooser
+    - org.kde.kompare
+    - org.kde.kweather
+    # System Apps:
+    - org.mozilla.firefox
+    - com.github.tchx84.Flatseal
+    - io.github.flattool.Warehouse
+    # Social Media:
+    - org.telegram.desktop
+    - com.skype.Client
+    - dev.vencord.Vesktop
+    # Security:
+    - com.yubico.yubioath
+    - fr.romainvigier.MetadataCleaner
+    # Gaming:
+    - com.usebottles.bottles
+    - com.discordapp.Discord
+    - org.yuzu_emu.yuzu
+    - org.kde.kmines
+    - org.prismlauncher.PrismLauncher
+    - com.leinardi.gx52
+    # Office:
+    - md.obsidian.Obsidian
+    - org.mozilla.Thunderbird
+    - com.ulduzsoft.Birdtray
+    - org.gnome.SimpleScan
+    - io.github.Qalculate.qalculate-qt
+    - com.github.tenderowl.frog
+    # Development
+    - org.kde.okteta
+    - org.kde.kompare
+    # File sharing
+    - org.filezillaproject.Filezilla
+    - org.qbittorrent.qBittorrent
+    - org.x.Warpinator
+    # System monitoring
+    - org.rncbc.qpwgraph
+    # Media consumption
+    - org.videolan.VLC
+    - com.calibre_ebook.calibre
+    - org.kde.elisa
+    - com.spotify.Client
+    - com.rafaelmardojai.Blanket
+    - io.github.seadve.Mousai
+    # Media production
+    - com.obsproject.Studio
+    - com.obsproject.Studio.Plugin.BackgroundRemoval
+    - com.obsproject.Studio.Plugin.OBSVkCapture
+    - com.obsproject.Studio.Plugin.Gstreamer
+    - com.obsproject.Studio.Plugin.GStreamerVaapi
+    - org.kde.kdenlive
+    - no.mifi.losslesscut
+    - org.tenacityaudio.Tenacity
+    - org.gimp.GIMP
+# A flatpak repo can also be added without having to install flatpaks,
+# as long as one of the repo- fields is present
+user:
+  repo-name: flathub
+  repo-title: "Flathub (User)"
+# Assuming that the above example is configured first in a recipe,
+# a subsequent usage might look like this:

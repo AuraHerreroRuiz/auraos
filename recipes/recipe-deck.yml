@@ -1,20 +1,18 @@
 # image will be published to ghcr.io/<user>/<name>
-name: auraos
+name: auraos-deck
 # description will be included in the image's metadata
-description: Aura's own personalised uBlue image
+description: Aura's own personalised bazzite-deck image
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/kinoite-main:stable
+base-image: ghcr.io/ublue-os/bazzite-deck:stable
 image-version: 41 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: common-packages.yml
+  - from-file: deck-packages.yml
   - from-file: common-modules.yml
   - from-file: common-fonts.yml
-  - from-file: common-akmods.yml
   - from-file: common-scripts.yml
-  - from-file: common-flatpaks.yml
-  - from-file: common-bling.yml
+  - from-file: deck-flatpaks.yml
   - from-file: common-files.yml
-  - from-file: common-containerfiles.yml
+  - from-file: deck-containerfiles.yml
