@@ -36,6 +36,7 @@ install:
   - solaar
   - showmethekey
   - terminus-fonts-console
+  - pipx
   - pam-u2f
   - pamu2fcfg
   - wireshark
