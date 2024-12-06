@@ -2,16 +2,6 @@ import '/usr/share/ublue-os/just/61-cryptenroll.just'
 import '/usr/share/ublue-os/just/61-authentication.just'
 import '/usr/share/ublue-os/just/61-theming.just'
 
-# Install all flatpaks defined in recipe.yml
-setup-flatpaks:
-    #!/usr/bin/env bash
-    echo 'Installing flatpaks from the ublue recipe ...'
-    flatpaks=$(yq -- '.firstboot.flatpaks[]' "/usr/share/ublue-os/recipe.yml")
-    for pkg in $flatpaks; do \
-        echo "Installing: ${pkg}" && \
-        flatpak install --user --noninteractive flathub $pkg; \
-    done
-
 opt-packages-symlink-restore:
     #!/usr/bin/env bash
     sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/enpass"
