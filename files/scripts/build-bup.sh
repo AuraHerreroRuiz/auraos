@@ -12,7 +12,7 @@ cd /tmp/bupbuild
 git clone 'https://github.com/bup/bup.git'
 cd bup
 # Checkout last release
-git checkout "$(git tag --sort=tag --list '[0-9]*' | tail -n 1)"
+git checkout "$(git tag --sort=taggerdate --list '[0-9]*' | tail -n 1)"
 # Build Bup
 make long-check
 make install DESTDIR=/tmp/bupbuilt PREFIX='/usr'

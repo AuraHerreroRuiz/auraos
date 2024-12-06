@@ -11,7 +11,7 @@ cd /tmp/HeadsetControlBuild
 git clone 'https://github.com/Sapd/HeadsetControl.git'
 cd HeadsetControl
 # Checkout last release
-git checkout "$(git tag --sort=tag --list '[0-9]*' | tail -n 1)"
+git checkout "$(git tag --sort=taggerdate --list '[0-9]*' | tail -n 1)"
 # Build Bup
 mkdir build
 cd build
