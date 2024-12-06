@@ -75,6 +75,7 @@ install:
 optfix:
   - enpass
   - vivaldi
+  - pipx
 remove:
 - firefox-langpacks
 - firefox
