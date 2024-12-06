@@ -6,6 +6,7 @@ opt-packages-symlink-restore:
     #!/usr/bin/env bash
     sudo ln -s "../../usr/lib/opt/enpass" "/var/opt/enpass"
     sudo ln -s "../../usr/lib/opt/vivaldi" "/var/opt/vivaldi"
+    sudo ln -s "../../usr/lib/opt/pipx" "/var/opt/pipx"
 
 #Useful when artifacts appear after graphic driver upgrades
 vivaldi-remove-gpu-cache:
