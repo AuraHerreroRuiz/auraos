@@ -3,7 +3,7 @@ name: auraos
 # description will be included in the image's metadata
 description: Aura's own personalised bazzite-deck image
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-deck:stable
+base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
 
 # module configuration, executed in order
