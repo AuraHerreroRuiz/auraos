@@ -11,9 +11,7 @@ dnf -y install git cmake extra-cmake-modules qt6-qtbase qt6-qtbase-devel kf6-kcm
 git clone 'https://invent.kde.org/system/kup.git'
 cd kup
 ## Checkout last release
-## git checkout "$(git tag --sort=tag --list 'kup-[0-9]*' | tail -n 1)"
-# Checking out commit that has kup fixed for plasma 6 until release is made
-git checkout 'f705664ce437ca2a40b4a91dadc4c3fe1e700dfd'
+git checkout "$(git tag --sort=tag --list 'kup-[0-9]*' | tail -n 1)"
 #Build Kup
 mkdir build
 cd build
