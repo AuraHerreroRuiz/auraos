@@ -5,10 +5,35 @@ description: Aura's own personalised bazzite-deck image
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite
 image-version: stable
-
+stages:
+  - name: JetBrainsMonoSlashedNerdFont
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-JetBrainsMonoSlashedNerdFont.sh
+  - name: HeadsetControl
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-headsetcontrol.sh
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # JetBrainsMonoSlashedNerdFont
+  - type: copy
+    from: JetBrainsMonoSlashedNerdFont
+    src:  /tmp/usr
+    dest: /usr
+  - type: script
+    snippets:
+      - fc-cache -fv
+  # HeadsetControl
+  - type: copy
+    from: HeadsetControl
+    src:  /tmp/HeadsetControlBuilt/usr
+    dest: /usr
   - from-file: deck-packages.yml
   - from-file: common-modules.yml
   - from-file: common-fonts.yml

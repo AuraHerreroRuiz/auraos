@@ -5,10 +5,87 @@ description: Aura's own personalised uBlue image
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
 image-version: 41
-
+stages:
+  - name: JetBrainsMonoSlashedNerdFont
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-JetBrainsMonoSlashedNerdFont.sh
+  - name: HeadsetControl
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-headsetcontrol.sh
+  - name: synaTudor
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-tudor.sh
+  - name: Bup
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-bup.sh
+  - name: Kup
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-kup.sh
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # JetBrainsMonoSlashedNerdFont
+  - type: copy
+    from: JetBrainsMonoSlashedNerdFont
+    src:  /tmp/usr
+    dest: /usr
+  - type: script
+    snippets:
+      - fc-cache -fv
+  # HeadsetControl
+  - type: copy
+    from: HeadsetControl
+    src:  /tmp/HeadsetControlBuilt/usr
+    dest: /usr
+  # SynaTudor
+  - type: copy
+    from: synaTudor
+    src:  /tmp/libfrint-tod-build/usr
+    dest: /usr
+  - type: copy
+    from: synaTudor
+    src:  /tmp/synatudor-build/sbin
+    dest: /sbin
+  - type: copy
+    from: synaTudor
+    src:  /tmp/synatudor-build/usr
+    dest: /usr
+  - type: copy
+    from: synaTudor
+    src:  /tmp/policiesout/usr
+    dest: /usr
+  - type: script
+    snippets:
+      - semodule -n -s targeted -X 200 -i /usr/share/selinux/packages/targeted/fprintd-tudor.pp
+  # Bup
+  - type: copy
+    from: Bup
+    src:  /tmp/bupbuilt/usr
+    dest: /usr
+  # Kup
+  - type: copy
+    from: Kup
+    src:  /tmp/kupbuilt/usr
+    dest: /usr
+  - type: copy
+    from: Kup
+    src:  /tmp/kupbuilt/etc
+    dest: /etc
   - from-file: common-packages.yml
   - from-file: common-modules.yml
   - from-file: common-fonts.yml
@@ -17,4 +94,3 @@ modules:
   - from-file: common-flatpaks.yml
   - from-file: common-bling.yml
   - from-file: common-files.yml
-  - from-file: common-containerfiles.yml
