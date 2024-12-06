@@ -70,6 +70,7 @@ install:
 optfix:
   - enpass
   - vivaldi
+  - pipx
 remove:
 - kwrite
 - kate
