@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-set -oe pipefail
+set -oue pipefail
 
-sudo pipx ensurepath --global
+pipx ensurepath --global
 pipx ensurepath
 pipx install gcalcli --global
