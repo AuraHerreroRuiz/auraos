@@ -54,6 +54,8 @@ install:
   - qemu-device-usb-redirect
   - qemu-device-display-virtio-vga
   - qemu-device-display-virtio-gpu
+  # Bup depencencies
+  - python3-libs
   #Kup dependencies
   - par2cmdline
   - libgit2
