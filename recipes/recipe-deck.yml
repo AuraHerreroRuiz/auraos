@@ -1,9 +1,10 @@
 # image will be published to ghcr.io/<user>/<name>
-name: auraos-deck
+name: auraos
 # description will be included in the image's metadata
 description: Aura's own personalised bazzite-deck image
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck:stable
+image-version: stable
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
