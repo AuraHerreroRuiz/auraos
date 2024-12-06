@@ -6,5 +6,6 @@ scripts:
   - posy-cursors.sh
   - zshplugins.sh
   - fluent-icons.sh
+  - kdotool.sh
   - keymapp.sh
   - xremap.sh
