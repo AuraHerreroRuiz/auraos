@@ -60,7 +60,6 @@ install:
   - par2cmdline
   - libgit2
   - python3-pyxattr
-  - python3-fusepy
   #Headset Control dependencies.
   - hidapi
   #PlasmaVault
