@@ -24,6 +24,7 @@ jobs:
           # !! Add your recipes here
           - recipe.yml
           - recipe-deck.yml
+          - recipe-gaming.yml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
