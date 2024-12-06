@@ -28,10 +28,8 @@ install:
   - ksystemlog
   # plasmoid stuff
   - qt6-qdbusviewer
-  - kcm_wacomtablet
   - plymouth-kcm
   - trash-cli
-  - touchegg
   - tuned-ppd
   - playerctl
   - python-spotipy
