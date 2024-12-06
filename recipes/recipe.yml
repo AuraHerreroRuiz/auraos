@@ -21,6 +21,10 @@ stages:
   - name: synaTudor
     from: fedora:41
     modules:
+      - type: files
+        files:
+          - source: sources/policies
+            destination: /tmp/sources/policies
       - type: script
         scripts:
           - build-tudor.sh
