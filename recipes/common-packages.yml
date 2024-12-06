@@ -4,7 +4,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/deltacopy/lightly-qt6/repo/fedora-41/deltacopy-lightly-qt6-fedora-41.repo
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-  # - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/insync.repo
+  - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/insync.repo
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/vscode.repo
   - https://copr.fedorainfracloud.org/coprs/pesader/showmethekey/repo/fedora-%OS_VERSION%/pesader-showmethekey-fedora-%OS_VERSION%.repo
 install:
@@ -13,8 +13,8 @@ install:
   - enpass
   - fzf
   - vivaldi-stable
-  # - insync
-  # - insync-dolphin
+  - insync
+  - insync-dolphin
   - lf
   - lsd
   - libreoffice
