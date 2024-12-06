@@ -15,6 +15,6 @@ git checkout "$(git tag --sort=tag --list 'kup-[0-9]*' | tail -n 1)"
 #Build Kup
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_WITH_QT6=ON -DQT_MAJOR_VERSION=6  ..
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make
 make install DESTDIR=/tmp/kupbuilt PREFIX='/usr'
