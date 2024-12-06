@@ -4,4 +4,4 @@ set -oe pipefail
 
 sudo pipx ensurepath --global
 pipx ensurepath
-pipx install gcalcli
+pipx install gcalcli --global
