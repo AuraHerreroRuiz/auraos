@@ -78,7 +78,6 @@ remove:
 - kate-krunner-plugin
 - vim-data
 - vim-minimal
-- vim-filesystem
 - vim-common
 - vim-enhanced
 - nano
