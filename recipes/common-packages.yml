@@ -1,6 +1,7 @@
 type: rpm-ostree
 repos:
   - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%OS_VERSION%/pennbauman-ports-fedora-%OS_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/deltacopy/lightly-qt6/repo/fedora-41/deltacopy-lightly-qt6-fedora-41.repo
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
   # - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/sources/repos/insync.repo
@@ -17,6 +18,7 @@ install:
   - lf
   - lsd
   - libreoffice
+  - lightly-qt6
   - micro
   - mosquitto
   - yakuake
