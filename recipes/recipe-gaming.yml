@@ -40,4 +40,3 @@ modules:
   - from-file: common-scripts.yml
   - from-file: deck-flatpaks.yml
   - from-file: common-files.yml
-  - from-file: deck-containerfiles.yml
