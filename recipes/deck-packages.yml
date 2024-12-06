@@ -72,8 +72,6 @@ optfix:
   - enpass
   - vivaldi
 remove:
-- firefox-langpacks
-- firefox
 - kwrite
 - kate
 - kate-plugins
