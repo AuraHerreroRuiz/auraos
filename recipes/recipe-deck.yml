@@ -41,12 +41,6 @@ modules:
   - from-file: deck-flatpaks.yml
   - from-file: common-files.yml
 # I don't need homebrew
-  - type: script
-    snippets:
-      - curl -Lo /tmp/brew-uninstall https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh
-      - chmod +x /tmp/brew-uninstall
-      - /tmp/brew-uninstall
-
   - type: systemd
     system:
       masked:
