@@ -40,3 +40,18 @@ modules:
   - from-file: common-scripts.yml
   - from-file: deck-flatpaks.yml
   - from-file: common-files.yml
+# I don't need homebrew
+  - type: script
+    snippets:
+      - ujust brew-remove
+  - type: systemd
+    system:
+      masked:
+        - brew-update.service
+        - brew-upgrade.service
+        - brew-setup.service
+    user:
+      masked:
+        - brew-update.service
+        - brew-upgrade.service
+        - brew-setup.service
