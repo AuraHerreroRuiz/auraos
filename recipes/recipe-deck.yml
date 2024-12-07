@@ -43,7 +43,10 @@ modules:
 # I don't need homebrew
   - type: script
     snippets:
-      - ujust brew-remove
+      - curl -Lo /tmp/brew-uninstall https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh
+      - chmod +x /tmp/brew-uninstall
+      - /tmp/brew-uninstall
+
   - type: systemd
     system:
       masked:

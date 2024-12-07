@@ -18,3 +18,8 @@ pin-deployment deployment:
 #Unpin a deployment. Use a number where 0 is the latest deployment, and increments the older the deployment.
 unpin-deployment deployment:
     sudo ostree admin pin -u "{{deployment}}"
+
+remove-homebrew:
+    curl -Lo /tmp/brew-uninstall https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh
+    chmod +x /tmp/brew-uninstall
+    /tmp/brew-uninstall
