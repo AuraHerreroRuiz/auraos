@@ -26,6 +26,7 @@ system:
     - com.yubico.yubioath
     - fr.romainvigier.MetadataCleaner
     # Gaming:
+    - net.davidotek.pupgui2
     - com.usebottles.bottles
     - com.discordapp.Discord
     - org.yuzu_emu.yuzu
