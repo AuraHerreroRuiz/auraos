@@ -26,6 +26,7 @@ install:
   - variety
   - krename
   - ksystemlog
+  - krdc
   # plasmoid stuff
   - qt6-qdbusviewer
   - plymouth-kcm
