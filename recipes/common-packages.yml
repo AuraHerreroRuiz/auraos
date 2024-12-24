@@ -28,6 +28,7 @@ install:
   - ksystemlog
   - krdc
   # plasmoid stuff
+  - applet-window-buttons
   - qt6-qdbusviewer
   - plymouth-kcm
   - trash-cli
