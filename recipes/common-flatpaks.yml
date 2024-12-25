@@ -46,8 +46,7 @@ system:
     - com.leinardi.gx52
     # Office:
     - md.obsidian.Obsidian
-    - org.mozilla.Thunderbird
-    - com.ulduzsoft.Birdtray
+    - eu.betterbird.Betterbird
     - org.gnome.SimpleScan
     - io.github.Qalculate.qalculate-qt
     - com.github.tenderowl.frog
