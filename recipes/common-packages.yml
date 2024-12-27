@@ -27,6 +27,9 @@ install:
   - krename
   - ksystemlog
   - krdc
+  # Workaround for QT apps
+  - qt5ct
+  - qt6ct
   # plasmoid stuff
   - applet-window-buttons
   - qt6-qdbusviewer
