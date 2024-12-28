@@ -68,6 +68,7 @@ install:
   #Kup dependencies
   - par2cmdline
   - libgit2
+  - python3.12-libs
   - python3-pyxattr
   - python3-fusepy
   #Headset Control dependencies.

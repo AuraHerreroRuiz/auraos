@@ -60,6 +60,7 @@ install:
   #Kup dependencies
   - par2cmdline
   - libgit2
+  - python3.12-libs
   - python3-pyxattr
   #Headset Control dependencies.
   - hidapi
