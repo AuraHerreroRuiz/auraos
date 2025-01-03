@@ -25,7 +25,7 @@ install:
   - ksystemlog
   - krdc
   # Scaling GTK apps correctly
-  - gnome-settings-daemon
+  # - gnome-settings-daemon
   # plasmoid stuff
   - qt6-qdbusviewer
   - plymouth-kcm
@@ -91,4 +91,3 @@ remove:
 - breeze-gtk-gtk2
 - breeze-gtk-gtk3
 - breeze-gtk-gtk4
-- kde-gtk-config
