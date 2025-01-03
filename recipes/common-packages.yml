@@ -31,7 +31,7 @@ install:
   - qt5ct
   - qt6ct
   # Scaling GTK apps correctly
-  # - gnome-settings-daemon
+  - gnome-settings-daemon
   # plasmoid stuff
   - applet-window-buttons
   - qt6-qdbusviewer
@@ -103,3 +103,4 @@ remove:
 - breeze-gtk-gtk2
 - breeze-gtk-gtk3
 - breeze-gtk-gtk4
+- kde-gtk-config
