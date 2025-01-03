@@ -30,8 +30,6 @@ install:
   # Workaround for QT apps
   - qt5ct
   - qt6ct
-  # Scaling GTK apps correctly
-  - gnome-settings-daemon
   # plasmoid stuff
   - applet-window-buttons
   - qt6-qdbusviewer
@@ -99,8 +97,3 @@ remove:
 - nano
 - nano-default-editor
 - default-editor
-- breeze-gtk-common
-- breeze-gtk-gtk2
-- breeze-gtk-gtk3
-- breeze-gtk-gtk4
-- kde-gtk-config
