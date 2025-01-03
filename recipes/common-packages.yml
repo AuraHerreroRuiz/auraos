@@ -30,6 +30,8 @@ install:
   # Workaround for QT apps
   - qt5ct
   - qt6ct
+  # Scaling GTK apps correctly
+  - gnome-settings-daemon
   # plasmoid stuff
   - applet-window-buttons
   - qt6-qdbusviewer
