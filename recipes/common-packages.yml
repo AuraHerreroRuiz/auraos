@@ -27,6 +27,7 @@ install:
   - krename
   - ksystemlog
   - krdc
+  - k3ba
   # Workaround for QT apps
   - qt5ct
   - qt6ct
