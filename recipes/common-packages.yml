@@ -28,6 +28,8 @@ install:
   - ksystemlog
   - krdc
   - k3b
+  - libburn
+  - cdrskin
   # Workaround for QT apps
   - qt5ct
   - qt6ct
