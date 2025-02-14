@@ -6,7 +6,7 @@ set -oe pipefail
 
 cd /tmp
 git clone https://github.com/vinceliuice/Fluent-icon-theme
-
+git checkout "$(git tag --sort=taggerdate --list '[0-9]*' | tail -n 1)"
 #!/usr/bin/env bash
 
 # if [ ${UID} -eq 0 ]; then
