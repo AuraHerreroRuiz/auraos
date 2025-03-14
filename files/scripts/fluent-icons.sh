@@ -24,7 +24,6 @@ readonly COLOR_VARIANTS=("standard" "green" "grey" "orange" "pink" "purple" "red
 readonly BRIGHT_VARIANTS=("" "light" "dark")
 readonly DEFAULT_NAME="Fluent"
 color=("standard")
-round=false
 install_theme() {
   # Appends a dash if the variables are not empty
   if [[ "$1" != "standard" ]]; then
@@ -50,9 +49,9 @@ install_theme() {
   sed -i "s/%NAME%/${THEME_NAME//-/ }/g"                                         "${THEME_DIR}/index.theme"
 
   if [[ -z "${brightprefix}" ]]; then
-    cp -r "${SRC_DIR}"/src/{16,22,24,32,64,256,scalable,symbolic}                "${THEME_DIR}"
+    cp -r "${SRC_DIR}"/src/{16,22,24,32,256,scalable,symbolic}                   "${THEME_DIR}"
 
-    cp -r "${SRC_DIR}"/links/{16,22,24,32,64,256,scalable,symbolic}              "${THEME_DIR}"
+    cp -r "${SRC_DIR}"/links/{16,22,24,32,256,scalable,symbolic}                 "${THEME_DIR}"
 
     if [[ -n "${colorprefix}" ]]; then
       install -m644 "${SRC_DIR}"/colors/color${colorprefix}/places/*.svg         "${THEME_DIR}/scalable/places"
@@ -78,7 +77,6 @@ install_theme() {
     # Link the common icons
     ln -sr "${STD_THEME_DIR}/scalable"                                           "${THEME_DIR}/scalable"
     ln -sr "${STD_THEME_DIR}/32"                                                 "${THEME_DIR}/32"
-    ln -sr "${STD_THEME_DIR}/64"                                                 "${THEME_DIR}/64"
     ln -sr "${STD_THEME_DIR}/256"                                                "${THEME_DIR}/256"
     ln -sr "${STD_THEME_DIR}/16/actions"                                         "${THEME_DIR}/16/actions"
     ln -sr "${STD_THEME_DIR}/16/devices"                                         "${THEME_DIR}/16/devices"
@@ -86,6 +84,7 @@ install_theme() {
     ln -sr "${STD_THEME_DIR}/16/places"                                          "${THEME_DIR}/16/places"
     ln -sr "${STD_THEME_DIR}/16/status"                                          "${THEME_DIR}/16/status"
     ln -sr "${STD_THEME_DIR}/22/actions"                                         "${THEME_DIR}/22/actions"
+    ln -sr "${STD_THEME_DIR}/22/categories"                                      "${THEME_DIR}/22/categories"
     ln -sr "${STD_THEME_DIR}/22/devices"                                         "${THEME_DIR}/22/devices"
     ln -sr "${STD_THEME_DIR}/22/emblems"                                         "${THEME_DIR}/22/emblems"
     ln -sr "${STD_THEME_DIR}/22/mimetypes"                                       "${THEME_DIR}/22/mimetypes"
@@ -103,19 +102,20 @@ install_theme() {
     install -d "${THEME_DIR}"/{16,22,24,32,symbolic}
 
     cp -r "${SRC_DIR}"/src/16/{actions,devices,places}                           "${THEME_DIR}/16"
-    cp -r "${SRC_DIR}"/src/22/{actions,devices,places}                           "${THEME_DIR}/22"
+    cp -r "${SRC_DIR}"/src/22/{actions,categories,devices,places}                "${THEME_DIR}/22"
     cp -r "${SRC_DIR}"/src/24/{actions,devices,places}                           "${THEME_DIR}/24"
     cp -r "${SRC_DIR}"/src/32/{actions,devices,status}                           "${THEME_DIR}/32"
     cp -r "${SRC_DIR}"/src/symbolic/*                                            "${THEME_DIR}/symbolic"
 
     # Change icon color for dark theme
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/22/categories/*.svg
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{16,22,24,32}/actions/*.svg
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/32/{devices,status}/*.svg
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{16,22,24}/{places,devices}/*.svg
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/symbolic/{actions,apps,categories,devices,emblems,emotes,mimetypes,places,status}/*.svg
 
     cp -r "${SRC_DIR}"/links/16/{actions,devices,places}                         "${THEME_DIR}/16"
-    cp -r "${SRC_DIR}"/links/22/{actions,devices,places}                         "${THEME_DIR}/22"
+    cp -r "${SRC_DIR}"/links/22/{actions,categories,devices,places}              "${THEME_DIR}/22"
     cp -r "${SRC_DIR}"/links/24/{actions,devices,places}                         "${THEME_DIR}/24"
     cp -r "${SRC_DIR}"/links/32/{actions,devices,status}                         "${THEME_DIR}/32"
     cp -r "${SRC_DIR}"/links/symbolic/*                                          "${THEME_DIR}/symbolic"
@@ -131,7 +131,6 @@ install_theme() {
     ln -sr "${STD_THEME_DIR}/24/animations"                                      "${THEME_DIR}/24/animations"
     ln -sr "${STD_THEME_DIR}/24/panel"                                           "${THEME_DIR}/24/panel"
     ln -sr "${STD_THEME_DIR}/32/categories"                                      "${THEME_DIR}/32/categories"
-    ln -sr "${STD_THEME_DIR}/64"                                                 "${THEME_DIR}/64"
     ln -sr "${STD_THEME_DIR}/256"                                                "${THEME_DIR}/256"
   fi
 
@@ -139,7 +138,6 @@ install_theme() {
   ln -sr "${THEME_DIR}/22"                                                       "${THEME_DIR}/22@2x"
   ln -sr "${THEME_DIR}/24"                                                       "${THEME_DIR}/24@2x"
   ln -sr "${THEME_DIR}/32"                                                       "${THEME_DIR}/32@2x"
-  ln -sr "${THEME_DIR}/64"                                                       "${THEME_DIR}/64@2x"
   ln -sr "${THEME_DIR}/256"                                                      "${THEME_DIR}/256@2x"
   ln -sr "${THEME_DIR}/scalable"                                                 "${THEME_DIR}/scalable@2x"
 
@@ -147,7 +145,6 @@ install_theme() {
   ln -sr "${THEME_DIR}/22"                                                       "${THEME_DIR}/22@3x"
   ln -sr "${THEME_DIR}/24"                                                       "${THEME_DIR}/24@3x"
   ln -sr "${THEME_DIR}/32"                                                       "${THEME_DIR}/32@3x"
-  ln -sr "${THEME_DIR}/64"                                                       "${THEME_DIR}/64@3x"
   ln -sr "${THEME_DIR}/256"                                                      "${THEME_DIR}/256@3x"
   ln -sr "${THEME_DIR}/scalable"                                                 "${THEME_DIR}/scalable@3x"
 
