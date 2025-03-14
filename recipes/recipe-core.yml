@@ -1,10 +1,10 @@
 # image will be published to ghcr.io/<user>/<name>
-name: auraos-slim
+name: auraos-core
 # description will be included in the image's metadata
-description: Aura's own personalised slim image
+description: Aura's own personalised core image
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 41
+base-image: ghcr.io/ublue-os/ucore-hci
+image-version: stable-zfs
 stages:
   - name: JetBrainsMonoSlashedNerdFont
     from: fedora:41
@@ -12,12 +12,6 @@ stages:
       - type: script
         scripts:
           - build-JetBrainsMonoSlashedNerdFont.sh
-  - name: HeadsetControl
-    from: fedora:41
-    modules:
-      - type: script
-        scripts:
-          - build-headsetcontrol.sh
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
@@ -31,17 +25,25 @@ modules:
       - fc-cache -fv
   - type: rpm-ostree
     install:
-      - docker-compose
+      - nginx
       - zsh
       - zsh-autosuggestions
       - zsh-syntax-highlighting
   - from-file: common-modules.yml
-  - from-file: common-fonts.yml
   - type: script
     scripts:
       - atuin.sh
       - moar.sh
-      - posy-cursors.sh
       - zshplugins.sh
-      - fluent-icons.sh
-  - from-file: common-files.yml
+  - type: files
+    files:
+      - source: system/etc/p10k
+        destination: /etc/p10k
+      - source: system/etc/profile.d
+        destination: /etc/profile.d
+      - source: system/etc/enviornment
+        destination: /etc/enviornment
+      - source: system/etc/inputrc
+        destination: /etc/inputrc
+      - source: system/etc/zshrc
+        destination: /etc/zshrc
