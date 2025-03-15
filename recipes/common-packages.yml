@@ -49,6 +49,7 @@ install:
   - pamu2fcfg
   - wireshark
   - ydotool
+  - wget2
   # zsh and its plugins
   - zsh
   - zsh-autosuggestions
