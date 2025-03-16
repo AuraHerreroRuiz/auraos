@@ -25,7 +25,6 @@ modules:
       - fc-cache -fv
   - type: rpm-ostree
     install:
-      - wget2
       - nginx
       - zsh
       - zsh-autosuggestions
