@@ -41,7 +41,7 @@ modules:
         destination: /etc/p10k
       - source: system/etc/profile.d
         destination: /etc/profile.d
-      - source: system/etc/enviornment
+      - source: system/etc/environment
         destination: /etc/enviornment
       - source: system/etc/inputrc
         destination: /etc/inputrc
