@@ -16,6 +16,7 @@ stages:
 # you can include multiple instances of the same module
 modules:
   - type: akmods
+    base: coreos-stable
     install:
       - openrgb # Turn off annoying rgb
   # JetBrainsMonoSlashedNerdFont
