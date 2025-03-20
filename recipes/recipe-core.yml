@@ -4,7 +4,7 @@ name: auraos-core
 description: Aura's own personalised core image
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/ucore-hci
-image-version: stable-zfs
+image-version: stable
 stages:
   - name: JetBrainsMonoSlashedNerdFont
     from: fedora:41
