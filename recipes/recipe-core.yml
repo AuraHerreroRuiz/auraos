@@ -25,6 +25,10 @@ modules:
       - fc-cache -fv
   - type: rpm-ostree
     install:
+      - trash-cli
+      - lf
+      - lsd
+      - micro
       - nginx
       - zsh
       - fzf
