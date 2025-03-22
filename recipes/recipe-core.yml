@@ -14,7 +14,7 @@ stages:
           - build-JetBrainsMonoSlashedNerdFont.sh
 # module configuration, executed in order
 # you can include multiple instances of the same module
-modules: 
+modules:
   # JetBrainsMonoSlashedNerdFont
   - type: copy
     from: JetBrainsMonoSlashedNerdFont
@@ -27,6 +27,7 @@ modules:
     install:
       - nginx
       - zsh
+      - fzf
       - zsh-autosuggestions
       - zsh-syntax-highlighting
   - from-file: common-modules.yml
