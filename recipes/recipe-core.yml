@@ -27,7 +27,6 @@ modules:
     install:
       - trash-cli
       - fastfetch
-      - lf
       - lsd
       - micro
       - nginx
