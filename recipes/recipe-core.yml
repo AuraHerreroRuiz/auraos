@@ -26,6 +26,9 @@ modules:
   - type: rpm-ostree
     install:
       - trash-cli
+      - cockpit-file-sharing
+      - cockpit-navigator
+      - cockpit-ostree
       - fastfetch
       - lsd
       - micro
