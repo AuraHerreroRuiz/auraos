@@ -96,5 +96,4 @@ modules:
   - from-file: common-akmods.yml
   - from-file: common-scripts.yml
   - from-file: common-flatpaks.yml
-  - from-file: common-bling.yml
   - from-file: common-files.yml
