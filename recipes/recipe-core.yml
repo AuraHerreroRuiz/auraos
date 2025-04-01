@@ -30,6 +30,7 @@ modules:
       - cockpit-ostree
       - fastfetch
       - lsd
+      - just
       - micro
       - nginx
       - zsh
