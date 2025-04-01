@@ -1,0 +1,50 @@
+# image will be published to ghcr.io/<user>/<name>
+name: auraos-thin
+# description will be included in the image's metadata
+description: Aura's own personalised image for thin clients
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: stable
+stages:
+  - name: JetBrainsMonoSlashedNerdFont
+    from: fedora:41
+    modules:
+      - type: script
+        scripts:
+          - build-JetBrainsMonoSlashedNerdFont.sh
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  # JetBrainsMonoSlashedNerdFont
+  - type:
+  - type: copy
+    from: JetBrainsMonoSlashedNerdFont
+    src:  /tmp/usr
+    dest: /usr
+  - type: script
+    snippets:
+      - fc-cache -fv
+  - type: rpm-ostree
+    install:
+      - zsh
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
+  - from-file: common-modules.yml
+  - from-file: common-fonts.yml
+  - type: script
+    scripts:
+      - atuin.sh
+      - moar.sh
+      - posy-cursors.sh
+      - zshplugins.sh
+      - fluent-icons.sh
+  - from-file: common-files.yml
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      install:
+        - org.mozilla.firefox

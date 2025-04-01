@@ -25,6 +25,7 @@ jobs:
           - recipe.yml
           - recipe-deck.yml
           - recipe-core.yml
+          - recipe-thin.yml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
