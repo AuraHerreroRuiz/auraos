@@ -16,7 +16,6 @@ stages:
 # you can include multiple instances of the same module
 modules:
   # JetBrainsMonoSlashedNerdFont
-  - type:
   - type: copy
     from: JetBrainsMonoSlashedNerdFont
     src:  /tmp/usr
