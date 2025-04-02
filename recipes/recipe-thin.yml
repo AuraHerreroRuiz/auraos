@@ -39,6 +39,7 @@ modules:
       - fluent-icons.sh
   - from-file: common-files.yml
   - from-file: common-topgrade.yml
+  - from-file: common-auto-update-reboot.yml
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:

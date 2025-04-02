@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+rpm-ostree status --pending-exit-77 > /dev/null
+
+case "$?" in
+    "0")
+        exit 0
+        ;;
+    "77")
+        systemctl reboot
+        exit
+        ;;
+    *)
+        exit 1
+        ;;
+esac

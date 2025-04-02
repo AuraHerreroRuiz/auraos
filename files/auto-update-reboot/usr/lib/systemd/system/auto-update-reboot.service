@@ -1,0 +1,6 @@
+[Unit]
+Description=Scheduled reboot with pending updates service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/auto-update-reboot

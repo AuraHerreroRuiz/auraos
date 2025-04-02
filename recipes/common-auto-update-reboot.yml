@@ -1,0 +1,11 @@
+- type: files
+  files:
+    - source: auto-update-reboot
+      destination: /
+- type: script
+  snippets:
+    - "chmod 755 /usr/bin/auto-update-reboot"
+- type: systemd
+  system:
+    enabled:
+      - auto-update-reboot.timer

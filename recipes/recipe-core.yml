@@ -56,3 +56,4 @@ modules:
         destination: /etc/inputrc
       - source: system/etc/zshrc
         destination: /etc/zshrc
+  - from-file: common-auto-update-reboot.yml
