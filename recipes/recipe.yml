@@ -97,3 +97,4 @@ modules:
   - from-file: common-scripts.yml
   - from-file: common-flatpaks.yml
   - from-file: common-files.yml
+  - from-file: common-topgrade.yml

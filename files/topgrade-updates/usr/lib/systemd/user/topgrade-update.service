@@ -1,0 +1,6 @@
+[Unit]
+Description=Auto Update With Topgrade Oneshot Service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/topgrade-update

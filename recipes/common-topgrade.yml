@@ -1,0 +1,25 @@
+# Setup topgrade service to manage updates
+- type: rpm-ostree
+  repos:
+    - https://copr.fedorainfracloud.org/coprs/lilay/topgrade/repo/fedora-%OS_VERSION%/lilay-topgrade-fedora-%OS_VERSION%.repo
+  install:
+    - topgrade
+
+- type: files
+  files:
+    - source: topgrade-updates
+      destination: /
+- type: script
+  snippets:
+    - "chmod 755 /usr/bin/topgrade-update"
+
+- type: systemd
+  system:
+    disabled:
+      - rpm-ostreed-automatic.timer
+      - flatpak-system-update.timer
+  user:
+    disabled:
+      - flatpak-user-update.timer
+    enabled:
+      - topgrade-update.timer

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+metered=$(busctl get-property org.freedesktop.NetworkManager /org/freedesktop/NetworkManager org.freedesktop.NetworkManager Metered | cut -d ' ' -f 2)
+battery=$(cat /sys/class/power_supply/BAT?/capacity &> /dev/null)
+cpu=$(top -bn1 | awk '/Cpu/ { print $2}' | cut -d',' -f1)
+ram=$(free -g | awk '/Mem/ { print $7}')
+
+if [[ -n $battery && $battery -le 15 ]]; then
+    echo "Too little battery to upgrade"
+    exit 2
+fi
+if [[ $cpu -ge 75 ]]; then
+    echo "CPU too busy too update"
+    exit 3
+fi
+if [[ $ram -le 4 ]]; then
+    echo "Too little memory to upgrade"
+    exit 4
+fi
+if [[ $metered != 4 && $metered != 2 ]]; then
+    echo "Can't upgrade on metered or no connection"
+    exit 5
+fi
+echo "Proceeding with update..."
+notify-send -i system-update-symbolic -a "Topgrade Auto Updates" "Updating the system..."
+
+if /usr/bin/topgrade --no-retry --cleanup --yes --skip-notify; then
+    notify-send -i checkmark -a "Topgrade Auto Updates" "Updating finished."
+else
+    notify-send -i system-error -a "Topgrade Auto Updates" "Failed to update the system. See logs for more details."
+    exit 1
+fi

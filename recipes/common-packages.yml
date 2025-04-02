@@ -7,7 +7,6 @@ repos:
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/files/sources/repos/insync.repo
   - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/files/sources/repos/vscode.repo
   - https://copr.fedorainfracloud.org/coprs/pesader/showmethekey/repo/fedora-%OS_VERSION%/pesader-showmethekey-fedora-%OS_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/lilay/topgrade/repo/fedora-%OS_VERSION%/lilay-topgrade-fedora-%OS_VERSION%.repo
 install:
   - code
   - ddcutil
@@ -31,7 +30,6 @@ install:
   - k3b
   - libburn
   - cdrskin
-  - topgrade
   # Workaround for QT apps
   - qt5ct
   - qt6ct

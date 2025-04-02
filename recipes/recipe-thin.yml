@@ -38,6 +38,7 @@ modules:
       - zshplugins.sh
       - fluent-icons.sh
   - from-file: common-files.yml
+  - from-file: common-topgrade.yml
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
