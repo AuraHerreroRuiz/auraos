@@ -25,6 +25,7 @@ modules:
       - fc-cache -fv
   - type: rpm-ostree
     install:
+      - micro
       - zsh
       - zsh-autosuggestions
       - zsh-syntax-highlighting
