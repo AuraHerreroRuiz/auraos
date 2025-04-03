@@ -3,13 +3,16 @@ rpm-ostree status --pending-exit-77 > /dev/null
 
 case "$?" in
     "0")
+        echo "No updates pending, skip rebooting."
         exit 0
         ;;
     "77")
+        echo "Updates pending, reboot triggered."
         systemctl reboot
-        exit
+        exit 0
         ;;
     *)
+        echo "Querying for pending update status failed."
         exit 1
         ;;
 esac
