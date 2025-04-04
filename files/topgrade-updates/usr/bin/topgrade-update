@@ -9,11 +9,11 @@ if [[ -n $battery && $battery -le 15 ]]; then
     echo "Too little battery to upgrade"
     exit 2
 fi
-if [[ $cpu -ge 75 ]]; then
+if [[ $cpu -ge 80 ]]; then
     echo "CPU too busy too update"
     exit 3
 fi
-if [[ $ram -le 4 ]]; then
+if [[ $ram -le 1 ]]; then
     echo "Too little memory to upgrade"
     exit 4
 fi
