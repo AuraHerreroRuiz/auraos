@@ -5,6 +5,7 @@ Wants=network-online.target
 [Timer]
 RandomizedDelaySec=30min
 OnUnitInactiveSec=3h
+OnBootSec=3h
 Persistent=true
 
 [Install]
