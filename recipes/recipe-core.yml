@@ -38,6 +38,10 @@ modules:
       - fzf
       - zsh-autosuggestions
       - zsh-syntax-highlighting
+    remove:
+      - docker-cli
+      - moby-engine
+      - moby-filesystem
   - from-file: common-modules.yml
   - type: script
     scripts:
