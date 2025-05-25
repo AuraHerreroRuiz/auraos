@@ -26,6 +26,7 @@ modules:
   - type: rpm-ostree
     install:
       - trash-cli
+      - podman-docker
       - cockpit-navigator
       - cockpit-ostree
       - fastfetch
