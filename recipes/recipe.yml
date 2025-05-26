@@ -19,7 +19,7 @@ stages:
         scripts:
           - build-headsetcontrol.sh
   - name: synaTudor
-    from: fedora:42
+    from: fedora:41
     modules:
       - type: files
         files:
