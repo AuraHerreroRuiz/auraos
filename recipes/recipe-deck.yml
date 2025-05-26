@@ -13,7 +13,7 @@ stages:
         scripts:
           - build-JetBrainsMonoSlashedNerdFont.sh
   - name: HeadsetControl
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: script
         scripts:
