@@ -75,9 +75,19 @@ install:
 optfix:
   - enpass
   - vivaldi
-group-remove:
+remove:
   packages:
+    - firefox-langpacks
     - firefox
+    - kwrite
     - kate
-    - vim
+    - kate-plugins
+    - kate-krunner-plugin
+    - vim-data
+    - vim-minimal
+    - vim-filesystem
+    - vim-common
+    - vim-enhanced
     - nano
+    - nano-default-editor
+    - default-editor
