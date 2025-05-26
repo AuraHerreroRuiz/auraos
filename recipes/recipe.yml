@@ -4,22 +4,22 @@ name: auraos
 description: Aura's own personalised uBlue image
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 41
+image-version: 42
 stages:
   - name: JetBrainsMonoSlashedNerdFont
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: script
         scripts:
           - build-JetBrainsMonoSlashedNerdFont.sh
   - name: HeadsetControl
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: script
         scripts:
           - build-headsetcontrol.sh
   - name: synaTudor
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: files
         files:
@@ -29,13 +29,13 @@ stages:
         scripts:
           - build-tudor.sh
   - name: Bup
-    from: fedora:40
+    from: fedora:42
     modules:
       - type: script
         scripts:
           - build-bup.sh
   - name: Kup
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: script
         scripts:

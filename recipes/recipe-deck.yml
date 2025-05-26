@@ -7,7 +7,7 @@ base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
 stages:
   - name: JetBrainsMonoSlashedNerdFont
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: script
         scripts:

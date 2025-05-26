@@ -4,10 +4,10 @@ name: auraos-thin
 description: Aura's own personalised image for thin clients
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 41
+image-version: 42
 stages:
   - name: JetBrainsMonoSlashedNerdFont
-    from: fedora:41
+    from: fedora:42
     modules:
       - type: script
         scripts:
