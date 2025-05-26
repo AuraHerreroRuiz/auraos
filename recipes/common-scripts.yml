@@ -1,6 +1,7 @@
 type: script
 scripts:
   - atuin.sh
+  - codium.sh
   - moar.sh
   - posy-cursors.sh
   - zshplugins.sh
