@@ -23,27 +23,19 @@ modules:
   - type: script
     snippets:
       - fc-cache -fv
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - micro
-      - zsh
-      - zsh-autosuggestions
-      - zsh-syntax-highlighting
-    remove:
-      - firefox
-      - firefox-langpacks
-      - kwrite
-      - kate
-      - kate-plugins
-      - kate-krunner-plugin
-      - vim-data
-      - vim-minimal
-      - vim-filesystem
-      - vim-common
-      - vim-enhanced
-      - nano
-      - nano-default-editor
-      - default-editor
+      packages:
+        - micro
+        - zsh
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
+    group-remove:
+      packages:
+        - firefox
+        - kate
+        - vim
+        - nano
   - from-file: common-modules.yml
   - from-file: common-fonts.yml
   - type: script

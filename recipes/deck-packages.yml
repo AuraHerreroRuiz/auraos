@@ -1,87 +1,83 @@
-type: rpm-ostree
+type: dnf
 repos:
-  - https://copr.fedorainfracloud.org/coprs/pennbauman/ports/repo/fedora-%OS_VERSION%/pennbauman-ports-fedora-%OS_VERSION%.repo
+  files:
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-  - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/files/sources/repos/insync.repo
-  - https://raw.githubusercontent.com/AuraHerreroRuiz/auraos/main/files/sources/repos/vscode.repo
-  - https://copr.fedorainfracloud.org/coprs/pesader/showmethekey/repo/fedora-%OS_VERSION%/pesader-showmethekey-fedora-%OS_VERSION%.repo
+  - insync.repo
+  - vscode.repo
+  copr:
+  - pennbauman/ports
+  - deltacopy/darkly
+  - pesader/showmethekey
 install:
-  - code
-  - enpass
-  - fzf
-  - vivaldi-stable
-  - insync
-  - insync-dolphin
-  - lf
-  - lsd
-  - libreoffice
-  - micro
-  - mosquitto
-  - yakuake
-  - hunspell-es
-  - variety
-  - krename
-  - ksystemlog
-  - krdc
-  # plasmoid stuff
-  - qt6-qdbusviewer
-  - plymouth-kcm
-  - trash-cli
-  - playerctl
-  - python-spotipy
-  - solaar
-  - showmethekey
-  - terminus-fonts-console
-  - pipx
-  - pam-u2f
-  - pamu2fcfg
-  - wireshark
-  - ydotool
-  # zsh and its plugins
-  - zsh
-  - zsh-autosuggestions
-  - zsh-syntax-highlighting
-  #Virt-manager packages from bluefin-dx
-  - qemu
-  - qemu-user-binfmt
-  - virt-manager
-  - libvirt
-  - edk2-ovmf
-  - genisoimage
-  - qemu-img
-  - qemu-system-x86-core
-  - qemu-char-spice
-  - qemu-device-usb-redirect
-  - qemu-device-display-virtio-vga
-  - qemu-device-display-virtio-gpu
-  # Bup depencencies
-  - python3-libs
-  #Kup dependencies
-  - par2cmdline
-  - libgit2
-  - python3.12-libs
-  - python3-pyxattr
-  #Headset Control dependencies.
-  - hidapi
-  #PlasmaVault
-  - cryfs
-  - fmt
-  #Keymapp
-  - webkit2gtk4.1
+  packages:
+    - code
+    - enpass
+    - fzf
+    - vivaldi-stable
+    - insync
+    - insync-dolphin
+    - lf
+    - lsd
+    - libreoffice
+    - micro
+    - mosquitto
+    - yakuake
+    - hunspell-es
+    - variety
+    - krename
+    - ksystemlog
+    - krdc
+    # plasmoid stuff
+    - qt6-qdbusviewer
+    - plymouth-kcm
+    - trash-cli
+    - playerctl
+    - python-spotipy
+    - solaar
+    - showmethekey
+    - terminus-fonts-console
+    - pam-u2f
+    - pamu2fcfg
+    - wireshark
+    - ydotool
+    # zsh and its plugins
+    - zsh
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
+    #Virt-manager packages from bluefin-dx
+    - qemu
+    - qemu-user-binfmt
+    - virt-manager
+    - libvirt
+    - edk2-ovmf
+    - genisoimage
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-char-spice
+    - qemu-device-usb-redirect
+    - qemu-device-display-virtio-vga
+    - qemu-device-display-virtio-gpu
+    # Bup depencencies
+    - python3-libs
+    #Kup dependencies
+    - par2cmdline
+    - libgit2
+    - python3.12-libs
+    - python3-pyxattr
+    #Headset Control dependencies.
+    - hidapi
+    #PlasmaVault
+    - cryfs
+    - fmt
+    #Keymapp
+    - webkit2gtk4.1
 optfix:
   - enpass
   - vivaldi
-  - pipx
-remove:
-- kwrite
-- kate
-- kate-plugins
-- kate-krunner-plugin
-- vim-data
-- vim-minimal
-- vim-common
-- vim-enhanced
-- nano
-- nano-default-editor
-- default-editor
+group-remove:
+  packages:
+    - firefox
+    - kate
+    - vim
+    - nano

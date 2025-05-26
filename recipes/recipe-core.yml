@@ -23,25 +23,25 @@ modules:
   - type: script
     snippets:
       - fc-cache -fv
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - trash-cli
-      - podman-docker
-      - cockpit-navigator
-      - cockpit-ostree
-      - fastfetch
-      - lsd
-      - just
-      - micro
-      - nginx
-      - zsh
-      - fzf
-      - zsh-autosuggestions
-      - zsh-syntax-highlighting
-    remove:
-      - docker-cli
-      - moby-engine
-      - moby-filesystem
+      packages:
+        - trash-cli
+        - podman-docker
+        - cockpit-navigator
+        - cockpit-ostree
+        - fastfetch
+        - lsd
+        - just
+        - micro
+        - nginx
+        - zsh
+        - fzf
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
+    group-remove:
+      packages:
+        - moby-engine
   - from-file: common-modules.yml
   - type: script
     scripts:

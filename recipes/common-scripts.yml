@@ -2,7 +2,6 @@ type: script
 scripts:
   - atuin.sh
   - moar.sh
-  - gcalcli.sh
   - posy-cursors.sh
   - zshplugins.sh
   - fluent-icons.sh
