@@ -29,7 +29,7 @@ stages:
         scripts:
           - build-tudor.sh
   - name: Bup
-    from: fedora:42
+    from: fedora:40
     modules:
       - type: script
         scripts:
