@@ -29,7 +29,7 @@ $(curl -GL \
 sha256sum -c ./*.sha256
 
 #Install the package
-dnf install ./*.rpm
+dnf install -y ./*.rpm
 
 #Change the icon to the transparent style
 curl -GL https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png -o /usr/share/pixmaps/vscodium.png
