@@ -35,4 +35,4 @@ dnf install -y ./*.rpm
 curl -GL https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png -o /usr/share/pixmaps/vscodium.png
 
 # Delete out of date icon from fluent
-sudo rm /usr/share/icons/Fluent/scalable/apps/*codium.svg
+rm /usr/share/icons/Fluent/scalable/apps/*codium.svg
