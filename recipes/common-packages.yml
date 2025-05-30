@@ -4,14 +4,14 @@ repos:
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
   - insync.repo
-  - vscode.repo
+  # - vscode.repo
   copr:
   - pennbauman/ports
   - deltacopy/darkly
   - pesader/showmethekey
 install:
   packages:
-    - code
+    # - code
     - ddcutil
     - enpass
     - fzf
