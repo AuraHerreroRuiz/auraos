@@ -1,11 +1,11 @@
 type: script
 scripts:
   - atuin.sh
+  - fluent-icons.sh
   - codium.sh
   - moar.sh
   - posy-cursors.sh
   - zshplugins.sh
-  - fluent-icons.sh
   - kdotool.sh
   - keymapp.sh
   - xremap.sh
