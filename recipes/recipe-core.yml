@@ -37,7 +37,6 @@ modules:
         - nginx
         - zsh
         - fzf
-        - xfsprogs-xfs_scrub
         - zsh-autosuggestions
         - zsh-syntax-highlighting
     remove:
