@@ -29,9 +29,9 @@ jobs:
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
-        uses: blue-build/github-action@v1.8
+        uses:  blue-build/github-action@v1
         with:
-          cli_version: v0.9.12
+          # cli_version: v0.9.12
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
