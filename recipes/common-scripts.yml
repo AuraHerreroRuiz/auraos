@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/script-latest.json
 type: script
 scripts:
   - atuin.sh

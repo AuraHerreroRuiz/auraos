@@ -1,11 +1,12 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: default-flatpaks
 configurations:
   - notify: true # Send notification after install/uninstall is finished (true/false)
     scope: system
     repo:
-      - url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      - name: flathub
-      - title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      name: flathub
+      title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
     install:
     # KDE Apps:
     - org.kde.digikam
@@ -82,6 +83,6 @@ configurations:
   - notify: false # Send notification after install/uninstall is finished (true/false)
     scope: user
     repo:
-      - url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      - name: flathub
-      - title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      name: flathub
+      title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
