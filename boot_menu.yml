@@ -3,5 +3,3 @@ ublue_variants:
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: auraos
-      - label: auraos-nvidia
-        info: Nvidia Drivers
