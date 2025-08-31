@@ -4,7 +4,7 @@ repos:
   files:
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-  - insync.repo
+  # - insync.repo
   # - vscode.repo
   copr:
   - pennbauman/ports
@@ -17,8 +17,8 @@ install:
     - enpass
     - fzf
     - vivaldi-stable
-    - insync
-    - insync-dolphin
+    # - insync
+    # - insync-dolphin
     - lf
     - lsd
     - libreoffice

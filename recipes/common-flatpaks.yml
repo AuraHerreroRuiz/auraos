@@ -51,6 +51,7 @@ configurations:
     - org.gnome.SimpleScan
     - io.github.Qalculate.qalculate-qt
     - com.github.tenderowl.frog
+    - com.nextcloud.talk
     # Development
     - io.dbeaver.DBeaverCommunity
     - com.jgraph.drawio.desktop
@@ -61,6 +62,7 @@ configurations:
     - org.filezillaproject.Filezilla
     - org.qbittorrent.qBittorrent
     - org.x.Warpinator
+    - com.nextcloud.desktopclient.nextcloud
     # System monitoring
     - org.rncbc.qpwgraph
     # Media consumption
