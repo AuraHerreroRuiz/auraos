@@ -51,7 +51,6 @@ configurations:
     - org.gnome.SimpleScan
     - io.github.Qalculate.qalculate-qt
     - com.github.tenderowl.frog
-    - com.nextcloud.talk
     # Development
     - io.dbeaver.DBeaverCommunity
     - com.jgraph.drawio.desktop
