@@ -5,19 +5,19 @@ battery=$(cat /sys/class/power_supply/BAT?/capacity &> /dev/null)
 cpu=$(top -bn1 | awk '/Cpu/ { print $2}' | cut -d',' -f1)
 ram=$(free -g | awk '/Mem/ { print $7}')
 
-if [[ -n $battery && $battery -le 15 ]]; then
+if [[ -n $battery && $battery -le 15 && ! (-f /etc/topgrade-update/skip-performance-checks)]]; then
     echo "Too little battery to upgrade"
     exit 2
 fi
-if [[ $cpu -ge 80 ]]; then
+if [[ $cpu -ge 80 && ! (-f /etc/topgrade-update/skip-performance-checks)]]; then
     echo "CPU too busy too update"
     exit 3
 fi
-if [[ $ram -le 1 ]]; then
+if [[ $ram -le 2 && ! (-f /etc/topgrade-update/skip-performance-checks) ]]; then
     echo "Too little memory to upgrade"
     exit 4
 fi
-if [[ $metered != 4 && $metered != 2 ]]; then
+if [[ $metered != 4 && $metered != 2 && ! (-f /etc/topgrade-update/skip-performance-checks) ]]; then
     echo "Can't upgrade on metered or no connection"
     exit 5
 fi
