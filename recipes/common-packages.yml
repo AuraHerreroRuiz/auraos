@@ -4,21 +4,16 @@ repos:
   files:
   - https://yum.enpass.io/enpass-yum.repo
   - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-  # - insync.repo
-  # - vscode.repo
   copr:
   - pennbauman/ports
   - deltacopy/darkly
   - pesader/showmethekey
 install:
   packages:
-    # - code
     - ddcutil
     - enpass
     - fzf
     - vivaldi-stable
-    # - insync
-    # - insync-dolphin
     - lf
     - lsd
     - libreoffice
@@ -73,14 +68,6 @@ install:
     - qemu-device-usb-redirect
     - qemu-device-display-virtio-vga
     - qemu-device-display-virtio-gpu
-    # Bup depencencies
-    - python3-libs
-    #Kup dependencies
-    - par2cmdline
-    - libgit2
-    - python3.12-libs
-    - python3-pyxattr
-    - python3-fusepy
     #Headset Control dependencies.
     - hidapi
     #PlasmaVault
