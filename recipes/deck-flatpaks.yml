@@ -22,7 +22,6 @@ configurations:
       - io.github.flattool.Warehouse
       # Social Media:
       - org.telegram.desktop
-      - com.skype.Client
       - dev.vencord.Vesktop
       # Security:
       - com.yubico.yubioath

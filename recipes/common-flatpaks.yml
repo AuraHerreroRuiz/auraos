@@ -27,7 +27,6 @@ configurations:
     - app.getclipboard.Clipboard
     # Social Media:
     - org.telegram.desktop
-    - com.skype.Client
     - dev.vencord.Vesktop
     # Security:
     - com.gitlab.davem.ClamTk
