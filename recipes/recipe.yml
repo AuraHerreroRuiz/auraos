@@ -64,8 +64,8 @@ modules:
     dest: /usr
   - type: copy
     from: synaTudor
-    src:  /tmp/synatudor-build/sbin
-    dest: /sbin
+    src: /tmp/synatudor-build/sbin
+    dest: /usr/bin
   - type: copy
     from: synaTudor
     src:  /tmp/synatudor-build/usr
