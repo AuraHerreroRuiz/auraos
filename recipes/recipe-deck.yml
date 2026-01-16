@@ -8,13 +8,13 @@ base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
 stages:
   - name: JetBrainsMonoSlashedNerdFont
-    from: fedora:42
+    from: fedora:43
     modules:
       - type: script
         scripts:
           - build-JetBrainsMonoSlashedNerdFont.sh
   - name: HeadsetControl
-    from: fedora:42
+    from: fedora:43
     modules:
       - type: script
         scripts:
