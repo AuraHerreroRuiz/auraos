@@ -34,6 +34,8 @@ install:
     - k3b
     - libburn
     - cdrskin
+    # Smartcard support
+    - gnupg2-scdaemon
     # Workaround for QT apps
     - qt5ct
     - qt6ct
