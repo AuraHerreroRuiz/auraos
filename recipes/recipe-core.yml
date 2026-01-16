@@ -33,6 +33,7 @@ modules:
         - cockpit-ostree
         - fastfetch
         - lsd
+        - ncdu
         - just
         - micro
         - nginx
