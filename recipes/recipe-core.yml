@@ -25,11 +25,14 @@ modules:
     snippets:
       - fc-cache -fv
   - type: dnf
+    repos:
+      copr:
+        - pennbauman/ports
     install:
       packages:
         - trash-cli
         - podman-docker
-        - cockpit-navigator
+        - lf
         - cockpit-ostree
         - fastfetch
         - lsd
