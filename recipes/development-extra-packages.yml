@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-latest.json
+type: dnf
+install:
+  packages:
+    - podman-compose

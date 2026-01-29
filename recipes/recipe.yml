@@ -99,3 +99,4 @@ modules:
   - from-file: common-flatpaks.yml
   - from-file: common-files.yml
   - from-file: common-topgrade.yml
+  - from-file: development-extra-packages.yml
