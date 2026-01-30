@@ -10,6 +10,7 @@ repos:
   - pesader/showmethekey
 install:
   packages:
+    - kexec-tools
     - ddcutil
     - enpass
     - fzf
