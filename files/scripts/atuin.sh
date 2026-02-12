@@ -16,7 +16,7 @@ curl -GL \
 "$(curl -GL \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/atuinsh/atuin/releases/latest | jq --raw-output ".assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz$\")).browser_download_url"
+  https://api.github.com/repos/atuinsh/atuin/releases/latest | jq --raw-output ".assets[] | select(.name | test(\"atuin-x86_64-unknown-linux-gnu.tar.gz$\")).browser_download_url"
 )" -o /tmp/atuin/atuin.tar.gz;
 
 
@@ -24,7 +24,7 @@ curl -GL \
 zipname=$(basename -s '.tar.gz' "$(curl -GL \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/atuinsh/atuin/releases/latest | jq --raw-output ".assets[] | select(.name | test(\"x86_64-unknown-linux-gnu.tar.gz$\")).name")")
+  https://api.github.com/repos/atuinsh/atuin/releases/latest | jq --raw-output ".assets[] | select(.name | test(\"atuin-x86_64-unknown-linux-gnu.tar.gz$\")).name")")
 
 mkdir -p /tmp/atuin/unzip
 
