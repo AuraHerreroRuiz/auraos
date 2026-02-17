@@ -2,11 +2,11 @@
 set -oue pipefail
 mkdir -p /tmp/kdotool-download
 
-wget https://github.com/jinliu/kdotool/releases/download/v0.2.2-pre/kdotool.tar.gz -O /tmp/kdotool-download/kdotool.tar.gz
+wget https://github.com/jinliu/kdotool/releases/download/v0.2.2/kdotool-0.2.2-x86_64-unknown-linux-gnu.tar.gz -O /tmp/kdotool-download/kdotool.tar.gz
 # Extract binary
 mkdir -p /usr/bin
 cd /usr/bin
 tar -xf /tmp/kdotool-download/kdotool.tar.gz kdotool --group root --owner root
-echo "910497319a794266b3637f857318c53c32d99c08a8278d2d07dc86d41cbd93a5fe3640af4e54d8df1a97be14b3f93871d44b53e7b9c02721146d96e2f4dfe19c  kdotool" | sha512sum -c
+echo "85b04d6dede715c217c29c72bb0f81fc041e405cf9ea4dece859443a2bfd88b033626e66cb3337ba1696051b78fe2caa41ad90c86ac323f9175d0d8753f0631a  kdotool" | sha256sum -c
 chmod 755 /usr/bin/kdotool
 
