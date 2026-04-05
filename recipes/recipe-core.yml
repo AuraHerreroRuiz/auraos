@@ -55,7 +55,7 @@ modules:
     remove:
       packages:
         - podman-compose
-        - podman-cockpit
+        - cockpit-podman
   - from-file: common-modules.yml
   - type: script
     scripts:
