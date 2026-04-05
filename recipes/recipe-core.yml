@@ -38,8 +38,8 @@ modules:
         - pennbauman/ports
     install:
       packages:
+        - docker-compose
         - trash-cli
-        - podman-docker
         - lf
         - cockpit-ostree
         - fastfetch
@@ -54,8 +54,9 @@ modules:
         - zsh-syntax-highlighting
     remove:
       packages:
-        - podman-compose
-        - cockpit-podman
+        - docker-cli
+        - moby-engine
+        - moby-filesystem
   - from-file: common-modules.yml
   - type: script
     scripts:
