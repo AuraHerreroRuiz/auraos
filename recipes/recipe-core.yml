@@ -46,9 +46,8 @@ modules:
         - zsh-syntax-highlighting
     remove:
       packages:
-        - docker-cli
-        - moby-engine
-        - moby-filesystem
+        - podman-compose
+        - podman-cockpit
   - from-file: common-modules.yml
   - type: script
     scripts:
