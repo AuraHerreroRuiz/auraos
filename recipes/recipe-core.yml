@@ -24,6 +24,14 @@ modules:
   - type: script
     snippets:
       - fc-cache -fv
+  # Prevent podman from being used
+  - type: systemd
+    system:
+      masked:
+        - podman.service
+        - podman.socket
+        - podman-restart.service
+        - podman-auto-update.service
   - type: dnf
     repos:
       copr:
